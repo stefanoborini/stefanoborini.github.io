@@ -1,4 +1,4 @@
-# Stefano Borini, PhD
+# All posts
 
 {% for post in site.posts %}
   <a href="{{ post.url }}">
