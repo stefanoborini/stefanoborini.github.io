@@ -1,6 +1,6 @@
 # Stefano Borini, PhD
 
-## Old, useful posts
+## Old posts
 
-- [Molecular Builder Project](posts/molecular_builder_project.md)
+- [Molecular Builder Project, a retrospective of a Waterfall project.](posts/molecular_builder_project.md)
 
