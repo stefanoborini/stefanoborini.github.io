@@ -1,26 +1,6 @@
 A pythonic way out of the GPL restrictions in MySQL client library
 ==================================================================
 
-date
-
-:   2013-02-05 10:53
-
-author
-
-:   Stefano
-
-category
-
-:   MySQL, Python, Software Licensing
-
-tags
-
-:   GPL
-
-slug
-
-:   a-pythonic-way-out-of-the-gpl-restrictions-in-mysql-client-library
-
 I recently became aware of this native Python package
 [PyMySQL](https://github.com/petehunt/PyMySQL). The package has one
 important benefit vs. the other solutions to talk to a MySQL server,

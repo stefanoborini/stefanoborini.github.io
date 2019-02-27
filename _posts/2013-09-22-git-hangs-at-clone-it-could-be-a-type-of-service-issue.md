@@ -1,18 +1,6 @@
 Git hangs at clone? It could be a Type of Service issue.
 ========================================================
 
-author
-
-:   Stefano
-
-category
-
-:   Linux, MacOSX
-
-tags
-
-:   git, ssh
-
 Today I was trying to download some code via git, and I got into a
 strange problem. When I ran git clone, it simply reported cloning into
 \'repo\' and was stuck there, until timeout. Same thing for pull. I

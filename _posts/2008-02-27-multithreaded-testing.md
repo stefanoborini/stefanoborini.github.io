@@ -1,14 +1,6 @@
 Multithreaded testing
 =====================
 
-author
-
-:   Stefano
-
-category
-
-:   Python, Testing
-
 Suppose you have to perform tests. Lots of tests. Functional tests,
 where each test could take a lot of time. Suppose also that
 
@@ -23,7 +15,7 @@ You install [testoob](http://testoob.sourceforge.net/). This thing is
 life-changing, believe me. So, let\'s see an example. Suppose you have
 this test:
 
-``` {.python}
+```python
 import unittest
 import time
 class MyTestCase(unittest.TestCase):
@@ -40,7 +32,7 @@ if __name__ == '__main__':
 
 If you run it, the whole testcase will take 8 seconds.
 
-``` {.text}
+```
 ..
 ----------------------------------------------------------------------
 Ran 2 tests in 8.000s
@@ -50,7 +42,7 @@ OK
 
 But if you install testoob, now you have a nice executable
 
-``` {.text}
+```
 stefano$ testoob test.py 
 ..
 ----------------------------------------------------------------------
@@ -61,7 +53,7 @@ OK
 Here is the magic: run it with the option \--threads=2 and the result is
 served in just 5 seconds:
 
-``` {.console}
+```
 stefano$ testoob --threads=2 test.py 
 ..
 ----------------------------------------------------------------------

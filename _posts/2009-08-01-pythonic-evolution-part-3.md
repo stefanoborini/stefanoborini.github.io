@@ -1,14 +1,6 @@
 Pythonic Evolution - Part 3
 ===========================
 
-author
-
-:   Stefano
-
-category
-
-:   Evolution, Python
-
 You are welcome to take a look at [Part
 1](http://forthescience.org/blog/2009/05/15/pythonic-evolution-part-1/)
 and
@@ -67,14 +59,14 @@ environment becomes more and more selective.
 Enough general chatting. Let\'s see an actual example. In the program
 you can download, the following conditions are set for the environment
 
-``` {.python}
+```python
 e.setConditions([(0,7),(2,11),(4,15),(5,17)])
 ```
 
 As you can see, the environment expects the bacteria to be able to solve
 the equation 2x+7. The line
 
-``` {.python}
+```python
 e.epoch(1.0,0.0, 20)
 ```
 
@@ -85,7 +77,7 @@ to solve exactly 2x+7 for all the specified points (x=0,2,4,5).
 
 Suppose we have a bacterium in the pool with the following genetic code:
 
-``` {.text}
+```
 IncX -3             # a = n | x = -3 | y = 0
 AddYtoA             # a = n | x = -3 | y = 0
 Return              # returns a = n
@@ -96,7 +88,7 @@ BranchXNotZero 2    #
 As you can see, this bacterium will return the input value unchanged.
 This means that the result and relative error for each condition will be
 
-``` {.text}
+```
 Given  | Expected | Produced | abs(Relative Error)
 0      | 7        | 0        | 7/7 = 1.0
 2      | 11       | 2        | 9/11 = 0.81
@@ -114,7 +106,7 @@ will be killed in Generation 3, as the tolerance is now 0.8.
 
 Let\'s see another example
 
-``` {.text}
+```
 MoveAtoY     # a = n   | x = 0 | y = n
 IncA  3      # a = n+3 | x = 0 | y = n
 MoveAtoY     # a = n+3 | x = 0 | y = n+3
@@ -124,7 +116,7 @@ LoadX 1      # Never reached
 
 In this case, we get
 
-``` {.text}
+```
 Given  | Expected | Produced | abs(Relative Error)
 0      | 7        | 3        | 4/7 = 0.57
 2      | 11       | 5        | 6/11 = 0.54
@@ -139,7 +131,7 @@ Given  | Expected | Produced | abs(Relative Error)
 Much better. Of course, the best condition would be something like this
 (chose a long one, just for illustrative purpose)
 
-``` {.text}
+```
 MoveAtoY    # a = n    | x = 0 | y = n
 IncX 3      # a = n    | x = 3 | y = n
 AddYtoA     # a = 2n   | x = 3 | y = n
@@ -154,7 +146,7 @@ IncX -2     # a = 2n+7 | x = 1 | y = -3
 This bacterium returns exactly what the environment expects. This as
 well
 
-``` {.text}
+```
 BranchXNotZero 2   # a = n    | x = 0 | y = 0 | no branch
 LoadY 1            # a = n    | x = 0 | y = 1
 MoveAtoY           # a = n    | x = 0 | y = n
@@ -189,7 +181,7 @@ not present : MoveAtoX. Once you have this codon, the space of the
 genetic code combinations allows you to potentially obtain the solution.
 This is one I wrote by hand:
 
-``` {.text}
+```
 MoveAtoX
 MoveAtoY
 LoadA 0

@@ -1,14 +1,6 @@
 C++ stdlib std::srand/std::rand are not repeatable across platforms
 ===================================================================
 
-author
-
-:   Stefano
-
-category
-
-:   c++
-
 I recently observed that `std::srand/std::rand` are not required to
 yield the same pseudorandom sequence across platforms. This code, for
 example

@@ -1,14 +1,6 @@
 Exploring Mandelbrot parameter space - part 2
 =============================================
 
-author
-
-:   Stefano
-
-category
-
-:   Fractals
-
 In the [previous
 post](http://forthescience.org/blog/2010/11/01/exploring-mandelbrot-parameter-space-%E2%80%93-part-1/),
 we saw that graphing the Mandelbrot starting point contains fractal

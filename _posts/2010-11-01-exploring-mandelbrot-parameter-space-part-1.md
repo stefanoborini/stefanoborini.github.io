@@ -1,18 +1,6 @@
 Exploring Mandelbrot parameter space -- part 1
 ==============================================
 
-author
-
-:   Stefano
-
-category
-
-:   Fractals
-
-tags
-
-:   mandelbrot
-
 Some time ago, I presented an [interesting python
 code](http://forthescience.org/blog/2010/07/12/the-mandelbrot-set-in-python/)
 able to draw the so-called Mandelbrot set, a fractal image with

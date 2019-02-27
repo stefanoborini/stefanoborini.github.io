@@ -1,18 +1,6 @@
 New gcc linker behavior leaves me puzzled
 =========================================
 
-author
-
-:   Stefano
-
-category
-
-:   linux
-
-tags
-
-:   gcc
-
 Today, together with a colleague, I found out this interesting behavior
 of the GNU linker. Suppose you define the following trivial (and
 incorrect, but who cares) program

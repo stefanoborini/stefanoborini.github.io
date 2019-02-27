@@ -1,14 +1,6 @@
 A raytracer in python - part 2: rendering multiple objects
 ==========================================================
 
-author
-
-:   Stefano
-
-category
-
-:   Python, Raytracing
-
 A quick addition needed to the raytracer is providing freedom to add
 more objects to the rendering scene. In Part 1, the design was such that
 only one object, a sphere, could be drawn. The new code allows much more
@@ -21,7 +13,7 @@ raytracer. This small program creates and renders a scene containing
 four spheres, a white one in the origin, the others along the axes, each
 with different colors.
 
-``` {.python}
+```python
 import raytrace
 from raytrace import objects
 
@@ -113,7 +105,7 @@ commands the pixel color, since it\'s in front.
 
 I achieve this with the following code
 
-``` {.python}
+```python
 def hit_bare_bones_object(self,ray):
    def f(o):
      shadeRec = o.hit(ray)

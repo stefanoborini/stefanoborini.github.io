@@ -1,26 +1,6 @@
 Difference between mpiexec and mpirun?
 ======================================
 
-date
-
-:   2013-02-15 20:24
-
-author
-
-:   Stefano
-
-category
-
-:   Computer Science
-
-tags
-
-:   MPI, parallel
-
-slug
-
-:   difference-between-mpiexec-and-mpirun
-
 A few days ago I started playing with MPI, and I started wondering:
 \"what\'s the difference between mpiexec and mpirun?\" It turns out that
 the distinction is [mostly

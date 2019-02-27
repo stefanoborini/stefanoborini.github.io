@@ -1,18 +1,6 @@
 Simulating network problems on OSX
 ==================================
 
-author
-
-:   Stefano
-
-category
-
-:   osx
-
-tags
-
-:   osx, networking
-
 Recently I had to simulate unreliable connections to a remote server,
 for testing purposes. I needed two cases: a fully unreachable host, and
 a host with considerable packet loss and delay. The first is easy to

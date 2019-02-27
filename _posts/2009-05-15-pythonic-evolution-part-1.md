@@ -1,14 +1,6 @@
 Pythonic Evolution - Part 1
 ===========================
 
-author
-
-:   Stefano
-
-category
-
-:   Evolution, Python
-
 This post is in different parts. The fact is that it requires quite a
 lot of time investment, something I really don\'t have in this period.
 
@@ -26,7 +18,7 @@ fixation (the old code is completely replaced by the new one).
 
 The math is simple. Here is a program that does it
 
-``` {.python}
+```python
 normal = 500
 mutated = 1
 
@@ -65,38 +57,38 @@ slightly higher probability of surviving: 91 %
 If you run the program, you will find out thatat generation 1, almost
 everything is made out of normal bacteria
 
-``` {.text}
+```
 Generation 1 -- normal : 99 %  mutated : 0 %
 ```
 
 At generation 100, you see that the mutated ones start to be visible
 
-``` {.text}
+```
 Generation 107 -- normal : 99 %  mutated : 1 %
 ```
 
 At generation 365, the mutated ones can start a political party
 
-``` {.text}
+```
 Generation 365 -- normal : 85 %  mutated : 14 %
 ```
 
 After 525 generations, they are fifty/fifty:
 
-``` {.text}
+```
 Generation 525 -- normal : 49 %  mutated : 50 %
 ```
 
 At generation 700, the mutated ones are the large majority
 
-``` {.text}
+```
 Generation 700 -- normal : 12 %  mutated : 87 %
 ```
 
 And finally, at generation 1000 the normal ones are basically
 disappeared, and the mutated ones conquered their environmental niche:
 
-``` {.text}
+```
 Generation 1000 -- normal : 0 %  mutated : 99 %
 ```
 

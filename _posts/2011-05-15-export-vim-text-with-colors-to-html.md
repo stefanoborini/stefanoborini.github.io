@@ -1,26 +1,6 @@
 Export vim text (with colors) to HTML
 =====================================
 
-date
-
-:   2011-05-15 11:34
-
-author
-
-:   Stefano
-
-category
-
-:   Computer Science
-
-tags
-
-:   HTML, vim
-
-slug
-
-:   export-vim-text-with-colors-to-html
-
 Vim is a great, great programming tool. Even after years of experience
 with it you still get to discover, either by change or by sharing,
 fantastic tips to make an impossible task incredibly easy.

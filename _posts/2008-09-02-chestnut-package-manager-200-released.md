@@ -1,22 +1,6 @@
 Chestnut Package Manager 2.0.0 released
 =======================================
 
-date
-
-:   2008-09-02 22:20
-
-author
-
-:   Stefano
-
-category
-
-:   Package Management
-
-slug
-
-:   chestnut-package-manager-200-released
-
 I just released a program I developed: [Chestnut Package
 Manager](http://chestnut.sourceforge.net/), a utility to handle
 executables and resource files in a transparent, platform independent

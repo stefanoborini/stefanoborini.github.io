@@ -1,14 +1,6 @@
 Global includes
 ===============
 
-author
-
-:   Stefano
-
-category
-
-:   Computer Science
-
 Sometimes in my programmer career I did this mistake: a big global
 header file that gets included by most, if not all the files in my
 project. This file normally contains one or more of the following:
@@ -44,7 +36,7 @@ effectively making your future maintainer life more difficult: you lose
 information about what is really used by the code and what is not.
 Compare for example:
 
-``` {.c}
+```c
 globals.h:
 
 #include <foo.h>
@@ -60,7 +52,7 @@ file.c:
 
 With the more communicative
 
-``` {.c}
+```c
 file.c:
 
 #include <foo.h>

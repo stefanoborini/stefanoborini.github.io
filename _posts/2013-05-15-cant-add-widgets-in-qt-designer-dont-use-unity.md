@@ -1,22 +1,6 @@
 Can\'t add widgets in Qt Designer? Don\'t use Unity
 ===================================================
 
-date
-
-:   2013-05-15 11:53
-
-author
-
-:   Stefano
-
-category
-
-:   Qt, Ubuntu
-
-slug
-
-:   cant-add-widgets-in-qt-designer-dont-use-unity
-
 I got around a problem in Qt designer that didn\'t allow me to drop any
 widget. When I tried, I obtained the barred circle mouse pointer,
 instead of the plus. When dropped, the drop operation did not complete,

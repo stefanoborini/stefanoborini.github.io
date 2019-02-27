@@ -1,14 +1,6 @@
 Box and Whiskers plot. How ?
 ============================
 
-author
-
-:   Stefano
-
-category
-
-:   R, Statistics
-
 I am trying to produce box and whiskers plots. Actually, not the plot in
 itself, but the values for the boxes, the whiskers and so on. An example
 of box and whiskers is the following
@@ -46,13 +38,13 @@ be found on [Wikipedia](http://en.wikipedia.org/wiki/Box_plot):
 
 As an example, the following set of 15 values in R
 
-``` {.r}
+```
 > a=c(2,2,3,3,3,4,4,5,6,6,6,6,8,12,13)
 ```
 
 have Q2 = 5, Q1 = 3 and Q3 = 6
 
-``` {.r}
+```
 > quantile(a)
   0%  25%  50%  75% 100% 
    2    3    5    6   13 
@@ -60,7 +52,7 @@ have Q2 = 5, Q1 = 3 and Q3 = 6
 
 The IQR is therefore 6-3 = 3
 
-``` {.r}
+```
 > IQR(a)
 [1] 3
 ```
@@ -72,7 +64,7 @@ by 2 and 8 (the lowest and highest values in the dataset that are not
 outliers). The result is the plot you see above. You can obtain the
 values for the box and whiskers as
 
-``` {.r}
+```
 > boxplot.stats(a)
 $stats
 [1] 2 3 5 6 8

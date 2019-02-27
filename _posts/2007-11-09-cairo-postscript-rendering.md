@@ -1,18 +1,6 @@
 Cairo PostScript rendering
 ==========================
 
-author
-
-:   Stefano
-
-category
-
-:   C/C++, Graphics, PostScript
-
-slug
-
-:   cairo-postscript-rendering
-
 I am trying to render vector graphics with alpha blending. Too bad,
 PostScript, even Level 3, does not support alpha blending. This means
 that if you want to draw two objects (say, circles) in PostScript and
@@ -40,7 +28,7 @@ out that even Cairo gives up in rendering PostScript vector graphics
 with alpha blending. For example, this code draws non-blended circles
 (alpha = 1.0), producing a vector based PostScript
 
-``` {.c}
+```c
 int main (int argc, char *argv[]) {
         cairo_surface_t *surface;
         cairo_t *cr;
@@ -76,13 +64,13 @@ int main (int argc, char *argv[]) {
 
 However, if you replace
 
-``` {.c}
+```c
 cairo_set_source_rgba (cr, 1.0, 0.0, 0.0, 1.0);
 ```
 
 with
 
-``` {.c}
+```c
 cairo_set_source_rgba (cr, 1.0, 0.0, 0.0, 0.5);
 ```
 
@@ -101,13 +89,13 @@ width="400px"}
 
 The PDF output was obtained by changing the line
 
-``` {.c}
+```c
 surface = (cairo_surface_t *)cairo_ps_surface_create (filename, 80.0, 80.0);
 ```
 
 to
 
-``` {.c}
+```c
 surface = (cairo_surface_t *)cairo_pdf_surface_create (filename, 80.0, 80.0);
 ```
 

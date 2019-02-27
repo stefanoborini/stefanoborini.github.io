@@ -1,26 +1,18 @@
 Nitpicking on python properties
 ===============================
 
-author
-
-:   Stefano
-
-category
-
-:   Python
-
 I like python properties, I really do. Properties allow you to convert
 explicit setters and getters into lean code while keeping control of
 your operation. Instead of this
 
-``` {.python}
+```python
 state.setMode(EditorMode.INSERT)
 current_mode = state.mode()
 ```
 
 with properties you can write a much more pleasant
 
-``` {.python}
+```python
 state.mode = EditorMode.INSERT
 current_mode = state.mode
 ```
@@ -28,7 +20,7 @@ current_mode = state.mode
 In both cases, if it weren\'t for the magic of properties, you would get
 direct access to a member, but if you create your class like this
 
-``` {.python}
+```python
 class State(object):
     def __init__(self):
         self._mode = EditorMode.COMMAND
@@ -100,7 +92,7 @@ Once again, it\'s a minor problem: you can use a special property
 accepting a tuple. For example, if you have values v1 and v2, on class
 Foo, you could have something like
 
-``` {.python}
+```python
 class Foo(object): 
     def __init__(self): 
         self._v1 = None 
@@ -137,7 +129,7 @@ f.values = (1,2)
 There\'s some kind of magic behind properties that you can\'t perceive
 to be there when you read client code. For example, code like this
 
-``` {.python}
+```python
 myobj.my_foo = 5
 ```
 
@@ -146,7 +138,7 @@ is not the case if my\_foo is a property. Maybe naming convention could
 disambiguate? I am not a fan of the strict PEP-8 requirements on naming
 of methods, so one could potentially decide for
 
-``` {.python}
+```python
 myobj.myMethod()
 myobj.myProperty = 5
 myobj.my_member_var = 3

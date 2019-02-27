@@ -1,18 +1,6 @@
 Beautiful Git rebasing of version branch
 ========================================
 
-author
-
-:   Stefano
-
-category
-
-:   
-
-tags
-
-:   
-
 In this post, I want to share with you a technique I learned recently
 from a colleague. It\'s a really great trick to keep your history nice
 and clean, while being able to work and push feature branches.

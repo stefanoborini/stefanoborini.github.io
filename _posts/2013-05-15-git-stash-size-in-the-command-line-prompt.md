@@ -1,14 +1,6 @@
 Git stash size in the command line prompt
 =========================================
 
-author
-
-:   Stefano
-
-category
-
-:   git
-
 Too often I get confused with git when it comes to stashes. I tend to
 stash often, as I jump from a task to another or from a branch to
 another, but it already happened I forgot I stashed something. The stash

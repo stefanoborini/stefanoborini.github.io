@@ -1,22 +1,6 @@
 Image self consistency from xkcd
 ================================
 
-date
-
-:   2010-01-14 13:02
-
-author
-
-:   Stefano
-
-category
-
-:   Mathematics, Websites
-
-slug
-
-:   image-self-consistency-from-xkcd
-
 I love [xkcd](http://xkcd.com). A comic combining fun and math by
 definition has to be good and geeky and the author, Randall Munroe, is a
 real genius on this. The latest comic is pretty interesting
@@ -48,7 +32,7 @@ Let\'s see it in action in a simplified form. I wrote two small python
 programs. They use matplotlib and the Python Image Library. The first
 (called piechart.py) creates a pie chart from a given data input
 
-``` {.python}
+```python
 import sys
 from matplotlib import pyplot
 
@@ -63,7 +47,7 @@ If we call this program specifying two values (the absolute values are
 not important, as the pie chart shows relative amount), it draws the pie
 chart accordingly
 
-``` {.bash}
+```bash
 python piechart.py 100 400 piechart_100w_400b.pdf
 convert -geometry 210x158 piechart_100w_400b.pdf piechart_100w_400b.png
 ```
@@ -81,7 +65,7 @@ quick convergence.
 The second program is called imagedata.py and extracts size and number
 of white and black pixels from an image.
 
-``` {.python}
+```python
 import sys
 
 from PIL import Image
@@ -101,7 +85,7 @@ print im.size[0],im.size[1],white,black
 If we run this program on the png image, it will tell us how many pixels
 are white, and how many are black.
 
-``` {.console}
+```
 $ python imagedata.py piechart_100w_400b.png
 210 158 23988 9192
 ```
@@ -114,7 +98,7 @@ our initial values of 20 % white and 80 % black.
 Now we create a new image, in agreement with the iterative procedure,
 passing the most recently obtained values
 
-``` {.bash}
+```bash
 python piechart.py 23988 9192 piechart_23988w_9192b.pdf
 convert -geometry 210x158 piechart_23988w_9192b.pdf piechart_23988w_9192b.png
 ```
@@ -122,7 +106,7 @@ convert -geometry 210x158 piechart_23988w_9192b.pdf piechart_23988w_9192b.png
 and repeat the process. This becomes tedious very soon, so I wrote a
 driver (driver.sh) to perform the process for me
 
-``` {.bash}
+```bash
 # generates the starting guess
 python piechart.py 100 400 iter_0.pdf
 convert -geometry 210x158 iter_0.pdf iter_0.png 
@@ -142,7 +126,7 @@ done
 
 If we run it, we immediately see a very interesting result
 
-``` {.text}
+```
 step w   h  white black
 1 - 210 158 23988 9192
 2 - 210 158 29075 4105
@@ -170,7 +154,7 @@ What if we started from the other direction, namely, with a guess
 containing zero as the number of black pixels? The result would have
 been the same
 
-``` {.text}
+```
 1 - 210 158 31750 1430
 2 - 210 158 31320 1860
 3 - 210 158 31221 1959

@@ -1,18 +1,6 @@
 A raytracer in python -- part 5: non-planar samplers
 ====================================================
 
-date
-
-:   2013-01-05 19:29
-
-author
-
-:   Stefano
-
-category
-
-:   Python, Raytracing
-
 In this post we are going to describe and implement non-planar samplers.
 In the previous [post about
 samplers](http://forthescience.org/blog/2011/11/30/a-raytracer-in-python-%e2%80%93-part-3-samplers/),

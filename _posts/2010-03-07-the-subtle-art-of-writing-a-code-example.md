@@ -1,26 +1,6 @@
 The subtle art of writing a code example
 ========================================
 
-date
-
-:   2010-03-07 06:10
-
-author
-
-:   Stefano
-
-category
-
-:   Computer Science
-
-tags
-
-:   code, example
-
-slug
-
-:   the-subtle-art-of-writing-a-code-example
-
 One of the most frustrating experiences when learning a new technology
 is finding useless examples. An example is the most precious thing that
 comes with a new library, language, or technology. It must be a starting

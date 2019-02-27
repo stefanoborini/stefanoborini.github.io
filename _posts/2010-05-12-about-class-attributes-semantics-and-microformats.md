@@ -1,22 +1,6 @@
 About class attributes, semantics and microformats
 ==================================================
 
-date
-
-:   2010-05-12 01:29
-
-author
-
-:   Stefano
-
-category
-
-:   HTML, Microformats, Semantics
-
-slug
-
-:   about-class-attributes-semantics-and-microformats
-
 I just got to [this post by Richard le
 Guen](http://richard.jp.leguen.ca/not-blog/a-css-class) via the
 referrals to my blog, and I feel it\'s important to clarify my point.
@@ -29,7 +13,7 @@ CSS, the visual aspect changes.
 To bind the entities you describe in HTML with how they will appear, you
 use a standardized attribute, the **class**. An example is:
 
-``` {.html}
+```html
 <div class="info">This is a message</div>
 ```
 
@@ -37,7 +21,7 @@ In this example, the **info** label is the class assigned to the content
 of the \<div\> HTML tag. Now you can change its appearance with a CSS
 directive like
 
-``` {.css}
+```css
 .info {
    color: blue;
    font-size: 13px;
@@ -57,7 +41,7 @@ point of microformats is to grant semantics through ad-hoc class names
 that are not only used as a representational reference into the css, but
 also are assigned to a well-defined meaning. Example:
 
-``` {.html}
+```html
 <div>
   <div>Joe Doe</div>
   <div>The Example Company</div>
@@ -68,7 +52,7 @@ also are assigned to a well-defined meaning. Example:
 
 can be endowed with semantic meaning if you use the hCard microformat
 
-``` {.html}
+```html
 <div class="vcard">
   <div class="fn">Joe Doe</div>
   <div class="org">The Example Company</div>

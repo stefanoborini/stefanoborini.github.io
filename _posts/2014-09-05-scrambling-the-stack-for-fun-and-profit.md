@@ -1,18 +1,6 @@
 Scrambling the stack for fun and profit
 =======================================
 
-author
-
-:   Stefano
-
-category
-
-:   C/C++
-
-tags
-
-:   
-
 Like any good respected tinkerer, I sometimes like to play with the
 madness and intricacies of the hardware and software I use. Recently I
 was tracing problems in a software I won\'t name but whose objective is

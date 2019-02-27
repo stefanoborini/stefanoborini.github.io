@@ -1,22 +1,6 @@
 MySQL enumeration, strict mode and the troubles of debugging
 ============================================================
 
-date
-
-:   2009-07-14 21:09
-
-author
-
-:   Stefano
-
-category
-
-:   MySQL
-
-slug
-
-:   mysql-enumeration-strict-mode-and-the-troubles-of-debugging
-
 Suppose you have a MySQL table containing an enum column. The
 enumeration allows the values \"FOO\", \"BAR\" and \"BAZ\". This is a
 production database, hooked up by a quite huge amount of programs

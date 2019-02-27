@@ -1,18 +1,10 @@
 base32 encoding in javascript
 =============================
 
-author
-
-:   Stefano
-
-category
-
-:   JavaScript
-
 I had to perform base32 encoding in javascript, and I found nothing
 ready for the task, so I started cramming out code, and here it is
 
-``` {.javascript}
+```javascript
 var baseenc = baseenc || {};
 
 baseenc.b32encode = function(s) {

@@ -1,22 +1,6 @@
 Lines of code
 =============
 
-date
-
-:   2008-02-23 00:43
-
-author
-
-:   Stefano
-
-category
-
-:   Project Management
-
-slug
-
-:   lines-of-code
-
 First, a disclaimer. I just want to play with numbers in this post.
 Lines of code (LOC) do not mean anything in terms of productivity. They
 can eventually be used as a rough estimate of the complexity of a

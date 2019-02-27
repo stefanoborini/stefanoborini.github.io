@@ -1,10 +1,6 @@
 Utilities for debugging
 =======================
 
-category
-
-:   Linux, MacOSX, Windows
-
 Part of my daily job involves getting dirty at the assembler level,
 generally to debug segfaults, FPE, deadlocks and similar stuff. It\'s a
 fascinating challenge which makes me feel extremely powerful and in

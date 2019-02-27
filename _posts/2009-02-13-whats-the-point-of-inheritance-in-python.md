@@ -1,14 +1,6 @@
 What\'s the point of inheritance in python ?
 ============================================
 
-author
-
-:   Stefano
-
-category
-
-:   C/C++, Design, Python
-
 Python is a fascinating language. It makes you think. Sometimes it can
 destroy your beliefs. Sometimes it makes you understand new concepts in
 a natural way, specifically Generic Programming.
@@ -35,7 +27,7 @@ replace objects of type OLD with object of type NEW without altering the
 properties of the program. For example, suppose you have the following
 situation
 
-``` {.c++}
+```cpp
 #include <iostream>
 
 class Animal {
@@ -76,7 +68,7 @@ But what about python? Let\'s see the code for the same case in python.
 Please note that I try to be as similar as possible to the C++ case for
 a moment:
 
-``` {.python}
+```python
 class Animal(object):
     def speak(self):
         raise NotImplementedError()
@@ -103,7 +95,7 @@ leverage the hierarchical concept of both `Dogs` and `Cats` being
 `Animals`. Here is the nice thing: in python, there\'s no need for this
 hierarchy. This works equally well
 
-``` {.python}
+```python
 class Dog:
     def speak(self):
         print "woff!"
@@ -153,7 +145,7 @@ without risking unintended side effects.
 But yes, there\'s a natural case where a class hierarchy is indeed
 useful: Exceptions. Suppose your code is like this
 
-``` {.python}
+```python
 class ServiceException(Exception): pass
 class TrivialException(Exception): pass
 

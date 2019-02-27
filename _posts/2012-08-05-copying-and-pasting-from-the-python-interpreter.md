@@ -1,14 +1,6 @@
 Copying and pasting from the python interpreter
 ===============================================
 
-author
-
-:   Stefano
-
-category
-
-:   Python
-
 One very powerful feature of python is the interactive interpreter: it
 allows you to test and quickly evaluate snippets of code. Occasionally,
 I need to rerun the same code, either during the same or another python

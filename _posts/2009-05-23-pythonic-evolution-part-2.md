@@ -1,14 +1,6 @@
 Pythonic Evolution - Part 2
 ===========================
 
-author
-
-:   Stefano
-
-category
-
-:   Evolution, Python
-
 This is the second part of a post relative to evolution. You can find
 the first part of the post
 [here](http://forthescience.org/blog/2009/05/15/pythonic-evolution-part-1/).
@@ -160,7 +152,7 @@ mathematical food.
 
 This is the most trivial one
 
-``` {.text}
+```
 Return
 ```
 
@@ -172,7 +164,7 @@ give him 5, it returns 5. You give him 13, it returns 13.
 
 A more interesting case is the following:
 
-``` {.text}
+```
 IncA 5
 Return
 ```

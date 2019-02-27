@@ -1,14 +1,6 @@
 From URI to ontologies
 ======================
 
-author
-
-:   Stefano
-
-category
-
-:   Computer Science
-
 It is some sort of well known pattern, the \"`http://`\" stuff. It is so
 frequently used that browsers just fill it in automatically by default.
 But what does exactly mean? What\'s behind it? In reality, behind a so

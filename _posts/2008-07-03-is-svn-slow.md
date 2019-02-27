@@ -1,22 +1,6 @@
 Is SVN slow?
 ============
 
-date
-
-:   2008-07-03 20:40
-
-author
-
-:   Stefano
-
-category
-
-:   Version Control
-
-slug
-
-:   is-svn-slow
-
 I am using SVN to manage my current development repository. As the
 project grew, the operations became slower and slower. Things like
 updating or committing could require minutes.

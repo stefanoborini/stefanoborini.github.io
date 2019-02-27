@@ -1,22 +1,6 @@
 Table namespacing in databases
 ==============================
 
-date
-
-:   2007-09-13 15:27
-
-author
-
-:   Stefano
-
-category
-
-:   Databases
-
-slug
-
-:   table-namespacing-in-databases
-
 I was trying to find out if some database implements namespacing for
 tables, but it looks like google produces no useful results for it. This
 is strange. In MySQL, tables are namespaced on a \"database

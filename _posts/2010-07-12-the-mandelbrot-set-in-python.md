@@ -1,17 +1,9 @@
 The Mandelbrot set, in python
 =============================
 
-author
-
-:   Stefano
-
-category
-
-:   Fractals, Python
-
 This code is so fascinating
 
-``` {.python}
+```python
 from PIL import Image
 
 max_iteration = 1000

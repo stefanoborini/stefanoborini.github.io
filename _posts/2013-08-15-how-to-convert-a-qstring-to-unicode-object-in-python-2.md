@@ -1,18 +1,10 @@
 How to convert a QString to unicode object in python 2?
 =======================================================
 
-author
-
-:   Stefano
-
-category
-
-:   Python
-
 I had this problem to solve, and I tried to find the safest way. This
 program illustrates the solution
 
-``` {.python}
+```python
 from PyQt4 import QtCore, QtGui                                                                                                                       
 import sys                                                                                                                                            
 
@@ -36,7 +28,7 @@ app.exec_()
 
 So the solution is
 
-``` {.python}
+```python
 unicode(qstring_object.toUtf8(), encoding="UTF-8")
 ```
 

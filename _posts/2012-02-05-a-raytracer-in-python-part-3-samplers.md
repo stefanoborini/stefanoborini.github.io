@@ -1,14 +1,6 @@
 A raytracer in python -- part 3: samplers
 =========================================
 
-author
-
-:   Stefano
-
-category
-
-:   Python, Raytracing
-
 In the previous post, we explored a very basic way of plotting images:
 shooting a ray from the center of every pixel, and plot the color of the
 object we hit. The result is a rather flat, very jagged image
@@ -149,7 +141,7 @@ generator of (x,y) tuples, with x and y being in the interval \[0.0,
 1.0). Once initialized, the Sampler can therefore be iterated over with
 a simple
 
-``` {.python}
+```python
 for subpixel in sampler:
     # use subpixel
 ```

@@ -1,14 +1,6 @@
 Python and memory fragmentation
 ===============================
 
-author
-
-:   Stefano
-
-category
-
-:   Python, Windows
-
 If you use CPython on 32 bit architectures, you may encounter a problem
 called memory fragmentation. It is more likely to happen on Windows for
 reasons that will soon be clear, but it\'s not a Windows exclusive. It
@@ -25,7 +17,7 @@ in the hole, but if it doesn\'t, the hole remains until something that
 fits is requested. On Linux, you can follow the VM occupation with this
 small python script
 
-``` {.python}
+```python
 import sys
 import subprocess
 

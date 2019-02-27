@@ -1,22 +1,6 @@
 Versioning file permissions in svn
 ==================================
 
-date
-
-:   2007-08-29 08:32
-
-author
-
-:   Stefano
-
-category
-
-:   Computer Science
-
-slug
-
-:   versioning-file-permissions-in-svn
-
 There can be cases when it\'s important to version file permissions. One
 case I have at hand is to have a cache directory for automatically
 generated images in a web application. The cache must be open for

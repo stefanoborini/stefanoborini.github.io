@@ -1,26 +1,10 @@
 Fortran 90 pitfall: initialization of vars at declaration
 =========================================================
 
-date
-
-:   2010-09-05 14:27
-
-author
-
-:   Stefano
-
-category
-
-:   Fortran
-
-slug
-
-:   fortran-90-pitfall-initialization-of-vars-at-declaration
-
 I am dusting my Fortran 90 skills. One big gotcha that always leaves me
 baffled is the following. Suppose you write the following program
 
-``` {.fortran}
+```fortran
 program test
   implicit none
 
@@ -41,7 +25,7 @@ end subroutine
 
 If you expect the output to be
 
-``` {.text}
+```
 0
 5
 0
@@ -52,7 +36,7 @@ you are right. This is indeed the output you get.
 
 Now consider the following slight different testsub routine
 
-``` {.fortran}
+```fortran
 subroutine testsub()
   implicit none
   integer :: var = 0
@@ -68,7 +52,7 @@ declaration line. You wouldn\'t expect a big difference right ? Sorry to
 bring the news, but that\'s a completely different story. The output you
 will obtain is
 
-``` {.text}
+```
 0
 5
 5
@@ -81,13 +65,13 @@ automatically SAVE, so they preserve their content between subsequent
 calls (in C terms, they are local static). In other words, this
 statement
 
-``` {.fortran}
+```fortran
 integer :: var = 0
 ```
 
 is totally equivalent to
 
-``` {.fortran}
+```fortran
 integer, save :: var = 0
 ```
 

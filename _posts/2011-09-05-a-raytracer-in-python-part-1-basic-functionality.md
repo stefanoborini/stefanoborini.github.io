@@ -1,14 +1,6 @@
 A raytracer in python - part 1: basic functionality
 ===================================================
 
-author
-
-:   Stefano
-
-category
-
-:   Books, Python, Raytracing
-
 Some time ago I visited Sydney, and I made a tragic mistake: I entered
 the University bookshop. Why a mistake, you say? I am book maniac. As
 soon as I enter a book shop (live or on web) I end up spending up to a

@@ -1,22 +1,6 @@
 Change MySQL config file
 ========================
 
-date
-
-:   2008-01-28 09:54
-
-author
-
-:   Stefano
-
-category
-
-:   MySQL
-
-slug
-
-:   change-mysql-config-file
-
 It seems trivial, and indeed it is, to specify a different configuration
 file for the mysql client, from the standard .my.cnf to a different
 file. This is generally needed when you don\'t want the password to be

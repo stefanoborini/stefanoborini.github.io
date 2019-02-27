@@ -1,22 +1,6 @@
 Why is most science programming done in fortran?
 ================================================
 
-date
-
-:   2009-02-22 01:03
-
-author
-
-:   Stefano
-
-category
-
-:   Fortran
-
-slug
-
-:   why-is-most-science-programming-done-in-fortran
-
 I found this interesting question in the referral logs on ForTheScience.
 Why is most science programming done in Fortran (77 or 95)?
 

@@ -1,14 +1,6 @@
 Upgraded my mac to SSD == pure bliss
 ====================================
 
-author
-
-:   Stefano
-
-category
-
-:   Hardware, MacOSX, Software
-
 ![image](http://forthescience.org/blog/wp-content/uploads/2011/02/OWC.jpg){.align-center
 width="400px"}
 

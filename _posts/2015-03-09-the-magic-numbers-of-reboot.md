@@ -1,23 +1,11 @@
 The magic numbers of reboot()
 =============================
 
-author
-
-:   Stefano
-
-category
-
-:   linux
-
-tags
-
-:   
-
 Today I learned an interesting piece of Linux trivia. To reboot the
 machine, there\'s a system call, reboot(). The funny thing is in its
 signature
 
-``` {.c}
+```c
 int reboot(int magic, int magic2, int cmd, void *arg);
 ```
 

@@ -1,20 +1,12 @@
 Using contexts in rdflib
 ========================
 
-author
-
-:   Stefano
-
-category
-
-:   Python, RDF
-
 I am playing with [rdflib](http://rdflib.net), a fantastic python
 library to handle RDF data. I had trouble understanding how to use
 contexts so to partition my ConjunctiveGraph into independent subgraphs.
 Here is the code
 
-``` {.python}
+```python
 import rdflib
 from rdflib.Graph import Graph
 
