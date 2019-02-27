@@ -1,31 +1,19 @@
 Naming for conversion routines
 ==============================
 
-author
-
-:   Stefano
-
-category
-
-:   programming
-
-tags
-
-:   
-
 I love code that self-documents and reads naturally, so I strive to name
 my routines and variables appropriately. When you are faced with the
 implementation of a conversion method, in generally the name is in the
 form \"toB\", where B is the result of the conversion, for example
 
-``` {.python}
+```python
 rgb_values = color.toRgb()
 ```
 
 The inverse, when we want to convert and integrate the conversion into
 an object\'s internal state, is generally in the form \"fromB\"
 
-``` {.python}
+```python
 color.fromRgb(rgb_values)
 ```
 
@@ -33,13 +21,13 @@ When you have a conversion function, things are slightly different:
 \"From\" assumes a different weight and meaning. To perform a conversion
 color object to rgb you can use either
 
-``` {.python}
+```python
 rgb_values = colorToRgb(color)
 ```
 
 or
 
-``` {.python}
+```python
 rgb_values = rgbFromColor(color)
 ```
 
@@ -50,7 +38,7 @@ right to left in the second example, and it reads naturally. The first
 solution is clumsier and disorganized. Similarly, the reverse conversion
 will be
 
-``` {.python}
+```python
 color = colorFromRgb(rgb_values)
 ```
 
