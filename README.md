@@ -1,4 +1,8 @@
-# All posts
+# Pages
+
+- [Test](test.md)
+
+# Posts
 
 <ul>
 {% for post in site.posts %}
