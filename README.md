@@ -2,6 +2,14 @@
 
 - [Resume](pages/resume.md)
 
+# Ramblings
+
+- [Graph theory](ramblings/graph_theory.md)
+
+# Slides
+
+- [Fortran](slides/fortran/fortran.svg)
+
 # Posts
 
 <ul>
@@ -9,8 +17,4 @@
   <li><a href="{{ post.url }}">{{ post.title }}</a></li>
 {% endfor %}
 </ul>
-
-# Ramblings
-
-- [Graph theory](ramblings/graph_theory.md)
 
