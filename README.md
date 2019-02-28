@@ -2,6 +2,10 @@
 
 - [Resume](pages/resume.md)
 
+# Opensource
+
+- [PEP-472](https://www.python.org/dev/peps/pep-0472/)
+
 # Ramblings
 
 - [Graph theory](ramblings/graph_theory.md)
