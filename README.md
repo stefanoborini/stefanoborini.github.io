@@ -33,7 +33,7 @@
     <h3 class="category-head">{{ category_name | capitalize }}</h3>
     <a name="{{ category_name | slugize }}"></a>
     <ul>
-    {% for post in site.categories[category_name] | sort %}
+    {% for post in site.categories[category_name] | sort:"title" %}
         <li><article class="archive-item"><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></article></li>
     {% endfor %}
     </ul>
