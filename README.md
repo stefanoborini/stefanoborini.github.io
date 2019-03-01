@@ -16,6 +16,11 @@
 - [Do and Don'ts in coding](slides/do_and_donts_in_coding/do_and_donts_in_coding.svg)
 - [Limitations of DFT](slides/limitations_of_DFT/limitations_of_DFT.svg)
 
+# Books
+
+- [PhD Thesis](https://github.com/stefanoborini/thesis-PhD/blob/master/thesis-borini.pdf)
+- [Master Thesis](https://github.com/stefanoborini/thesis-master/blob/master/borini-master-thesis.pdf)
+
 # Posts
 
 <ul>
