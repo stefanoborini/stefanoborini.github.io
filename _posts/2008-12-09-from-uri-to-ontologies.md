@@ -1,3 +1,6 @@
+---
+category: semantic web
+---
 From URI to ontologies
 ======================
 

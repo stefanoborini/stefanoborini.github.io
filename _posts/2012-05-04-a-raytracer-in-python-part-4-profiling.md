@@ -1,3 +1,6 @@
+---
+category: python
+---
 A raytracer in python -- part 4: profiling
 ==========================================
 

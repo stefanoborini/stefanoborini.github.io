@@ -1,3 +1,6 @@
+---
+category: qt
+---
 How to convert a QString to unicode object in python 2?
 =======================================================
 

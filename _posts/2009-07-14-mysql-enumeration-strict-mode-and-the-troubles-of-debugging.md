@@ -1,3 +1,6 @@
+---
+category: databases
+---
 MySQL enumeration, strict mode and the troubles of debugging
 ============================================================
 

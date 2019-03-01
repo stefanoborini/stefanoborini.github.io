@@ -1,3 +1,6 @@
+---
+category: python
+---
 What\'s the point of inheritance in python ?
 ============================================
 

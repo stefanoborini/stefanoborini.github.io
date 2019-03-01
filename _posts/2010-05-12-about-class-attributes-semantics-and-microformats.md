@@ -1,3 +1,6 @@
+---
+category: semantic web
+---
 About class attributes, semantics and microformats
 ==================================================
 

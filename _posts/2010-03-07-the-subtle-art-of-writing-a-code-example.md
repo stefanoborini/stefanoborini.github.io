@@ -1,3 +1,6 @@
+---
+category: other
+---
 The subtle art of writing a code example
 ========================================
 

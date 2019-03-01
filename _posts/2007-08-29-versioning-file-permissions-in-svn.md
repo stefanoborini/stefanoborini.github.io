@@ -1,3 +1,6 @@
+---
+category: other
+---
 Versioning file permissions in svn
 ==================================
 

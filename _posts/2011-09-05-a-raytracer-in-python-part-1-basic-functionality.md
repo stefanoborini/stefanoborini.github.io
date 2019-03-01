@@ -1,3 +1,6 @@
+---
+category: python
+---
 A raytracer in python - part 1: basic functionality
 ===================================================
 

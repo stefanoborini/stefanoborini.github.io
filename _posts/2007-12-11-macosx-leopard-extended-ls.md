@@ -1,3 +1,6 @@
+---
+category: other
+---
 MacOSX Leopard extended ls
 ==========================
 

@@ -1,3 +1,6 @@
+---
+category: git
+---
 Git hangs at clone? It could be a Type of Service issue.
 ========================================================
 

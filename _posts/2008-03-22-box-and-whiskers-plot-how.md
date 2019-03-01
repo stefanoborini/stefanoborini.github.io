@@ -1,3 +1,6 @@
+---
+category: other
+---
 Box and Whiskers plot. How ?
 ============================
 

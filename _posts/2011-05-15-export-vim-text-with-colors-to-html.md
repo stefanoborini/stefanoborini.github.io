@@ -1,3 +1,6 @@
+---
+category: other
+---
 Export vim text (with colors) to HTML
 =====================================
 

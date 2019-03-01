@@ -1,3 +1,6 @@
+---
+category: remove
+---
 A good lesson in python and unicode
 ===================================
 

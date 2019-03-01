@@ -1,3 +1,6 @@
+---
+category: python
+---
 Python and memory fragmentation
 ===============================
 

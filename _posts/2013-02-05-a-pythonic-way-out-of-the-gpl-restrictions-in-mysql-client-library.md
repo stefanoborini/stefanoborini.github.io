@@ -1,3 +1,6 @@
+---
+category: python
+---
 A pythonic way out of the GPL restrictions in MySQL client library
 ==================================================================
 

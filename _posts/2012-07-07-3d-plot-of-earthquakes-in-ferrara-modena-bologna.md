@@ -1,3 +1,6 @@
+---
+category: remove
+---
 3d plot of earthquakes in Ferrara-Modena-Bologna
 ================================================
 

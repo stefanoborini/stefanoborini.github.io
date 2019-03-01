@@ -1,3 +1,6 @@
+---
+category: other
+---
 Doing nothing in bash
 =====================
 

@@ -1,3 +1,6 @@
+---
+category: c
+---
 Scrambling the stack for fun and profit
 =======================================
 

@@ -1,3 +1,6 @@
+---
+category: other
+---
 Change separator in gnuplot
 ===========================
 

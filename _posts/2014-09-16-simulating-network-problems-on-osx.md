@@ -1,3 +1,6 @@
+---
+category: other
+---
 Simulating network problems on OSX
 ==================================
 

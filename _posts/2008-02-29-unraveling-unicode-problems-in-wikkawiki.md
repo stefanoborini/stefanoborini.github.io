@@ -1,3 +1,6 @@
+---
+category: other
+---
 Unraveling Unicode problems in WikkaWiki
 ========================================
 

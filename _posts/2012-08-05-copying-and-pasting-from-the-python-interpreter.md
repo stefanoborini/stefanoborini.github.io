@@ -1,3 +1,6 @@
+---
+category: python
+---
 Copying and pasting from the python interpreter
 ===============================================
 

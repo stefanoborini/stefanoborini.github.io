@@ -1,3 +1,6 @@
+---
+category: git
+---
 Git stash size in the command line prompt
 =========================================
 

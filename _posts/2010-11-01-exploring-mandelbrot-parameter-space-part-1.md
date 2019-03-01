@@ -1,3 +1,6 @@
+---
+category: python
+---
 Exploring Mandelbrot parameter space -- part 1
 ==============================================
 

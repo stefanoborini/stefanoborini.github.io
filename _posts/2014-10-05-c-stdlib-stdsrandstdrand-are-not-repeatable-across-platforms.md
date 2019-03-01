@@ -1,3 +1,6 @@
+---
+category: other
+---
 C++ stdlib std::srand/std::rand are not repeatable across platforms
 ===================================================================
 

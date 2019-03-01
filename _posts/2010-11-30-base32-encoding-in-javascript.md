@@ -1,3 +1,6 @@
+---
+category: javascript
+---
 base32 encoding in javascript
 =============================
 

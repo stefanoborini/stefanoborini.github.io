@@ -1,3 +1,6 @@
+---
+category: c
+---
 New gcc linker behavior leaves me puzzled
 =========================================
 

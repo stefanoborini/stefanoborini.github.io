@@ -1,3 +1,6 @@
+---
+category: fortran
+---
 Why is most science programming done in fortran?
 ================================================
 

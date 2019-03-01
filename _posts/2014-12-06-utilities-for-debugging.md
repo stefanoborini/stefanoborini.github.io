@@ -1,3 +1,6 @@
+---
+category: c
+---
 Utilities for debugging
 =======================
 

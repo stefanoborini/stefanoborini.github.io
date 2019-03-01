@@ -1,3 +1,6 @@
+---
+category: databases
+---
 Table namespacing in databases
 ==============================
 

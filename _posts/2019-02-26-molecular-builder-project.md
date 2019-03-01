@@ -1,3 +1,6 @@
+---
+category: project management
+---
 # Retrospective of an old project: the molecular builder project.
 ## or, how I discovered Agile before it went mainstream.
 

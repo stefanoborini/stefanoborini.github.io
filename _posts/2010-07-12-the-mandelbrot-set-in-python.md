@@ -1,3 +1,6 @@
+---
+category: python
+---
 The Mandelbrot set, in python
 =============================
 

@@ -1,3 +1,6 @@
+---
+category: python
+---
 Multithreaded testing
 =====================
 

@@ -1,3 +1,6 @@
+---
+category: semantic web
+---
 XML Namespace URL (updated)
 ===========================
 

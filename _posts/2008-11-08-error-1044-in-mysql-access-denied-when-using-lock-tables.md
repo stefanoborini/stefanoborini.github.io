@@ -1,3 +1,6 @@
+---
+category: databases
+---
 Error 1044 in MySQL: Access denied when using LOCK TABLES
 =========================================================
 

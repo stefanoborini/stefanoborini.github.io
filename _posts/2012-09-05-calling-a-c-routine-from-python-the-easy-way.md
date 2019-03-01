@@ -1,3 +1,6 @@
+---
+category: python
+---
 Calling a C routine from python, the easy way
 =============================================
 

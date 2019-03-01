@@ -1,3 +1,6 @@
+---
+category: git
+---
 Beautiful Git rebasing of version branch
 ========================================
 

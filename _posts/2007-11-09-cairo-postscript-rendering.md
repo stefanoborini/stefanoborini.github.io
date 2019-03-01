@@ -1,3 +1,6 @@
+---
+category: other
+---
 Cairo PostScript rendering
 ==========================
 

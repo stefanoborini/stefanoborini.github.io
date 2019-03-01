@@ -1,3 +1,6 @@
+---
+category: other
+---
 Difference between mpiexec and mpirun?
 ======================================
 

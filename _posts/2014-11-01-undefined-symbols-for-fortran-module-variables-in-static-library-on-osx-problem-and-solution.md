@@ -1,3 +1,6 @@
+---
+category: fortran
+---
 Undefined symbols for Fortran module variables in static library on OSX. Problem (and solution)
 ===============================================================================================
 

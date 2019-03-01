@@ -1,3 +1,6 @@
+---
+category: python
+---
 Nitpicking on python properties
 ===============================
 

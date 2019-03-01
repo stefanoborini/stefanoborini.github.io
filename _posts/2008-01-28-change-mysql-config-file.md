@@ -1,3 +1,6 @@
+---
+category: databases
+---
 Change MySQL config file
 ========================
 

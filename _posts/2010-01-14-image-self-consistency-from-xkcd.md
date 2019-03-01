@@ -1,3 +1,6 @@
+---
+category: python
+---
 Image self consistency from xkcd
 ================================
 

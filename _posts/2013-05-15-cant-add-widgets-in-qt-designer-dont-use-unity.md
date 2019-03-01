@@ -1,3 +1,6 @@
+---
+category: remove
+---
 Can\'t add widgets in Qt Designer? Don\'t use Unity
 ===================================================
 

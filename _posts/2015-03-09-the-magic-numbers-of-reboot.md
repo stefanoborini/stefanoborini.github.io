@@ -1,3 +1,6 @@
+---
+category: c
+---
 The magic numbers of reboot()
 =============================
 
