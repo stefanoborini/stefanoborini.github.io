@@ -1,3 +1,6 @@
+---
+category: fortran
+---
 Fortran 90 pitfall: initialization of vars at declaration
 =========================================================
 
