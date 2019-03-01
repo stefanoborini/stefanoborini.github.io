@@ -21,6 +21,7 @@
 - [PhD Thesis](https://github.com/stefanoborini/thesis-PhD/blob/master/thesis-borini.pdf)
 - [Master Thesis](https://github.com/stefanoborini/thesis-master/blob/master/borini-master-thesis.pdf)
 
+# Posts
 
 <div id="archives">
 {% for category in site.categories %}
@@ -39,12 +40,4 @@
   </div>
 {% endfor %}
 </div>
-
-# Posts
-
-<ul>
-{% for post in site.posts %}
-  <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>
 
