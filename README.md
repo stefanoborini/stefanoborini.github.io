@@ -24,7 +24,8 @@
 # Posts
 
 <div id="archives">
-{% for category in site.categories %}
+{% assign sorted_cats = site.categories | sort %}
+{% for category in sorted_cats %}
   <div class="archive-group">
     {% capture category_name %}{{ category | first }}{% endcapture %}
     <div id="#{{ category_name | slugize }}"></div>
@@ -33,8 +34,9 @@
     <h3 class="category-head">{{ category_name | capitalize }}</h3>
     <a name="{{ category_name | slugize }}"></a>
     <ul>
-    {% for post in site.categories[category_name] | sort:"title" %}
-        <li><article class="archive-item"><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}} x</a></article></li>
+    {% assign sorted_posts = category[1] | reversed %}
+    {% for post in sorted_posts %}
+        <li><article class="archive-item"><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></article></li>
     {% endfor %}
     </ul>
   </div>
