@@ -34,7 +34,7 @@
     <h3 class="category-head">{{ category_name | capitalize }}</h3>
     <a name="{{ category_name | slugize }}"></a>
     <ul>
-    {% assign sorted_posts = category[1] | reversed %}
+    {% assign sorted_posts = category[1] | sort:"title" %}
     {% for post in sorted_posts %}
         <li><article class="archive-item"><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></article></li>
     {% endfor %}
