@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Model View Controller</title>
+
+		<meta name="description" content="A discussion over MVC best practices and common patterns">
+		<meta name="author" content="Stefano Borini">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../revealjs/css/reveal.css">
+		<link rel="stylesheet" href="../revealjs/css/theme/mp.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../revealjs/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../revealjs/css/print/pdf.css' : '../revealjs/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        <style>
+            .reveal {
+              font-size: 28px;
+            }
+        </style>
+		<!--[if lt IE 9]>
+		<script src="../revealjs/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Model View Controller</h1>
+					<h2>and related patterns</h2>
+					<br>
+					<h4>Stefano Borini</h4>
+                    <aside class="notes">
+                        Good morning, today we are going to talk about Model View Controller and why it's good for you.
+                        It's a central concept when you program graphical user interfaces, backend and frontend web.
+                        It is not strictly a design pattern. It is instead a collection of patterns that forms a
+                        design principle.
+                    </aside>
+				</section>
+
+				<section>
+                    <h2>What is Model View Controller?</h2>
+                    <p>Set of guidelines to develop UI applications.</p>
+                    <p>Generic term. Many variations! Some large, some small.</p>
+                    <table>
+                        <tr>
+                            <td>
+                                <ul>
+                                    <li>Reenskaug MVC</li>
+                                    <li>Model View Viewmodel</li>
+                                    <li>Document View</li>
+                                    <li>Model View Presenter</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul>
+                                    <li>Model View Adapter</li>
+                                    <li>Model Gui Mediator</li>
+                                    <li>Taligent MVP</li>
+                                    <li>Dolphin MVP</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                    <p>And so on...</p>
+                    <br />
+                    <h3>Gives a vocabulary of terms to understand each other</h3>
+                    <h3>Teaches us not what to do, but mostly what NOT to do</h3>
+                    <aside class="notes">
+                    </aside>
+				</section>
+
+				<section>
+                    <h2>Variations: what are the differences?</h2>
+                    <ul>
+                        <li>Who does what?</li>
+                        <li>Semantic level of concepts (has it visual concern or not)?</li>
+                        <li>Who are the protagonists, and how are they called?</li>
+                        <li>Is the framework providing something for free or not?</li>
+                    </ul>
+                    <p>When you pick a framework, the MVC design has been chosen for you.</p>
+                    <h3>Don't fight it. Extend it. Simplify it.</h3>
+                    <aside class="notes">
+                    </aside>
+				</section>
+
+				<section>
+                    <h2>Structure of a UI application</h2>
+                    <div style="float: left; margin-left: 20%">
+                        <h3>Three main roles</h3>
+                        <ul>
+                            <li>Model</li>
+                            <li>View</li>
+                            <li>Controller</li>
+                        </ul>
+                    </div>
+                    <div style="float: left; margin-left: 20%">
+                        <h3>Three ancillary roles</h3>
+                        <ul>
+                            <li>Command</li>
+                            <li>Service</li>
+                            <li>Input Output (I/O)</li>
+                        </ul>
+                    </div>
+                    <div style="clear: both"></div>
+                    <h3>Roles, not classes</h3>
+                    <p>One class can take multiple roles (rare for some cases)</p>
+                    <p>One role can be taken by multiple classes (layer)</p>
+                    <aside class="notes">
+                    </aside>
+				</section>
+
+				<section>
+                    <h2>Model</h2>
+                    <ul>
+                        <li>Contains state and business logic of your application</li>
+                        <li>Notifies observers when changes happen (what protocol?)</li>
+                        <li>MUST NOT contain any UI elements/dependencies<sup>*<sup></li>
+                    </ul>
+                    <p><small><sup>*</sup>MAY contain "semantically UI" concepts: Viewmodel in MVVM</small></p>
+                    <h3>An application should be functional with no UI components involved</h3>
+                    <aside class="notes">
+                    </aside>
+				</section>
+
+				<section>
+                    <h2>View</h2>
+                    <ul>
+                        <li>A user interface to the Model</h2>
+                        <li>An observer of the Model</h2>
+                        <li>Visually renders the Model state (directly or through adaptation)</li>
+                        <li>Receives user input (mouse clicks, keyboard)</li>
+                        <li>MUST NOT contain any application state</li>
+                    </ul>
+                    <h3>Not to be confused with...</h3>
+                    <dl>
+                        <dt>Widget</dt><dd>A visual element of interaction that has no Model synchronisation capabilities.</dd>
+                    </dl>
+                    <h3>UI programming: exercise in data synchronization between Models and Views</h3>
+                    <aside class="notes">
+                    </aside>
+                </section>
+
+				<section>
+                    <h2>Controller</h2>
+                    <ul>
+                        <li>Acts on behalf of the View to modify the Model through its API.</li>
+                        <li>Had stronger responsibilities in the past. Less today.</li>
+                        <li>Still very central in backend web programming.</li>
+                    </ul>
+                    <h3>Not to be confused with...</h3>
+                    <dl>
+                        <dt>Control</dt><dd>Another term for Widget.</dd>
+                    </dl>
+                    <aside class="notes">
+                        The model role is absolved by whatever object contains the state of your application.
+                        Your whole application, without the UI, should be able to work through the model alone
+                        (plus some other objects used to modify that state). What you gain is scriptability,
+                        testability, and reusability.
+
+                        Another important model duty is to notify whoever is interested in changes in its state
+                        that a change has occurred.
+                        
+                        The view on the other hand, is generally stateless. It renders the model, listens to its
+                        changes, and re-renders itself. It also provides a way to modify the model, but not directly.
+                        Instead, it delegates to controllers, which encapsulate the logic to modify the model.
+
+                        It's worth stressing that these are roles, not classes. A single class could take on multiple
+                        roles, and many classes could be part of the same role. Classes that belong to the same role
+                        are part of that role "layer" (e.g. model layer)
+                    </aside>
+				</section>
+
+				<section>
+                    <h2>Command</h2>
+                    <ul>
+                        <li>Encapsulates and bundles change operations to Model</li>
+                        <li>Basically, a "smart" function to act on the Model</li>
+                    </ul>
+                    <h4>Differences with Controller</h4>
+                    <ul>
+                        <li>Controller is permanent. Command is ephemeral.</li>
+                        <li>Controller "understands" the View. Command does not.</li>
+                        <li>Controller translates. Command executes.</li>
+                    </ul>
+                    </p>
+                    <aside class="notes">
+                        Model View and Controller are not the only roles in an application. You can find also these ones quite often.
+                        One could argue that Command is a sort of controller, but its nature is on demand and volatile. A controller
+                        is generally permanent.
+                    </aside>
+				</section>
+
+				<section>
+                    <h2>Service</h2>
+                    <ul>
+                        <li>Provides functionality to access and synchronize against non-local state</li>
+                        <li>Used by Model, Controller and Command. Never by View.</li>
+                    </ul>
+                    <h4>Typical Examples</h4>
+                    <p>Access to database, Docker, svn, git,<br />JSON serialization, REST client, process management.</p>
+                    <aside class="notes">
+                        Examples of services are things like database communication, network communication, process management etc.
+                        You might consider them close to the Model layer, and in some cases model objects may use the service layer.
+                    </aside>
+				</section>
+
+				<section>
+                    <h2>Input Output (I/O)</h2>
+                    <ul>
+                        <li>File storage and permanence of state.</li>
+                        <li>File deprecation and upgrading.</li>
+                        <li>Import and export to foreign file formats.</li>
+                    </ul>
+                    <h4>Typical Example</h4>
+                    <p>
+                        Write and read configuration settings.<br />
+                        Write and read Model data (Save as...)<br/ >
+                        Export as other formats.
+                    </p>
+				</section>
+
+				<section>
+                    <h2>I/O Protips</h2>
+                    <h4>File formats are important. You must keep supporting them.</h4>
+                    <ul>
+                        <li>Don't use pickle.</li>
+                        <li>Low level format + high level format. Choose one, specify the other.</li>
+                        <li>Choose well your low level format.</li>
+                        <li>Version your files (e.g. version 1, 2, 3) from day one.</li>
+                        <li>Change version only when breaking backward compatibility</li>
+                        <li>Always add to the format to preserve backward compatibility</li>
+                        <li>Make old parsers ignore unknown entries (but see PNG)</li>
+                        <li>Make new parsers provide defaults for missing new keys.</li>
+                        <li>Upgrade on read. Don't keep old Model around.</li>
+                    </ul>
+                    <aside class="notes">
+                        IO layer is basically about permanence of the Model onto the disk.
+                    </aside>
+				</section>
+
+				<section>
+                    <h3>Side note on Qt</h3>
+                    <ul>
+                        <li>Qt is an application framework... kinda</li>
+                        <li>It is a widget set with some application framework capabilities bolted on.</li>
+                        <li>Poor model-view/data binding capabilities.</li>
+                        <li>A modern framework deals with boilerplate effectively:
+                            <ul>
+                                <li>Basic application organization via high level concepts</li>
+                                <li>Declarative data binding</li>
+                                <li>Easy layouting</li>
+                                <li>Undo/Redo system</li>
+                                <li>Plugin/extension system</li>
+                                <li>Lookup and handling of resources (icons/images/data)</li>
+                                <li>Save/restore configuration</li>
+                                <li>Uses a declarative or "fill the spaces" (Hollywood) approach</li>
+                            </ul>
+                        </li>
+                    <ul>
+                    <h3>A good Desktop UI application framework for python does not really exist</h3>
+                </section>
+
+				<section>
+                    <h3>Patterns: Coarse grained MVC</h3>
+                    <p>Connects View and Model via a complex Controller.</p>
+                    <img src="images/mvc_coarse.png" />
+                    <p>Poor reusability</p>
+				</section>
+
+				<section>
+                    <h3>Patterns: Fine grained MVC</h3>
+                    <p>Connects SubViews and Model through simple synchronising Controllers.</p>
+                    <p>Controllers connect one Model property to one View widget.</p>
+                    <img src="images/mvc_fine.png" />
+                    <p>Greater reusability, but simple</p>
+				</section>
+
+				<section>
+                    <h3>Patterns: Data Binding</h3>
+                    <p>Fine grained MVC minus boilerplate (courtesy of framework).</p>
+                    <p>Generally declarative binding between one UI element and one Model entry.</p>
+                    <p>Adapters can convert data in transit.</p>
+                    <img src="images/data_binding.png" />
+				</section>
+
+				<section>
+                    <h3>Data binding synchronization degrees of freedom</h3>
+                    <h4>Directionality</h4>
+                    <div>
+                        <dl style="display: block; margin-left: 15%">
+                            <dt>One way</dt><dd>propagate Model changes to View. Useful for read only Views.</dd>
+                            <dt>One way source</dt><dd>propagate View changes to Model. Useful for Models that tend to reformat.</dd>
+                            <dt>Two ways</dt><dd>Model to View and View to Model.</dd>
+                        </dl>
+                    </div>
+                    <h4>Responsiveness</h4>
+                    <div>
+                    <dl style="display: block; margin-left: 15%;">
+                        <dt>Immediate</dt><dd>synchronization at every mouse/keyboard action.</dd>
+                        <dt>Delayed</dt><dd>synchronization at focus out/close.</dd>
+                    </dl>
+                    </div>
+				</section>
+
+				<section>
+                    <h3>Pattern: Data Dialog</h3>
+                    <p>Retrieve information from the user via a Modal<sup>*</sup> dialog.</p>
+                    <p><small><sup>*</sup>Window requiring exclusive user attention until it's closed with Ok or Cancel. Blocks any other interaction.</small></p>
+                    <ol>
+                        <li>Copy the Model</li>
+                        <li>Exec the Modal dialog, passing the copy of the Model</li>
+                        <li>On Cancel, throw away the copy. Close the dialog</li>
+                        <li>On OK, merge modified copy of the Model with the current Model.</li>
+                        <li>Don't replace, might ruin data binding.</li>
+                        <li>Merge as atomic operation for data binding.</li>
+                        <li>If not possible, be aware of the consequences.</li>
+                    </dl>
+				</section>
+                
+				<section>
+                    <h3>Gotcha: Lapsed listener</h3>
+                    <ol>
+                        <li>Observer listen for changes on a Model.</li>
+                        <li>Goes out of scope without unsubscribing.</li>
+                        <li>Not&nbsp;collected:&nbsp;notification&nbsp;connection&nbsp;prevents&nbsp;it.</li>
+                        <li>Still receiving notifications!</li>
+                        <li>Notifications may trigger unwanted behavior.</li>
+                    </ol>
+				</section>
+
+				<section>
+                    <h3>Qt Gotcha: deleteLater</h3>
+                    <ul>
+                        <li>deleteLater schedules a widget for deletion.</li>
+                        <li>Note: deletes the C++ object!</li>
+                        <li>Python object wrapper may still be alive...</li>
+                        <li>... and referring to freed memory!</li>
+                        <li>Crash!</li>
+                    </ul>
+				</section>
+
+				<section>
+                    <h2>The event loop and the main thread</h2>
+                    <p>UI programming is fundamentally event driven.</p>
+                    <p>One thread (main thread) executes the event loop:</p>
+                    <ol>
+                        <li>waits for events (button clicks, keyboard button presses, timers...)</li>
+                        <li>dispatches the events to the appropriate entities, synchronously.</li>
+                        <li>perform all the operations consequential of the dispatching.</li>
+                        <li>next loop iteration begins. Thread goes back to wait status.</li>
+                    </ol>
+                    <p>You have 200 msec per iteration, or application will feel frozen/sluggish</p>
+                    <h3>If your operation takes longer, it must not be performed by the main thread</h3>
+                    <aside class="notes">
+                    </aside>
+				</section>
+
+				<section>
+                    <h3>Multithreading and Threads</h3>
+                    <ul>
+                        <li>Threads are good at waiting, not at doing (especially in python)</li>
+                        <li>Hard to do well. Use futures and callbacks to encapsulate boilerplate</li>
+                        <li>Hard to manage. Use a thread pool</li>
+                        <li>Cannot be canceled once running (flag checking...)</li>
+                    </ul>
+                    <aside class="notes">
+                    </aside>
+				</section>
+
+				<section>
+                    <h3>Multithreading and UI</h3>
+                    <ul>
+                        <li>Secondary threads CANNOT call UI stuff. You have to post an event into the event queue.</li>
+                        <li>Qt helps you with thread affinity and signal/slots. But be careful.</li>
+                        <li>What if you have to wait for a reply? async programming.</li>
+                    </ul>
+                    <aside class="notes">
+                    </aside>
+				</section>
+
+				<section>
+                    <h3>Multithreading and python</h3>
+                    <ul>
+                        <li>Don't forget your basic locking rituals.</li>
+                        <li>Minimise shared state. Use queue.Queue, threading.Event.</li>
+                        <li>Set secondary threads as daemons.</li>
+                        <li>Don't rely on atomicity of basic types (some ops are atomic, but don't rely on it)</li>
+                        <li>When in doubt, RLock</li>
+                        <li>Exceptions and GC from secondary threads.</li>
+                    </ul>
+                    <aside class="notes">
+                    </aside>
+				</section>
+
+				<section>
+                    <h3>Patterns in secondary thread/process management.</h3>
+                    <dl>
+                        <dt>Enqueue</dt><dd>Add new operation into a queue. Let the consumer thread go through the queue</dd>
+                        <dt>Debounce</dt><dd>Let running thread to end. Discard any secondary request</dd>
+                        <dt>Replace</dt><dd>Let running thread to end. Replace waiting request with latest one</dd>
+                    </dl>
+                    <aside class="notes">
+                    </aside>
+				</section>
+				<section>
+                    <h1>Good Luck!</h1>
+				</section>
+			</div>
+		</div>
+
+		<script src="../revealjs/lib/js/head.min.js"></script>
+		<script src="../revealjs/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: false,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../revealjs/plugin/search/search.js', async: true },
+					{ src: '../revealjs/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../revealjs/plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
