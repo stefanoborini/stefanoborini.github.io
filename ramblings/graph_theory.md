@@ -1,10 +1,13 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<div>
 
 # group theory and graph theory
 
 Automorphism: maps a structure to itself. The structure (and the topology) is
 preserved.
-aut(R^3) -> R^3
+
+
+$$aut(R^3) -> R^3$$
 
 aut(graph) -> graph
 identity is always present 
@@ -51,8 +54,6 @@ vertex images (copies of a vertex into another graph) can be used but they
 do not have their own identity. They have the same identifier as the
 original one.
 
------
-
 ## external edges 
 
 Optional approach:
@@ -90,7 +91,7 @@ rotation has $k=3$ because after three rotations of 120 degrees, we go back
 to the starting condition.
 
 The topological part of the symmetry operation $O^{T}$ acts only on the topology.
-\begin{equation}
+\[
 O^{T} G = \tilde{G}
 \end{equation}
 $O^{T}$ is defined by its axis (the number of vertexes which won't duplicate
@@ -443,4 +444,4 @@ combined operations. we can combine different operations. suppose for
 example to combine a translation and a rotation into a single operation. 
 The application of this operation one time is remapped to a given number of
 applications of each of the suboperations. 
-
+</div>
