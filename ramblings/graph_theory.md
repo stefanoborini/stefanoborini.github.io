@@ -398,8 +398,8 @@ operations modify topology and desc values.
 external links can be defined only on the irreducible graph?
 what about a face made of links from 2 operations?
 
-<p>suppose $g$ is a graph and $d$ is a xyz descriptor. $G^T_d$ is a generator for
-translation operation on the descriptor, $G^T_t$ is a generator for
+<p>suppose \g is a graph and \d is a xyz descriptor. $$G^T_d$$ is a generator for
+translation operation on the descriptor, $$G^T_t$$ is a generator for
 translation on the topology</p>
 
 <p>
@@ -419,11 +419,11 @@ $$d_1^{color} = G^{identity}T_d(distance = (1.0,0.0,0.0), G^T_t)(d^{color})$$
 
 <p>rotation of two vertexes linked together. one of them forms an axis.
 indexes of the vertexes on the axis: $Z=(1,)$</p>
-<p>external links: $R=()$</p>
+<p>external links: R=()</p>
 
-<p>l\_G_g = G_g(Z,R)</p>
-<p>l\_G_v^{rot} = G_v^{rot} (order = 3)</p>
-<p>\tilde{d]_{xyz} = G_D(l\_G_v^{rot} , l\_G_g)(d_{xyz})</p>
+<p>$$l\_G_g = G_g(Z,R)$$</p>
+<p>$$l\_G_v^{rot} = G_v^{rot} (order = 3)$$</p>
+<p>$$\tilde{d]_{xyz} = G_D(l\_G_v^{rot} , l\_G_g)(d_{xyz})$$</p>
 
 example for R: (1, (1,1)) means a link between 1 and 1 after the application
 of the operation one time.
