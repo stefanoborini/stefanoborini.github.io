@@ -1,5 +1,4 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
-<div>
 
 # group theory and graph theory
 
@@ -7,9 +6,12 @@ Automorphism: maps a structure to itself. The structure (and the topology) is
 preserved.
 
 
+<p>
 $$aut(R^3) -> R^3$$
 
-aut(graph) -> graph
+$$aut(graph) -> graph$$
+</p>
+
 identity is always present 
 
 A graph G describes a topology. This topology is then adorned with
@@ -444,4 +446,3 @@ combined operations. we can combine different operations. suppose for
 example to combine a translation and a rotation into a single operation. 
 The application of this operation one time is remapped to a given number of
 applications of each of the suboperations. 
-</div>
