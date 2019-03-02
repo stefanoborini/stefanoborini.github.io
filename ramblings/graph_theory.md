@@ -93,23 +93,22 @@ rotation has $k=3$ because after three rotations of 120 degrees, we go back
 to the starting condition.
 
 The topological part of the symmetry operation $O^{T}$ acts only on the topology.
-\[
-O^{T} G = \tilde{G}
-\end{equation}
-$O^{T}$ is defined by its axis (the number of vertexes which won't duplicate
+<p>
+$$O^{T} G = \tilde{G}$$
+</p>
+<p>$O^{T}$ is defined by its axis (the number of vertexes which won't duplicate
 under its application) and its order $k$. The final number of vertexes in
-$\tilde{G}$ is $ k*(nvert(G) - nvert(axis)) + nvert(axis)$.
+$\tilde{G}$ is $ k*(nvert(G) - nvert(axis)) + nvert(axis)$.</p>
 
-When symmetry is involved, it is possible to describe edges, faces and so
+<p>When symmetry is involved, it is possible to describe edges, faces and so
 on, involving vertexes created by the symmetry operation. These edges are
 called "external edges". Their specification should reside together with the
-operation $O^{T}$.
+operation $O^{T}$.</p>
 
-The descriptor values for the generated elements can in principle be
+<p>The descriptor values for the generated elements can in principle be
 generated from the $O^{D}$ part of the operation. this part is descriptor
 dependent. each descriptor knows how to act in response to application of
-symmetry. what about external edges descriptors ?
-
+symmetry. what about external edges descriptors ?</p>
 
 external edges must be specified on the operation, not on the generating
 graph (which knows nothing about the operation)
@@ -124,18 +123,17 @@ this is a more complex thing.
 
 
 
-\begin{verbatim}
+```
 graph + descriptor -> operation + 
                       additional relationships + 
                       additional descriptors      -> new (Graph + Descriptor)
-                                                  
-\end{verbatim}
+```                                                  
 
 The action of an operation on a descriptor depends on the original value,
 the referred entity (vertex, link...), the change algorithm and the number
 of applications of the basic operation.
 
-for example, if you have three vertexes, 1,2,3 and links 1-2 and 2-3,
+<p>for example, if you have three vertexes, 1,2,3 and links 1-2 and 2-3,
 describing for example a molecule, you can perform a 3-fold rotation. This
 operation is performed by an $O^{T}$ having as axis vertex 1 and 2, and
 degree 3. vertex 3 will be mapped to (3,(0)), (3,(1)), and (3,(2)), where we
@@ -143,7 +141,7 @@ indicate the number of applications of the operation basic step in
 parenthesis. The descriptor (for example, xyz coordinate) will change the
 coordinate of 3 so to respect the folding. New links will be created between
 2 and (3,(n)). Please note that these links are internal links, not
-external (FIXME is it true?).
+external (FIXME is it true?).</p>
 
 In general, there's no difference between a 6-fold rotation and a 6-times
 translation, from the topological point of view.
@@ -153,7 +151,6 @@ application of multiple operations, one after another?
 avoid selflinking because it's a mess.
 
 graph descriptors describe the graph as a whole, not topological elements.
-
 
 descriptors: vertex
 
@@ -183,15 +180,14 @@ rotazione spinorica 3-fold, in 3d l'ordine e' 3, ma in 4d l'ordine e' 6.
 Questo vale ogni volta che il descrittore ha una ripetizione diversa dalla
 topologia. (FIXME e' possibile cio'?)
 
-\begin{verbatim}
+```
 operation (preserve vertexes, creates new vertexes and other topological elements)
     / \
      |
      | translation
        rotation
        reflection  (work on a geometrical description of the system)
-
-\end{verbatim}
+```
 
 se la rotazione fosse sqrt(2), l'ordine e' infinito. 
 
@@ -204,13 +200,13 @@ graph.
 identificativo con (id, numero applicazioni operazione)
 
 
-\subsection{traversing}
-in a forest, we need to have starting vertexes for each block.
+## traversing
 
+in a forest, we need to have starting vertexes for each block.
 
 matching a molecule for changes. fingerprinting. smiles.
 
-
+```
 tree-like
 
 world - molecule - atom
@@ -221,46 +217,45 @@ world - molecule - atom
                    bond
         
         molecule
+```
 
 use cases
 
-add an atom, bond
-remove an atom
-walk the molecule
-merge moolecules
-split a molecule into parts
-select
-match search pattern
+- add an atom, bond
+- remove an atom
+- walk the molecule
+- merge moolecules
+- split a molecule into parts
+- select
+- match search pattern
 
 
+## graph datatype representation
 
-\section{graph datatype representation}
-\begin{itemize}
-\item Adjacency matrix representation: graph[i][j] = True iff there's an
-edge between vertex $i$ and $j$. Space complexity $O(n_{v}^2)$
-\item adjacency list representation: graph[i] = list([j,k,l]). express the
-vertexes $(i,j), (i,k), (i,l)$. Space complexity $O(e)$
-\end{itemize}
+- <p>Adjacency matrix representation: graph[i][j] = True iff there's an
+edge between vertex $i$ and $j$. Space complexity $O(n_{v}^2)$</p>
+- <p>adjacency list representation: graph[i] = list([j,k,l]). express the
+vertexes $(i,j), (i,k), (i,l)$. Space complexity $O(e)$</p>
 
-\section{traversal algorithms}
+
+## traversal algorithms
 
 depending on the border node selection criterium:
-\begin{itemize}
-\item breadth first search. uses a FIFO. enqueue the root and start the
+
+- breadth first search. uses a FIFO. enqueue the root and start the
 algorithm. The algorithm dequeues a vertex, enqueues its unmarked children,
 visit the vertex and mark it visited. Repeated until the queue is empty.
-\item depth first search. Uses a list depth number for each vertex. the list
+- depth first search. Uses a list depth number for each vertex. the list
 contains -1 if the vertex was not visited, otherwise the level of descent
 when visited (root is 0, children of root 1 etc...). The vertex is visited,
 then the children if not already visited (depth number == -1), recursively.
-\item others.
-\end{itemize}
+- others.
 
-\section{topological sort}
+## topological sort
 
-\section{cycle detection}
+## cycle detection
 
-\begin{verbatim}
+```
 int n; // num of nodes
 int dfn[n] // ordinal number for graph visited nodes
 int v,w; // represent vertexes
@@ -284,21 +279,19 @@ def dfs(v):
         elseif dfn[w] == 0:
             dfs(w)
     inProg[v] = False
+```
 
-
-\end{verbatim}
-
-\section{detecting connected components}
+## detecting connected components
 
 perform a traversal of the tree. all the unvisited nodes after the traversal
 belong to a different component. start from one of these nodes. go on until
 all the nodes have a component.
 
-\section{Prim's algorithm}
+## Prim's algorithm
 
 minimum cost spanning tree. returns a set of edges:
 
-\begin{verbatim}
+```
 set of vertices V
 set of vertices U
 vertex x,y
@@ -311,13 +304,13 @@ while U != V
     U += y
     
 return T
-\end{verbatim}
+```
 
 Kruskal works by selecting the edges with lower weight, creating subgraphs.
 every time an edge connects two subgraphs, they are merged as a single
 subraph
 
-\begin{verbatim}
+```
 start with only the vertexes.
 set of edges T = 0
 
@@ -326,31 +319,30 @@ while there's more than one set
     T += (x,y)
     merge the two sets x and y are belonging to in a single set
 return T
-\end{verbatim}
+```
 
-
-Prim's algorithm runs in $O(n^2)$, while Kruskal's algorithm takes $n log n$
+<p>Prim's algorithm runs in $O(n^2)$, while Kruskal's algorithm takes $n log n$
 time. Thus Prim's algorithm is faster on dense graphs, while Kruskal's is
-faster on sparse graphs. 
+faster on sparse graphs.</p>
 
-\section{transitive closure: warshall algorithm}
+## transitive closure: warshall algorithm
 
-\begin{verbatim}
+```
 graph A expressed as Adjacency matrix 
 copy A in C
 for k,i,j in A.shape:
     C[i,j] = C[i,j] || (C[i,k] && C[k,j])
-\end{verbatim}
+```
 
 
-\section{shortest path: dijkstra algorithm}
+## shortest path: dijkstra algorithm
 
-\begin{verbatim}
 be C[v,w] the cost of the edge (v,w). The cost must be non negative, and the
 cost of a unexistent edge is +infinite. The dijkstra algorithm finds the
 cost of the cheapest path between a starting vertex A and every other vertex in the
 graph. (FIXME: the cost, but the path ?)
 
+```
 foreach v in V
     D[v] = C[A,v]
 
@@ -366,8 +358,7 @@ been calculated
 V-S : set of vertices from the graph for which the shortest path has not
 been calculated
 D = set of distances 
-
-\end{verbatim}
+```
 
 generated graph and generated descriptor are matched by cardinality.
 
@@ -407,33 +398,32 @@ operations modify topology and desc values.
 external links can be defined only on the irreducible graph?
 what about a face made of links from 2 operations?
 
-suppose $g$ is a graph and $d$ is a xyz descriptor. $G^T_d$ is a generator for
+<p>suppose $g$ is a graph and $d$ is a xyz descriptor. $G^T_d$ is a generator for
 translation operation on the descriptor, $G^T_t$ is a generator for
-translation on the topology
+translation on the topology</p>
 
-\begin{equation}
-d_1 = G^T_d(distance = (1.0,0.0,0.0), G^T_t)(d)
-\end{equation}
+<p>
+$$d_1 = G^T_d(distance = (1.0,0.0,0.0), G^T_t)(d)$$
+</p>
 
 the distance parameter is the value generator for the translation operation.
 
-\begin{equation}
-g_1 = G^T_t(links = (indexes of the identifiers), axis = (indexes of the
-vertex axis))(g)
-\end{equation}
+<p>
+$$g_1 = G^T_t(links = (indexes of the identifiers), axis = (indexes of the
+vertex axis))(g)$$
+</p>
 
-\begin{equation}
-d_1^{color} = G^{identity}T_d(distance = (1.0,0.0,0.0), G^T_t)(d^{color})
-\end{equation}
+<p>
+$$d_1^{color} = G^{identity}T_d(distance = (1.0,0.0,0.0), G^T_t)(d^{color})$$
+</p>
 
-rotation of two vertexes linked together. one of them forms an axis.
-indexes of the vertexes on the axis: $Z=(1,)$
-external links: $R=()$
-\begin{eqnarray}
-l\_G_g = G_g(Z,R)
-l\_G_v^{rot} = G_v^{rot} (order = 3)
-\tilde{d]_{xyz} = G_D(l\_G_v^{rot} , l\_G_g)(d_{xyz})
-\end{eqnarray}
+<p>rotation of two vertexes linked together. one of them forms an axis.
+indexes of the vertexes on the axis: $Z=(1,)$</p>
+<p>external links: $R=()$</p>
+
+<p>l\_G_g = G_g(Z,R)</p>
+<p>l\_G_v^{rot} = G_v^{rot} (order = 3)</p>
+<p>\tilde{d]_{xyz} = G_D(l\_G_v^{rot} , l\_G_g)(d_{xyz})</p>
 
 example for R: (1, (1,1)) means a link between 1 and 1 after the application
 of the operation one time.
