@@ -3,6 +3,11 @@
 
 @import "{{ site.theme }}";
 
+
 .page-header {
-	padding: 0;
+    padding: 0;
+}
+
+.project-name {
+    color: black;
 }
