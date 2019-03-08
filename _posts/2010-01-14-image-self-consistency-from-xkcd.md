@@ -151,7 +151,7 @@ point where it does not change anymore: it achieved self-consistency,
 and it is representing itself. This is a movie of the various steps
 until convergence
 
-![piechart convergence](http://forthescience.org/blog/wp-content/uploads/2010/01/piechart_convergence_cycle.gif)
+![piechart convergence]({{ site.url }}/assets/images/2010/01/piechart_convergence_cycle.gif)
 
 What if we started from the other direction, namely, with a guess
 containing zero as the number of black pixels? The result would have
@@ -172,7 +172,7 @@ been the same
 Again, even with a different starting guess, we obtain the same result,
 here depicted as a movie
 
-![piechart convergence](http://forthescience.org/blog/wp-content/uploads/2010/01/piechart_convergence_2_cycle.gif)
+![piechart convergence](({{ site.url }}/assets/images/2010/01/piechart_convergence_2_cycle.gif)
 
 I hope this gave a brief explanation on how Randall achieved the
 self-consistent image. His case was more complex, having three plots.
