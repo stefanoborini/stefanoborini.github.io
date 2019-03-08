@@ -55,7 +55,7 @@ python piechart.py 100 400 piechart_100w_400b.pdf
 convert -geometry 210x158 piechart_100w_400b.pdf piechart_100w_400b.png
 ```
 
-![piechart convergence iteration 0](http://forthescience.org/blog/wp-content/uploads/2010/01/iter_0.png)
+![piechart convergence iteration 0]({{ site.url }}/assets/images/2010/01/iter_0.png)
 
 This creates a pie chart where white is 1/5 of the pie chart area and
 black is 4/5. Please note that due to a setup problem of my matplotlib I
