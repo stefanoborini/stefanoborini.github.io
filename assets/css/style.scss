@@ -4,9 +4,13 @@
 @import "{{ site.theme }}";
 
 .page-header {
-    padding: 0;
+    padding: 10px;
 }
 
-.project-name {
-    color: black;
+body {
+    line-height: 1.0;
+}
+
+h1 {
+    font-size: 1em;
 }
