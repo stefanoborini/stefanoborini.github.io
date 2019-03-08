@@ -87,8 +87,7 @@ The picture show the three different cases. From left to right,
 PostScript backend without alpha blending, PostScript backend with alpha
 blending, and PDF backend with alpha blending.
 
-![image](http://forthescience.org/blog/wp-content/uploads/2007/11/cairo_rendering.png){.align-center
-width="400px"}
+![image]({{ site.url }}/assets/images/2007/11/cairo_rendering.png)
 
 The PDF output was obtained by changing the line
 

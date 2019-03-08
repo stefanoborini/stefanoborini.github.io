@@ -172,7 +172,7 @@ been the same
 Again, even with a different starting guess, we obtain the same result,
 here depicted as a movie
 
-![piechart convergence](({{ site.url }}/assets/images/2010/01/piechart_convergence_2_cycle.gif)
+![piechart convergence]({{ site.url }}/assets/images/2010/01/piechart_convergence_2_cycle.gif)
 
 I hope this gave a brief explanation on how Randall achieved the
 self-consistent image. His case was more complex, having three plots.
