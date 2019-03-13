@@ -19,9 +19,9 @@
 
 # Books
 
+- [Understanding Model-View-Controller](https://stefanoborini.com/book-modelviewcontroller)
 - [PhD Thesis](https://github.com/stefanoborini/thesis-PhD/blob/master/thesis-borini.pdf)
 - [Master Thesis](https://github.com/stefanoborini/thesis-master/blob/master/borini-master-thesis.pdf)
-- [Understanding Model-View-Controller](https://github.com/stefanoborini/book-modelviewcontroller)
 
 # Posts
 
