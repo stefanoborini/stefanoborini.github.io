@@ -2,3 +2,9 @@ title: Fly, Crash, Throw Exception
 description: Random stuff from Stefano Borini
 show_downloads: false
 theme: jekyll-theme-cayman
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      categories: "incomplete"
