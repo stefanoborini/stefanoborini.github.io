@@ -1,5 +1,5 @@
 ---
-category: C++
+category: c++
 ---
 # T considered harmful in template programming
 
