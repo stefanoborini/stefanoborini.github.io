@@ -187,6 +187,10 @@ independently when they are, in fact, highly related, is asking for trouble.
 
 ## Changing the loop variable inside the loop
 
+## Giving log messages semantic meaning
+
+Making log messages meaningful for further parsing makes the output very fragile.
+
 ## Magic numbers
 
 If you have magic integers that have a special meaning, give them a name as parameters. If I see this
