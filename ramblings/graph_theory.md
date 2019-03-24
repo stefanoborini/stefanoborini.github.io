@@ -5,7 +5,6 @@
 Automorphism: maps a structure to itself. The structure (and the topology) is
 preserved.
 
-
 <p>
 $$aut(R^3) -> R^3$$
 

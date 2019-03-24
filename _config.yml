@@ -8,3 +8,4 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       category: "incomplete"
+      comments: true
