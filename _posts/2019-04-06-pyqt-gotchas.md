@@ -17,8 +17,6 @@ hard-to-debug chaos in two cases:
 
 Both cases will lead to access to freed memory, leading to undefined behavior. Let's see some examples to make things clear.
 
-== Examples ==
-
 ## Gotcha #1: Using WA_DeleteOnClose
 
 Never use WA_DeleteOnClose.
