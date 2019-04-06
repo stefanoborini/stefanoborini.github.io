@@ -16,6 +16,7 @@
 - [Do and Don'ts in coding](slides/do_and_donts_in_coding/do_and_donts_in_coding.svg)
 - [Fortran notes](slides/fortran/fortran.svg)
 - [Limitations of DFT](slides/limitations_of_DFT/limitations_of_DFT.svg)
+- [Testing analysis](slides/testing-analysis/testing-analysis.svg)
 
 # Books
 
