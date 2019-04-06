@@ -80,11 +80,11 @@ I present here all cases, together with the proper placement.
 
 _NOTE_: If you have both a direct dependency for an executable, and a direct or dynamic dependency on the same dll somewhere else, you might have to have two copies of the dll in two different places.
 
-== Open Problems ==
+# Open Problems
 
 * can't use mkl scalapack dynamically, because the dynamic dll is missing the "pzherk" symbol. We are forced to link it statically.
 
-== Other attempts ==
+# Other attempts
 
 Here is a list of alternative strategies we examined to tackle the problem, unsuccessful for some reason or another.
 
