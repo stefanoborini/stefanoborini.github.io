@@ -59,13 +59,13 @@ you have a variable "a" that contained the position, and after some operation
 "a" contains the speed. Then you call a routine "kin(a,m)" which computes the
 kinetic energy. The routine kin is defined as such
 
-```
+```fortran
 subroutine kin(a,m)
 ```
 
 Why keep "a" as dummy argument just because the caller had "a" ? Why not take the chance of using a meaningful name within the routine, with
 
-```
+```fortran
 subroutine kin(speed, mass)
 ```
 
@@ -108,7 +108,7 @@ Connected to the above issue, you also have the case where a single routine
 must do a lot of stuff in order to achieve a single result. Normally, this
 routine is chunked into pieces using comments, like this
 
-```
+```fortran
    ! doing foo
    lots of code
    ! doing bar
@@ -196,7 +196,7 @@ Making log messages meaningful for further parsing makes the output very fragile
 
 If you have magic integers that have a special meaning, give them a name as parameters. If I see this
 
-```
+```fortran
 method = 2
 ```
 
@@ -220,7 +220,7 @@ number means every time I meet it around in the program, while at the moment
 the only thing that hints at the meaning of each number is the logic of that
 if. Suppose that earlier on I found this
 
-```
+```fortran
 if (method == 1) then
     mmParam=3.2
 else if (method == 2) then
@@ -236,14 +236,14 @@ Advanced languages such as C (yeah, advanced) has a nifty feature called enum.
 Fortran does not, but you can sort of work around it, at the very minimum
 declaring a bunch of parameters
 
-```
+```fortran
 integer, parameter :: METHOD_TYPE_TRIVIAL = 1
 integer, parameter :: METHOD_TYPE_LESS_TRIVIAL = 2
 integer, parameter :: METHOD_TYPE_COMPLEX = 3
 ```
 so you can actually use these variables, making clear what you mean
 
-```
+```fortran
 if (method == METHOD_TYPE_TRIVIAL) then
     mmParam=3.2
 else if (method == METHOD_TYPE_LESS_TRIVIAL) then
