@@ -79,33 +79,33 @@ on the descriptor level, and these two operations are almost unrelated.
 ## Symmetry operations in graph theory
 
 A symmetry operation is an operation that acts on a graph and the associated
-descriptors. The action of a symmetry operation $O$ on the graph purely acts on
-the topology. The action of $O$ on the descriptors acts on the values of the
-descriptors. Obviously, the action of $O$ can change the number of elements
+descriptors. The action of a symmetry operation $$O$$ on the graph purely acts on
+the topology. The action of $$O$$ on the descriptors acts on the values of the
+descriptors. Obviously, the action of $$O$$ can change the number of elements
 (creating new vertexes, for example), so the multiplicity of the descriptors
 must match this change appropriately.
 
-A symmetry operation $$O$$ has an order $k$. The order is the number of
+A symmetry operation $$O$$ has an order $$k$$. The order is the number of
 applications of the symmetry "step" needed to come back to the starting
-situation. (FIXME reformulate with group theory names). therefore, a $C_3$
-rotation has $k=3$ because after three rotations of 120 degrees, we go back
+situation. (FIXME reformulate with group theory names). therefore, a $$C_3$$
+rotation has $$k=3$$ because after three rotations of 120 degrees, we go back
 to the starting condition.
 
-The topological part of the symmetry operation $O^{T}$ acts only on the topology.
+The topological part of the symmetry operation $$O^{T}$$ acts only on the topology.
 <p>
 $$O^{T} G = \tilde{G}$$
 </p>
-<p>$O^{T}$ is defined by its axis (the number of vertexes which won't duplicate
-under its application) and its order $k$. The final number of vertexes in
-$\tilde{G}$ is $ k*(nvert(G) - nvert(axis)) + nvert(axis)$.</p>
+<p>$$O^{T}$$ is defined by its axis (the number of vertexes which won't duplicate
+under its application) and its order $$k$$. The final number of vertexes in
+$$\tilde{G}$$ is $$k*(nvert(G) - nvert(axis)) + nvert(axis)$$.</p>
 
 <p>When symmetry is involved, it is possible to describe edges, faces and so
 on, involving vertexes created by the symmetry operation. These edges are
 called "external edges". Their specification should reside together with the
-operation $O^{T}$.</p>
+operation $$O^{T}$$.</p>
 
 <p>The descriptor values for the generated elements can in principle be
-generated from the $O^{D}$ part of the operation. this part is descriptor
+generated from the $$O^{D}$$ part of the operation. this part is descriptor
 dependent. each descriptor knows how to act in response to application of
 symmetry. what about external edges descriptors ?</p>
 
@@ -134,7 +134,7 @@ of applications of the basic operation.
 
 <p>for example, if you have three vertexes, 1,2,3 and links 1-2 and 2-3,
 describing for example a molecule, you can perform a 3-fold rotation. This
-operation is performed by an $O^{T}$ having as axis vertex 1 and 2, and
+operation is performed by an $$O^{T}$$ having as axis vertex 1 and 2, and
 degree 3. vertex 3 will be mapped to (3,(0)), (3,(1)), and (3,(2)), where we
 indicate the number of applications of the operation basic step in
 parenthesis. The descriptor (for example, xyz coordinate) will change the
@@ -232,9 +232,9 @@ use cases
 ## graph datatype representation
 
 - <p>Adjacency matrix representation: graph[i][j] = True iff there's an
-edge between vertex $i$ and $j$. Space complexity $O(n_{v}^2)$</p>
+edge between vertex $$i$$ and $$j$$. Space complexity $$O(n_{v}^2)$$</p>
 - <p>adjacency list representation: graph[i] = list([j,k,l]). express the
-vertexes $(i,j), (i,k), (i,l)$. Space complexity $O(e)$</p>
+vertexes $$(i,j), (i,k), (i,l)$$. Space complexity $$O(e)$$</p>
 
 
 ## traversal algorithms
@@ -320,7 +320,7 @@ while there's more than one set
 return T
 ```
 
-<p>Prim's algorithm runs in $O(n^2)$, while Kruskal's algorithm takes $n log n$
+<p>Prim's algorithm runs in $$O(n^2)$$, while Kruskal's algorithm takes $$n log n$$
 time. Thus Prim's algorithm is faster on dense graphs, while Kruskal's is
 faster on sparse graphs.</p>
 
@@ -397,7 +397,7 @@ operations modify topology and desc values.
 external links can be defined only on the irreducible graph?
 what about a face made of links from 2 operations?
 
-<p>suppose \g is a graph and \d is a xyz descriptor. $$G^T_d$$ is a generator for
+<p>suppose g is a graph and d is a xyz descriptor. $$G^T_d$$ is a generator for
 translation operation on the descriptor, $$G^T_t$$ is a generator for
 translation on the topology</p>
 
@@ -417,12 +417,12 @@ $$d_1^{color} = G^{identity}T_d(distance = (1.0,0.0,0.0), G^T_t)(d^{color})$$
 </p>
 
 <p>rotation of two vertexes linked together. one of them forms an axis.
-indexes of the vertexes on the axis: $Z=(1,)$</p>
-<p>external links: R=()</p>
+indexes of the vertexes on the axis: $$Z=(1,)$$</p>
+<p>external links: $$R=()$$</p>
 
-<p>$$l\_G_g = G_g(Z,R)$$</p>
-<p>$$l\_G_v^{rot} = G_v^{rot} (order = 3)$$</p>
-<p>$$\tilde{d]_{xyz} = G_D(l\_G_v^{rot} , l\_G_g)(d_{xyz})$$</p>
+<p>$$l_G_g = G_g(Z,R)$$</p>
+<p>$$l_{G_v^{rot}} = G_v^{rot} (order = 3)$$</p>
+<p>$$\tilde{d_{xyz} = G_D(l_{G_v^{rot}} , l_G_g)(d_{xyz})$$</p>
 
 example for R: (1, (1,1)) means a link between 1 and 1 after the application
 of the operation one time.
