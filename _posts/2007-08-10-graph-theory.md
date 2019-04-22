@@ -1,9 +1,9 @@
 ---
-category: ramblings
+category: graph theory
 ---
 <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
-# group theory and graph theory
+# group theory and graph theory (unfinished)
 
 Automorphism: maps a structure to itself. The structure (and the topology) is
 preserved.
