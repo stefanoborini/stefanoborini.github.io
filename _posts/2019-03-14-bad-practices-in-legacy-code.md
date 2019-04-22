@@ -1,7 +1,8 @@
 ---
 category: fortran
+title: Bad practices in Fortran legacy code (incomplete)
 ---
-# Bad practices in legacy code
+# Bad practices in Fortran legacy code
 
 I have my fair experience with legacy Fortran code, and still I can't wrap my
 head around some practices, in particular when it comes to understand the logic
@@ -85,12 +86,12 @@ routine not only cuts through the mathematical board, but also the computer
 science board, doing computation and input/output at the same time.  This has
 the following results
 
-	- increase the number of arguments to pass to the routine
-	- makes it harder or impossible to reuse
-	- makes it harder to debug
-	- makes it longer
-	- increases the number of variables declared inside the routine
-	- don't give any hint, while browsing the code, where the other things are calculated.
+- increase the number of arguments to pass to the routine
+- makes it harder or impossible to reuse
+- makes it harder to debug
+- makes it longer
+- increases the number of variables declared inside the routine
+- don't give any hint, while browsing the code, where the other things are calculated.
 
 The objection at this point normally is "but calling a routine is expensive!"
 No it's not. Calling a routine is not expensive, unless it's proven that it is.
@@ -116,10 +117,10 @@ routine is chunked into pieces using comments, like this
 
 The major drawbacks of this behavior are
 
-	- if a routine is too long, it might be doing too much. See above point
-	- the comment splitting might not be kept up to date
-    - it gives no hint at a glance of which entities are actually manipulated
-      in that piece of code
+- if a routine is too long, it might be doing too much. See above point
+- the comment splitting might not be kept up to date
+- it gives no hint at a glance of which entities are actually manipulated
+  in that piece of code
 
 If a part of the code is worth of a short comment explaining what it does, it
 is also worth extracting into a separate routine with a meaningful name out of
@@ -195,11 +196,13 @@ Making log messages meaningful for further parsing makes the output very fragile
 
 If you have magic integers that have a special meaning, give them a name as parameters. If I see this
 
-```method = 2```
+```
+method = 2
+```
 
 I get absolutely no information about it until I meet this
 
-```
+```fortran
 if (method == 1) then
     call doMethodTrivial()
 else if (method == 2) then
@@ -225,6 +228,7 @@ else if (method == 2) then
 else if (method == 3) then
     mmParam=3.0
 endif
+```
 
 now do you know what each number means?
 
