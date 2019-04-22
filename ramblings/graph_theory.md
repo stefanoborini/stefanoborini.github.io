@@ -85,7 +85,7 @@ descriptors. Obviously, the action of $O$ can change the number of elements
 (creating new vertexes, for example), so the multiplicity of the descriptors
 must match this change appropriately.
 
-A symmetry operation <span>$O$</span> has an order $k$. The order is the number of
+A symmetry operation $$O$$ has an order $k$. The order is the number of
 applications of the symmetry "step" needed to come back to the starting
 situation. (FIXME reformulate with group theory names). therefore, a $C_3$
 rotation has $k=3$ because after three rotations of 120 degrees, we go back
