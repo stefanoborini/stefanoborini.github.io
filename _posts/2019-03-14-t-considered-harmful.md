@@ -1,5 +1,6 @@
 ---
 category: c++
+title: T considered harmful in template programming
 ---
 # T considered harmful in template programming
 
@@ -11,31 +12,31 @@ required interface, and freeing the burden of providing multiple definitions
 for the same function for different types. For example
 
 ```
-template &lt;typename T&gt;
+template <typename T>
 T max(T x, T y)
 {
-return x &lt; y ? y : x;
+return x < y ? y : x;
 }
 ```
 
 satisfies the need to define a max() routine, provided that the generic type T
-supports operator&lt;. With only one definition, we cover every possible type,
+supports operator<. With only one definition, we cover every possible type,
 in this case from native ones to user-defined ones. The compiler will examine
 our needs, and instantiate the proper definition according to them, so if one
 writes
 
-```
+```c
 int i = 1;
 int j = 2;
 int maxval = max(i,j);
-`````````
+```
 
 the following template instance will be created for us
-```
-template &lt;&gt;
+```c
+template <>
 int max(int x, int y)
 {
-return x &lt; y ? y : x;
+return x < y ? y : x;
 }
 ```
 
@@ -58,11 +59,11 @@ protocol a type is supposed to define (a protocol that goes beyond its type, as
 in the case of OOP style programming), I think a better practice should be
 something like
 
-```
-template &lt;typename ComparableProto&gt;
+```c
+template <typename ComparableProto>
 ComparableProto max(ComparableProto x, ComparableProto y)
 {
-return x &lt; y ? y : x;
+return x < y ? y : x;
 }
 ```
 
@@ -71,6 +72,5 @@ inquired by the function body for comparability. It still does not communicate
 fully, but it's a huge improvement over a generic name such as T, that says
 very little. I restate that this case is trivial, but for more complex code,
 defining a shared terminology in the development team through protocol names
-documents better the intent of a templated class or
-method.
+documents better the intent of a templated class or method.
 
