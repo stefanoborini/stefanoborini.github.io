@@ -1,8 +1,9 @@
 ---
 category: c
+title: A discussion about global includes
 ---
-Discussion about global includes
-================================
+A discussion about global includes
+==================================
 
 Sometimes in my programmer career I did this mistake: a big global
 header file that gets included by most, if not all the files in my
@@ -83,7 +84,5 @@ in openGL.
 
 References:
 
--   [If (global header files are bad) then
-    ...?](http://groups.google.com/group/microsoft.public.vc.mfc/browse_thread/thread/f522d2e61e2acfd6/d71a6fad505053a2)
--   [global header
-    file](http://groups.google.com/group/microsoft.public.vc.mfc/browse_thread/thread/91ecec41f230d7de/69eb355fe2513253)
+- [If (global header files are bad) then ...?](http://groups.google.com/group/microsoft.public.vc.mfc/browse_thread/thread/f522d2e61e2acfd6/d71a6fad505053a2)
+- [global header file](http://groups.google.com/group/microsoft.public.vc.mfc/browse_thread/thread/91ecec41f230d7de/69eb355fe2513253)
