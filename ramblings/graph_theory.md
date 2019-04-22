@@ -99,15 +99,15 @@ $$O^{T}$$ is defined by its axis (the number of vertexes which won't duplicate
 under its application) and its order $$k$$. The final number of vertexes in
 $$\tilde{G}$$ is $$k*(nvert(G) - nvert(axis)) + nvert(axis)$$.
 
-<p>When symmetry is involved, it is possible to describe edges, faces and so
+When symmetry is involved, it is possible to describe edges, faces and so
 on, involving vertexes created by the symmetry operation. These edges are
 called "external edges". Their specification should reside together with the
-operation $$O^{T}$$.</p>
+operation $$O^{T}$$.
 
-<p>The descriptor values for the generated elements can in principle be
+The descriptor values for the generated elements can in principle be
 generated from the $$O^{D}$$ part of the operation. this part is descriptor
 dependent. each descriptor knows how to act in response to application of
-symmetry. what about external edges descriptors ?</p>
+symmetry. what about external edges descriptors ?
 
 external edges must be specified on the operation, not on the generating
 graph (which knows nothing about the operation)
@@ -132,7 +132,7 @@ The action of an operation on a descriptor depends on the original value,
 the referred entity (vertex, link...), the change algorithm and the number
 of applications of the basic operation.
 
-<p>for example, if you have three vertexes, 1,2,3 and links 1-2 and 2-3,
+for example, if you have three vertexes, 1,2,3 and links 1-2 and 2-3,
 describing for example a molecule, you can perform a 3-fold rotation. This
 operation is performed by an $$O^{T}$$ having as axis vertex 1 and 2, and
 degree 3. vertex 3 will be mapped to (3,(0)), (3,(1)), and (3,(2)), where we
@@ -140,7 +140,7 @@ indicate the number of applications of the operation basic step in
 parenthesis. The descriptor (for example, xyz coordinate) will change the
 coordinate of 3 so to respect the folding. New links will be created between
 2 and (3,(n)). Please note that these links are internal links, not
-external (FIXME is it true?).</p>
+external (FIXME is it true?).
 
 In general, there's no difference between a 6-fold rotation and a 6-times
 translation, from the topological point of view.
@@ -231,10 +231,10 @@ use cases
 
 ## graph datatype representation
 
-- <p>Adjacency matrix representation: graph[i][j] = True iff there's an
-edge between vertex $$i$$ and $$j$$. Space complexity $$O(n_{v}^2)$$</p>
-- <p>adjacency list representation: graph[i] = list([j,k,l]). express the
-vertexes $$(i,j), (i,k), (i,l)$$. Space complexity $$O(e)$$</p>
+- Adjacency matrix representation: graph[i][j] = True iff there's an
+edge between vertex $$i$$ and $$j$$. Space complexity $$O(n_{v}^2)$$
+- r adjacency list representation: graph[i] = list([j,k,l]). express the
+vertexes $$(i,j), (i,k), (i,l)$$. Space complexity $$O(e)$$
 
 
 ## traversal algorithms
@@ -397,9 +397,9 @@ operations modify topology and desc values.
 external links can be defined only on the irreducible graph?
 what about a face made of links from 2 operations?
 
-<p>suppose g is a graph and d is a xyz descriptor. $$G^T_d$$ is a generator for
+suppose g is a graph and d is a xyz descriptor. $$G^T_d$$ is a generator for
 translation operation on the descriptor, $$G^T_t$$ is a generator for
-translation on the topology</p>
+translation on the topology
 
 <p>
 $$d_1 = G^T_d(distance = (1.0,0.0,0.0), G^T_t)(d)$$
@@ -416,11 +416,11 @@ vertex axis))(g)$$
 $$d_1^{color} = G^{identity}T_d(distance = (1.0,0.0,0.0), G^T_t)(d^{color})$$
 </p>
 
-<p>rotation of two vertexes linked together. one of them forms an axis.
-indexes of the vertexes on the axis: $$Z=(1,)$$</p>
-<p>external links: $$R=()$$</p>
+rotation of two vertexes linked together. one of them forms an axis.
+indexes of the vertexes on the axis: $$Z=(1,)$$
+external links: $$R=()$$
 
-<p>$$l_G_g = G_g(Z,R)$$</p>
+<p>$$l_{G_g} = G_g(Z,R)$$</p>
 <p>$$l_{G_v^{rot}} = G_v^{rot} (order = 3)$$</p>
 <p>$$\tilde{d_{xyz} = G_D(l_{G_v^{rot}} , l_G_g)(d_{xyz})$$</p>
 
