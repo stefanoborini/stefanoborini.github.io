@@ -1,5 +1,6 @@
 ---
 category: c++
+title: Refreshing my C++ for fun and profit (Incomplete)
 ---
 # Refreshing my C++ for fun and profit (Incomplete)
 
