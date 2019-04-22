@@ -422,8 +422,8 @@ external links: $$R=()$$
 
 <p>$$l_{G_g} = G_g(Z,R)$$</p>
 <p>$$l_{G_v^{rot}} = G_v^{rot} (order = 3)$$</p>
-<p>$$\tilde{d_{xyz}}$$</p>
-<p>= G_D(l_{G_v^{rot}}, l_G_g)(d_{xyz})$$</p>
+<p>$$\tilde{d}_{xyz} = G_D$$</p>
+<p>$$(l_{G_v^{rot}}, l_G_g)(d_{xyz})$$</p>
 
 example for R: (1, (1,1)) means a link between 1 and 1 after the application
 of the operation one time.
