@@ -9,9 +9,9 @@ baffled is the following. Suppose you write the following program
 
 ```fortran
 program test
-  implicit none
+  implicit none
 
-  call testsub()
+  call testsub()
   call testsub()
 end program
 

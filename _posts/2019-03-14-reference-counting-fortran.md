@@ -1,5 +1,6 @@
 ---
 category: fortran
+title: Reference counting in Fortran 95 (incomplete)
 ---
 # Reference counting in Fortran 95
 
@@ -51,8 +52,7 @@ lost interest in it, and it made sense within that context. To do this, I
 implemented two methods on the objects: ``Relinquish`` and ``Grab``. In our
 example it would be
 
-```
-
+```fortran
     module EngineModule
        implicit none
        private
@@ -84,13 +84,11 @@ example it would be
         end subroutine
 
     end module
-
 ```
 
 This is the Car
 
-```
-
+```fortran
     module CarModule
        use EngineModule
        implicit none
@@ -147,7 +145,7 @@ Note how the ``deleteImpl`` routine deletes the engine member only if the pointe
 how the relinquish function returns the pointer and nullifies the current member. This is the first
 part of ownership transfer. The second part is in ownership acquisition in the ``EngineList`` grab routine
 
-```
+```fortran
     subroutine grabEngine(self, enginePtr)
        ! takes ownership of an engine object (which has been relinquished by someone else)
        type(EngineListType), intent(inout) :: self
@@ -155,11 +153,13 @@ part of ownership transfer. The second part is in ownership acquisition in the `
 
        self%engine => enginePtr
     end subroutine
+```
 
+With reference counting:
 
-
+```fortran
 module RefCount
-implicit none
+    implicit none
 
     type ObjectType
         integer :: refCount = 0
@@ -167,7 +167,7 @@ implicit none
     end type
 
     type ObjectRefType
-        type (ObjectType), pointer :: object =&gt; null()
+        type (ObjectType), pointer :: object => null()
     end type
     interface New
         module procedure NewObject
@@ -210,7 +210,7 @@ contains
         type (ObjectRefType), pointer :: Ref
 
         allocate(Ref)
-        Ref%object =&gt; object
+        Ref%object => object
         Ref%object%refCount = Ref%object%refCount + 1
         print *, "New reference. Count = ", Ref%object%refCount
     end function
@@ -219,7 +219,7 @@ contains
         type (ObjectRefType), pointer :: newref
 
         allocate(NewRef)
-        NewRef%object =&gt; ref%object
+        NewRef%object => ref%object
         NewRef%object%refCount = NewRef%object%refCount + 1
         print *, "New reference. Count = ", NewRef%object%refCount
     end function
@@ -241,10 +241,11 @@ contains
         type (ObjectRefType), pointer :: ref
         type (ObjectType), pointer :: DerefPrivate
 
-        DerefPrivate =&gt; ref%object
+        DerefPrivate => ref%object
     end function
 
 end module
+
 program m
     use RefCount
     type (ObjectType), pointer :: object, objectPtr
@@ -255,14 +256,14 @@ program m
 
     object%data = 10.0
 
-    ref1 =&gt; Ref(object)
-    ref2 =&gt; Ref(object)
-    ref3 =&gt; Ref(ref1)
+    ref1 => Ref(object)
+    ref2 => Ref(object)
+    ref3 => Ref(ref1)
 
-    objectPtr =&gt; deRef(ref3)
+    objectPtr => deRef(ref3)
     objectPtr%data = 2.0
 
-    objectPtr =&gt; deRef(ref2)
+    objectPtr => deRef(ref2)
 
     print *, objectPtr%data
 
