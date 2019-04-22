@@ -1,5 +1,6 @@
 ---
 category: c++
+title: libstdc++ dependencies notes
 ---
 # libstdc++ dependencies notes
 
@@ -57,7 +58,7 @@ In this case, <a
 href="https://bug559964.bugzilla.mozilla.org/attachment.cgi?id=518130">the
 patch is relatively small</a>,
 
-problems with libc
+## problems with libc
 
 Unfortunately, libstdc++ is not the only problem. There's also the problem with
 libc. libc.so.6 is normally a link to a specific libc library (f.ex.
@@ -65,7 +66,9 @@ lib64/libc-2.15.so) and it also has symbol versions, so if you compile against
 lib64/libc-2.15.so and try to run on lib64/libc-2.9.so, it is likely it won't
 work with errors like
 
+```
 /lib64/libc.so.6: version GLIBC_2.14 not found (required by ....)
+```
 
 I assumed the C library came with the compiler, but this is not the case. When
 you install a new compiler, there is no new version of the C library waiting
@@ -74,22 +77,15 @@ for you.
 To add to the trouble, libc works in concert with the kernel, so there is a
 dependency of the compiled libc against a specific kernel version.
 
-<a href="http://stackoverflow.com/questions/10815453/compile-with-older-libc-version-glibc-2-14-not-found">http://stackoverflow.com/questions/10815453/compile-with-older-libc-version-glibc-2-14-not-found</a>
-
-<a href="http://stackoverflow.com/questions/10830650/how-do-i-fix-a-version-glibc-2-14-not-found-error">http://stackoverflow.com/questions/10830650/how-do-i-fix-a-version-glibc-2-14-not-found-error</a>
-
-<a href="http://stackoverflow.com/questions/8657908/deploying-yesod-to-heroku-cant-build-statically/8658468#8658468">http://stackoverflow.com/questions/8657908/deploying-yesod-to-heroku-cant-build-statically/8658468#8658468</a>
-
-<a href="https://github.com/yesodweb/yesod/wiki/Deploying-Yesod-Apps-to-Heroku">https://github.com/yesodweb/yesod/wiki/Deploying-Yesod-Apps-to-Heroku</a>
-
-<a href="http://stackoverflow.com/questions/4099013/link-to-provided-glibc">http://stackoverflow.com/questions/4099013/link-to-provided-glibc</a>
-
-libc does not like being linked statically (unsupported) <a
+- <a href="http://stackoverflow.com/questions/10815453/compile-with-older-libc-version-glibc-2-14-not-found">http://stackoverflow.com/questions/10815453/compile-with-older-libc-version-glibc-2-14-not-found</a>
+- <a href="http://stackoverflow.com/questions/10830650/how-do-i-fix-a-version-glibc-2-14-not-found-error">http://stackoverflow.com/questions/10830650/how-do-i-fix-a-version-glibc-2-14-not-found-error</a>
+- <a href="http://stackoverflow.com/questions/8657908/deploying-yesod-to-heroku-cant-build-statically/8658468#8658468">http://stackoverflow.com/questions/8657908/deploying-yesod-to-heroku-cant-build-statically/8658468#8658468</a>
+- <a href="https://github.com/yesodweb/yesod/wiki/Deploying-Yesod-Apps-to-Heroku">https://github.com/yesodweb/yesod/wiki/Deploying-Yesod-Apps-to-Heroku</a>
+- <a href="http://stackoverflow.com/questions/4099013/link-to-provided-glibc">http://stackoverflow.com/questions/4099013/link-to-provided-glibc</a>
+- libc does not like being linked statically (unsupported) <a
 href="http://gcc.gnu.org/ml/gcc/2009-07/msg00299.html">http://gcc.gnu.org/ml/gcc/2009-07/msg00299.html</a>
-
-<a href="http://www.akkadia.org/drepper/no_static_linking.html">http://www.akkadia.org/drepper/no_static_linking.html</a>
-
-<a href="http://stackoverflow.com/questions/6941332/anticipate-kernel-too-old-errors-between-2-6-16-and-2-6-26-kernel-versions">http://stackoverflow.com/questions/6941332/anticipate-kernel-too-old-errors-between-2-6-16-and-2-6-26-kernel-versions</a>
+- <a href="http://www.akkadia.org/drepper/no_static_linking.html">http://www.akkadia.org/drepper/no_static_linking.html</a>
+- <a href="http://stackoverflow.com/questions/6941332/anticipate-kernel-too-old-errors-between-2-6-16-and-2-6-26-kernel-versions">http://stackoverflow.com/questions/6941332/anticipate-kernel-too-old-errors-between-2-6-16-and-2-6-26-kernel-versions</a>
 
 So, how do others solve this problem? <a
 href="https://bugzilla.mozilla.org/show_bug.cgi?id=526868">Mozilla apparently
@@ -116,4 +112,4 @@ The backward compatibility might, in the end, <a
 href="https://bugzilla.mozilla.org/show_bug.cgi?id=561236#c2">arise from pure
 luck</a>.
 
-<a href="http://tldp.org/HOWTO/Program-Library-HOWTO/index.html">http://tldp.org/HOWTO/Program-Library-HOWTO/index.html</a>
+See also <a href="http://tldp.org/HOWTO/Program-Library-HOWTO/index.html">http://tldp.org/HOWTO/Program-Library-HOWTO/index.html</a>
