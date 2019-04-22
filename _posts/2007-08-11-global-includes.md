@@ -1,8 +1,8 @@
 ---
 category: c
 ---
-Global includes
-===============
+Discussion about global includes
+================================
 
 Sometimes in my programmer career I did this mistake: a big global
 header file that gets included by most, if not all the files in my

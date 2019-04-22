@@ -6,10 +6,6 @@
 
 - [PEP-472](https://www.python.org/dev/peps/pep-0472/)
 
-# Ramblings
-
-- [Graph theory](ramblings/graph_theory.md)
-
 # Slides
 
 - [Model View Controller](slides/model-view-controller/index.html)

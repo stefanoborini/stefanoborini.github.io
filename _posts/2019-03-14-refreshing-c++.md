@@ -1,7 +1,7 @@
 ---
 category: c++
 ---
-# Refreshing my C++ for fun and profit
+# Refreshing my C++ for fun and profit (Incomplete)
 
 It has been a while since I used C++, and now that I regularly do it at work, I
 decided to refresh it a bit. I never really dropped it completely in this
@@ -45,11 +45,11 @@ So, you should prefer {} over = except when using auto, when the opposite is tru
 
 Finally, instead of writing
 ```
-MyClass&lt;MyTemplate, MySecondTemplate&lt;int, string&gt; &gt; \*a = MyClass&lt;MyTemplate, MySecondTemplate&lt;int, string&gt; &gt;("string")
+MyClass<MyTemplate, MySecondTemplate<int, string> > *a = MyClass<MyTemplate, MySecondTemplate<int, string> >("string")
 ```
 We can write
 ```
-auto \*a = MyClass&lt;MyTemplate, MySecondTemplate&lt;int, string&gt; &gt;("string")
+auto *a = MyClass<MyTemplate, MySecondTemplate<int, string> >("string")
 ```
 The compiler knows the type at compile time, and can use this knowledge to save us some typing. auto is cool.
 
@@ -58,7 +58,7 @@ The compiler knows the type at compile time, and can use this knowledge to save 
 Using, for all purposes, replaces typedef.
 ```
 typedef MyClass * MyClassPointer
-using MyClassPointer = (MyClass \*);
+using MyClassPointer = (MyClass *);
 ```
 
 ## Placement new
@@ -71,14 +71,14 @@ allows you to separate allocation from construction. An example (<a
 href="http://www.devx.com/tips/Tip/12582">taken from here</a>):
 
 ```
-\#include 
+#include 
 using namespace std;
 int main() {
         char *buf  = new char[1000];         // pre-allocated buffer
         string *q = new string("hi");        // ordinary heap allocation. Allocates and call constructor
         delete(q);                           // ordinary heap deallocation. Calls destructor and deallocates.
         string *p = new (buf) string("hi");  // placement new. Executes constructor without allocation
-        p-&gt;~string();                        // executes destructor.
+        p->~string();                        // executes destructor.
         delete[] buf;                        // free the memory of the buffer
 }
 ```
