@@ -1,4 +1,8 @@
-# What is REST, in brief
+---
+category: web
+title: What is REST, in brief (incomplete)
+---
+# What is REST, in brief (incomplete)
 
 What exactly IS a REST API. What makes it RESTful? What is an average use case
 for this in a program?  My knowledge of APIs is... Well, not that good, but a
@@ -15,6 +19,7 @@ DELETE. When you create the object with POST, you also deliver a payload, in
 whatever format you want, that describes the content. The most trivial example
 would be a collection of users, you create a new user like this, supposing the
 payload is in xml. You send this to the webserver
+
 ```
 POST /users/
 <user><name>John Doe</name></user>
@@ -23,20 +28,24 @@ POST /users/
 The response generally contains the new id, suppose it's 2453. now you have a
 resource at http://example.com/users/2453/ and if you GET it, you obtain back
 your xml, or another representation, if you want
+
 ```
 GET /users/2453/
 <user><name>John Doe</name</user>
 ```
+
 The idea is that you always create resources, and all operations are changes in
 the state of these resources. You never perform actions on these resources on
 the webserver, meaning that some patterns that rely on "remote procedure call"
 like behavior, such as when you call stuff like
 http://example.com/?action=changeName&id=2453&newName=John%20Deer
 is a no-no in REST. Instead, you would do
+
 ```
 PUT /users/2453/
 <user><name>John Deer</name</user>
 ```
+
 And you would delete with
 
 ```

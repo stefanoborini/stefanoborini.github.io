@@ -1,3 +1,8 @@
+---
+category: project management
+title: What Dungeons and Dragons taught me about software project management (incomplete)
+---
+
 # What Dungeons and Dragons taught me about software project management
 
 In Dungeons and Dragons,

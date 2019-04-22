@@ -7,17 +7,15 @@ As you probably know, I'm a python fan. Unfortunately, python does not run in
 the most common development platform out there: the browser. To add more to the
 trouble, the only language supported by the browser platform is JavaScript.
 Much has been said about the disgraces of this language, to the point that
-someone ( considered important to write a book on The Good Parts of JavaScript.
+someone considered important to write a book on The Good Parts of JavaScript.
 In other words, everything that is not in that book is most likely to be a
 horror zombie monster ready to bite you.
 
 I had my amount of struggling with the language, Occasionally, I hated its
 apparent lack of logic and alien behavior, but as time passed I decided to stop
 fighting it to fit into my mental schema, and I started embracing it as-is.
-After that I reached the same conclusion <a
-href="http://www.crockford.com/">Crockford</a> said: that <a
-href="http://www.crockford.com/javascript/javascript.html">JavaScript is a
-deeply misunderstood language</a>.
+After that I reached the same conclusion <a href="http://www.crockford.com/">Crockford</a> said: 
+that <a href="http://www.crockford.com/javascript/javascript.html">JavaScript is a deeply misunderstood language</a>.
 
 The only difference is that javascript is different from other languages out
 there. I tried to develop my own mental schemes to understand how it works.
@@ -32,7 +30,8 @@ of your class. Python is class-based, as many other languages out there (C++,
 Java). The idea is that classes can be arranged in hierarchies, and you can
 obtain inheritance through subclassing a base class. For example.
 
-```class Animal(object):
+```javascript
+class Animal(object):
     def __init__(self):
         self._hungry = True
     def feed(self):
@@ -55,13 +54,15 @@ something else. The something else can be an integer, a float, a string,
 another object, or a function. You have a instance variable by assigning a
 value. You have a method by assigning a function.
 
-Javascript does not work this way. Instead, javascript uses another object instance as a prototype, which is used in a prototype chain .
+Javascript does not work this way. Instead, javascript uses another object
+instance as a prototype, which is used in a prototype chain.
 
 ## How does prototyping work?
 
-The best conceptual picture I was able to devise to make this point understandable is the following. Suppose you have this code
+The best conceptual picture I was able to devise to make this point
+understandable is the following. Suppose you have this code
 
-```
+```javascript
 function Person(name) {
     this._name = name;
     this.getName = function() {
@@ -72,18 +73,19 @@ function Person(name) {
 me = new Person("Stefano");
 alert(me.getName());
 ```
-in javascript, any function is like a factory (a real one), although very few functions are actually used for their factory behavior.
+in javascript, any function is like a factory (a real one), although very few
+functions are actually used for their factory behavior.
 
 There are many, many ways of doing object oriented programming in JavaScript.
 
-*When you see **<span style="text-decoration: underline;">this</span>, think <span style="text-decoration: underline;">owner</span>.*
+*When you see <span style="text-decoration: underline;">this</span>, think <span style="text-decoration: underline;">owner</span>.*
 
 *What happens when you "instantiate" ?*
 
 When you use the new operator on a function Foo, you are invoking the function in "constructor mode", which is not a function invocation in the traditional sense. What happens under the hood is the following:
 
 - A new, empty object is created from scratch.
-- The new object .__proto__ attribute  referenced by function Foo.prototype (normally an empty object, but can be modified)
+- The new object.__proto__ attribute  referenced by function Foo.prototype (normally an empty object, but can be modified)
 - The object just created is assigned to the "this" variable inside the function Foo.
 - The constructor function is entered.
 - Inside this function you can use the "this" variable to set up the newly created object with variables and methods. These methods will be available only on the object just created.
@@ -118,4 +120,3 @@ When you use the new operator on a function Foo, you are invoking the function i
 - http://msdn.microsoft.com/en-us/scriptjunkie/ff852808.aspx
 - http://odetocode.com/Blogs/scott/archive/2010/07/22/prototypes-and-inheritance-in-javascript.aspx
 - http://www.bolinfest.com/javascript/inheritance.php
-	- 
