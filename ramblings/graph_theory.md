@@ -408,8 +408,7 @@ $$d_1 = G^T_d(distance = (1.0,0.0,0.0), G^T_t)(d)$$
 the distance parameter is the value generator for the translation operation.
 
 <p>
-$$g_1 = G^T_t(links = (indexes of the identifiers), axis = (indexes of the
-vertex axis))(g)$$
+$$g_1 = G^T_t(links = (\text{indexes of the identifiers}), axis = (\text{indexes of the vertex axis}))(g)$$
 </p>
 
 <p>
