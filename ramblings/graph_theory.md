@@ -95,9 +95,9 @@ The topological part of the symmetry operation $$O^{T}$$ acts only on the topolo
 <p>
 $$O^{T} G = \tilde{G}$$
 </p>
-<p>$$O^{T}$$ is defined by its axis (the number of vertexes which won't duplicate
+$$O^{T}$$ is defined by its axis (the number of vertexes which won't duplicate
 under its application) and its order $$k$$. The final number of vertexes in
-$$\tilde{G}$$ is $$k*(nvert(G) - nvert(axis)) + nvert(axis)$$.</p>
+$$\tilde{G}$$ is $$k*(nvert(G) - nvert(axis)) + nvert(axis)$$.
 
 <p>When symmetry is involved, it is possible to describe edges, faces and so
 on, involving vertexes created by the symmetry operation. These edges are
