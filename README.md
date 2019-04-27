@@ -6,13 +6,14 @@
 
 - [PEP-472](https://www.python.org/dev/peps/pep-0472/)
 
-# Slides
+# Slides and presentations
 
 - [Model View Controller](slides/model-view-controller/index.html)
 - [Do and Don'ts in coding](slides/do_and_donts_in_coding/do_and_donts_in_coding.svg)
 - [Fortran notes](slides/fortran/fortran.svg)
 - [Limitations of DFT](slides/limitations_of_DFT/limitations_of_DFT.svg)
 - [Testing analysis](slides/testing-analysis/testing-analysis.svg)
+- [EuroSciPy 2017 - Simphony-remote - Accessing containerized desktop and web applications with a web browser (video)](https://www.youtube.com/watch?v=QK2ydXN8yv4)
 
 # Books
 
