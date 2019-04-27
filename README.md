@@ -17,6 +17,7 @@
 
 # Books
 
+- [Computing for Comparative Microbial Genomics: Bioinformatics for Microbiologists](https://www.amazon.co.uk/Computing-Comparative-Microbial-Genomics-Microbiologists/dp/1848002548)
 - [Understanding Model-View-Controller](book-modelviewcontroller)
 - [PhD Thesis](https://github.com/stefanoborini/thesis-PhD/blob/master/thesis-borini.pdf)
 - [Master Thesis](https://github.com/stefanoborini/thesis-master/blob/master/borini-master-thesis.pdf)
