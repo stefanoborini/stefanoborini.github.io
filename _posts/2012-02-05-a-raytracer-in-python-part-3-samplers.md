@@ -1,5 +1,6 @@
 ---
 category: python
+title: A raytracer in python -- part 3: samplers
 ---
 A raytracer in python -- part 3: samplers
 =========================================
@@ -95,6 +96,7 @@ considerably slower. In the following table you can see the timings (in
 seconds) for Jittered and Regular sampling, compared against the case
 with no sampling. The size of the image rendered is 200x200 pixels.
 
+```
   -------------------- --------------- ----------- ---------- ------------
   Sample size/sets     No sampling     Regular     Random     Jittered
 
@@ -110,6 +112,7 @@ with no sampling. The size of the image rendered is 200x200 pixels.
 
   16/4                                 240         277        260
   -------------------- --------------- ----------- ---------- ------------
+```
 
 As we can see, supersampling introduces a considerably higher
 computational effort. We also see that having multiple sets (a
