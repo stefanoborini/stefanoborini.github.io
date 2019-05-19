@@ -1,9 +1,8 @@
 ---
 category: python
-title: A raytracer in python - part 3 samplers
+title: A Raytracer in Python - Part 3 - Samplers
 ---
-A raytracer in python -- part 3: samplers
-=========================================
+# A Raytracer in Python - Part 3 - Samplers
 
 In the previous post, we explored a very basic way of plotting images:
 shooting a ray from the center of every pixel, and plot the color of the

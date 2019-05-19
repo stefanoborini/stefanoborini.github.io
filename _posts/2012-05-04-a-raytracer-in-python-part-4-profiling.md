@@ -1,8 +1,8 @@
 ---
 category: python
+title: A Raytracer in Python - Part 4 - Profiling
 ---
-A raytracer in python -- part 4: profiling
-==========================================
+# A Raytracer in Python - Part 4 - Profiling
 
 After having finally obtained a raytracer which produces antialiasing,
 it is now time to take a look at performance. We already saw some
@@ -11,8 +11,7 @@ pixels (a grand total of 640.000 rays) takes definitely too much. I want
 to perform some profiling with python, find the hotspots in the code,
 and eventually devise a strategy to optimize them.
 
-General profiling with cProfile
--------------------------------
+## General profiling with cProfile
 
 To perform basic profiling, I used the cProfile program provided in the
 standard library. It appears that the longest processing time is in the
@@ -41,8 +40,7 @@ This does not surprise me, as the main computation a raytracer performs
 is to test each ray for intersection on the objects in the scene, in
 this case multiple Sphere objects.
 
-Profiling line by line for hot spots
-------------------------------------
+## Profiling line by line for hot spots
 
 Understood that most of the time is spent into hit(), I wanted to
 perform line-by-line profiling. This is not possible with the standard
@@ -137,8 +135,7 @@ is going to take 0.6 seconds, not small, but definitely not as huge as
 the numbers we see. Why is that ? And why is the raytracer so slow for
 the same task ? I think the bottleneck is somewhere else.
 
-Finding the problem
--------------------
+## Finding the problem
 
 I decided to profile World.render() to understand what\'s going on: this
 is the routine in charge of going through the pixels, shooting the rays,

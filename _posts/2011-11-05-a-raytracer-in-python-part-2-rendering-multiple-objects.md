@@ -1,8 +1,8 @@
 ---
 category: python
+title: A Raytracer in Python - Part 2 - Rendering Multiple Objects
 ---
-A raytracer in python - part 2: rendering multiple objects
-==========================================================
+# A Raytracer in Python - Part 2 - Rendering Multiple Objects
 
 A quick addition needed to the raytracer is providing freedom to add
 more objects to the rendering scene. In Part 1, the design was such that

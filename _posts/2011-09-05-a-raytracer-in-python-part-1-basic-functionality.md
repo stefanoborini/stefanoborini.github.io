@@ -1,8 +1,8 @@
 ---
 category: python
+title: A Raytracer in Python - Part 1 - Basic Functionality
 ---
-A raytracer in python - part 1: basic functionality
-===================================================
+# A Raytracer in Python - Part 1 - Basic Functionality
 
 Some time ago I visited Sydney, and I made a tragic mistake: I entered
 the University bookshop. Why a mistake, you say? I am book maniac. As
@@ -30,15 +30,13 @@ can get.
 
 All the code for raytracing is [available on my github](https://github.com/stefanoborini/python-raytrace)
 
-What is raytracing and how does it work ?
------------------------------------------
+## What is raytracing and how does it work ?
 
 Raytracing is a technique to produce a photorealistic image. It works by
 projecting rays from the observer to the scene, and coloring pixels on a
 viewplane for every ray that intersects an object.
 
-![image](http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Ray_trace_diagram.svg/500px-Ray_trace_diagram.svg.png){.align-center
-width="400px"}
+![image](http://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Ray_trace_diagram.svg/500px-Ray_trace_diagram.svg.png)
 
 This mechanism resembles how vision works, although in the opposite
 direction. Light rays from a lamp hit objects and their reflection
