@@ -174,6 +174,6 @@ w.render()
 
 The result is intriguing:
 
-![image]({{ site.url }}/assets/images/2011/05/render.png){.align-center width="400px"}
+![image]({{ site.url }}/assets/images/2011/05/render.png)
 
 Ok, I have a very loose definition of \"intriguing\", but it\'s a start.

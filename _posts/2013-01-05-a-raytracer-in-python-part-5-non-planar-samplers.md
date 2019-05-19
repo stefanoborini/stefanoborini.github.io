@@ -5,8 +5,7 @@ A raytracer in python -- part 5: non-planar samplers
 ====================================================
 
 In this post we are going to describe and implement non-planar samplers.
-In the previous [post about
-samplers](http://forthescience.org/blog/2011/11/30/a-raytracer-in-python-%e2%80%93-part-3-samplers/),
+In the previous [post about samplers](http://forthescience.org/blog/2011/11/30/a-raytracer-in-python-%e2%80%93-part-3-samplers/),
 we implemented and characterized different planar samplers to make
 antialiasing possible. The characteristic of these samplers was to
 produce regular or random points on a plane with x,y between zero and
@@ -27,8 +26,7 @@ must be remapped to a full circle from \[-1:1\] in both axes, so to
 cover the circle completely while preserving the distribution. This is
 done through a formulation called Shirley\'s concentric maps.
 
-![image](http://forthescience.org/blog/wp-content/uploads/2011/07/disk.png){.align-center
-width="400px"}
+![image]({{ site.url }}/assets/images/2011/07/disk.png)
 
 In the hemisphere remapping, we also want to introduce a variation in
 the density so that it changes with the cosine of the polar angle from
@@ -36,8 +34,7 @@ the top of the hemisphere. In other words, we want an adjustable
 parameter *e* to focus the point density closer to the top of the
 hemisphere.
 
-![image](http://forthescience.org/blog/wp-content/uploads/2011/07/hemisphere.png){.align-center
-width="400px"}
+![image]({{ site.url }}/assets/images/2011/07/hemisphere.png)
 
 We will need the characteristics of this distributions later on, when we
 will have to implement reflections and other optical effects. As you can
@@ -54,5 +51,4 @@ because we need to provide three different iteration strategies. Methods
 set of points. Note that the hemisphere point generator returns 3D
 points, differently from the other two returning 2D points.
 
-[You can find the code for this post at
-github](https://github.com/stefanoborini/python-raytrace/commit/363cdc7d59f7a132efcadab617e3c9a9373ed5dc).
+[You can find the code for this post at github](https://github.com/stefanoborini/python-raytrace/commit/363cdc7d59f7a132efcadab617e3c9a9373ed5dc).

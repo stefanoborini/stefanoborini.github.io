@@ -18,7 +18,7 @@ To perform basic profiling, I used the cProfile program provided in the
 standard library. It appears that the longest processing time is in the
 hit() function
 
-``` {.text}
+```
 $ python -m cProfile -s time test3.py
  Ordered by: internal time
 
@@ -71,7 +71,7 @@ class Sphere(object):
 
 The results of this profiling are
 
-``` {.text}
+```
 Line # Hits  Time    Per Hit  % Time Line Contents
 ==============================================================
 12                                   @profile
@@ -160,8 +160,7 @@ Line #      Hits         Time  Per Hit   % Time  Line Contents
 ```
 
 Why is it so slow to perform these two operations? It turns out that
-[numpy is incredibly slow at creating
-arrays](http://stackoverflow.com/questions/6559463/why-is-numpy-array-so-slow).
+[numpy is incredibly slow at creating arrays](http://stackoverflow.com/questions/6559463/why-is-numpy-array-so-slow).
 This may indeed be the reason why it\'s so slow to instantiate a Ray
 object (two numpy.arrays), to add the color (another instantiation) and
 to perform operations in the Sphere.hit slow lines. At this point I\'m

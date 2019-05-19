@@ -46,8 +46,7 @@ w.render()
 
 The resulting image is the following
 
-![image](http://forthescience.org/blog/wp-content/uploads/2011/05/render1.png){.align-center
-width="400px"}
+![image]({{ site.url }}/assets/images/2011/05/render1.png)
 
 Clearly, the white sphere is not visible, as it\'s hidden by the blue
 sphere. This test allowed me to discover a problem with orientation: the
@@ -146,8 +145,6 @@ will indicate that the ray hit nothing. I may rework on this function
 later on, but for this second round, it suits my needs.
 
 It\'s now time to move on to samplers. Given that the code is growing in
-size, [I created a git repository you can clone
-from](https://github.com/stefanoborini/python-raytrace). The [release of
-this post is available
-here](https://github.com/stefanoborini/python-raytrace/tree/74521b39d6ebba01b7446b7353c9a7868407513b).
+size, [I created a git repository you can clone from](https://github.com/stefanoborini/python-raytrace). 
+The [release of this post is available here](https://github.com/stefanoborini/python-raytrace/tree/74521b39d6ebba01b7446b7353c9a7868407513b).
 The code is under BSD license.

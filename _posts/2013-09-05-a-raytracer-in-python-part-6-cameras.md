@@ -4,8 +4,7 @@ category: python
 A raytracer in python -- part 6: cameras
 ========================================
 
-In the [latest commit for the raytracer, I added
-cameras](https://github.com/stefanoborini/python-raytrace/commit/c5fc3a3c97c46d75d378f6e8c0fa4b53a0efa7b2).
+In the [latest commit for the raytracer, I added cameras](https://github.com/stefanoborini/python-raytrace/commit/c5fc3a3c97c46d75d378f6e8c0fa4b53a0efa7b2).
 The design changed so that now the responsible for rendering is the
 camera object. Actual cameras are specializations of an abstract class
 BaseCamera, which holds common information about positioning. The
@@ -33,8 +32,7 @@ objects are in focus for a Pinhole camera (left picture) which has no
 depth of field by construction, and become more out of focus as the lens
 size increases (1.0 in the center picture, 5.0 in the right one)
 
-![image](http://forthescience.org/blog/wp-content/uploads/2011/08/lens.png){.align-center
-width="400px"}
+![image]({{ site.url }}/assets/images/2011/08/lens.png)
 
 Other cameras may technically be possible: the book goes further in
 deploying fisheye and stereoscopic cameras, but I am not interested in
