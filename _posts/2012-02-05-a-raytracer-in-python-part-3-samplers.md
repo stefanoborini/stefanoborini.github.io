@@ -1,6 +1,6 @@
 ---
 category: python
-title: A raytracer in python -- part 3: samplers
+title: A raytracer in python - part 3: samplers
 ---
 A raytracer in python -- part 3: samplers
 =========================================
