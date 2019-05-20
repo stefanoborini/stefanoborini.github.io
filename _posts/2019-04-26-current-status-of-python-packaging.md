@@ -1,6 +1,9 @@
 ---
 category: python
+title: Current State of Python Packaging - 2019
 ---
+
+# Current State of Python Packaging - 2019
 
 In this post, I will try to put out the dumpster fire that is python packaging. I spent the best part of my evenings in 
 the past two months to gather as much information as possible about the problem, the current solutions, what is legacy 
