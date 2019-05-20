@@ -27,10 +27,10 @@ The problems. Plural.
 Suppose we want to create a python "thing": maybe it's a standalone program, maybe a library.
 The development and usage of this thing involves the following "actors":
 
-- developer: the person or persons who write the thing.
-- CI: an automated process that runs tests on the thing.
-- build: an automated or semi-automated process to go from the thing on our git to the thing someone else can install and use.
-- enduser: the final person or persons that use the thing. 
+- **Developer**: the person or persons who write the thing.
+- **CI**: an automated process that runs tests on the thing.
+- **Build**: an automated or semi-automated process to go from the thing on our git to the thing someone else can install and use.
+- **Enduser**: the final person or persons that use the thing. 
   They may be other developers, if the thing is a library, or they might be the general public, if it's an application.
   Or a cloud computing microservice, if the thing is a web service of some sort. You get the point.
 
@@ -52,16 +52,13 @@ incorrect. I'd love to explain you why, but I would take a digression I am unabl
 A first step is to define a shippable entity that aggregates a given release of a given software. This shippable entity is what we
 call package. You can ship it in two forms:
 
-- *source*: you make available the source code, and who gets it has to compile it yourself.
-- *binary*: you compile the code, publish the compiled, and who gets it uses it directly.
+- **source**: you take the source code, put it in a zip or tar.gz, and who gets it has to compile it by himself.
+- **binary**: you compile the code, publish the compiled stuff, and who gets it uses it directly with no additional fuss.
 
-There are a bunch of caveats and asterisks and "wait, isn't python interpreted" things I won't detail for now, see above. 
-The take home message is that there are two possible packaging strategies to target your audience. 
+Of course with the need of packaging come the need for tools for it, specifically for the following tasks:
 
-Of course with the need of packaging come the need for tools for it, specifically:
-
-- create the shippable package
-- publish the shippable package so that it can be obtained by others
+- create the shippable package (what I called **build** above)
+- publish the shippable package somewhere so that it can be obtained by others
 - download and install the shippable package
 - handle dependencies. What if package A needs package B to run? What if
   package A may or may not need package B to run depending on what and how you
@@ -72,24 +69,26 @@ Of course with the need of packaging come the need for tools for it, specificall
 
 ## Can you be more specific? What do I have to do when I want to write some code?
 
-Sure. You want to write some code. So you follow these steps:
+Sure. You want to write some code. So you generally follow these steps:
 
 1. You create an isolated python so that you can work on multiple projects. 
    If you don't, the stuff for project A might mess up the stuff from project B.
-2. You want to specify which dependencies you want, but in two ways: abstract, and concrete.
-   Why the difference? because your code may want to use, say, numpy. But which version? 
-   To create a real, working environment you need a specific version of it. 
+2. You want to specify which dependencies you want, but keep into account that there are two ways of doing so: 
+   **abstract** where you just say what you want in general terms (e.g. numpy) and **concrete**, where you say
+   which specific version you want (e.g. numpy 1.1.0). Why the difference? I'll detail later.
+   To create a real, working environment you need a concrete dependency.
 3. Now you have what you need and you can start developing.
 
-## Which tools do I have to use for that?
+## Which tools do I have to use to do this?
 
 This is tricky, because there are many and they are changing. One option is
-that you create the isolated python "virtual environment" with virtualenv,
-which is part of python.  Then, you use pip (also part of python) to install
+that you create the isolated python "virtual environment" with *virtualenv*,
+which is part of python. Then, you use *pip* (also part of python) to install
 the packages that you depend on. Typing them one by one is boring and not
 really automatic, so people put the concrete dependencies (with hardcoded
 versions) in a file and then tell pip: "go read that file and install what's in
-there". And pip obliges.
+there". And pip obliges.  This file is the famous requirements.txt you might 
+have seen around.
 
 ## What is pip?
 
@@ -98,22 +97,27 @@ A program that downloads packages and installs them. If they have dependencies, 
 ## How?
 
 It goes to a remote service, pypi, finds the package by name and version, downloads it, and installs it.
-But it does a little more than that. Because this package may have additional dependencies itself, so it gets those too,
-and installs them.
+But it does a little more than that, because this package may have additional dependencies itself, 
+so it gets those too, and installs them.
 
-## Why do you say that this approach "is an option"
+## Why do you say that this approach "is an option"?
 
 Because it gets boring and complex quite quickly. You have to manage by hand
-your direct dependencies versions for different platforms. For example, on
-windows you might need a package, and on linux another. You also have to
-consider that some of your dependencies are real dependencies that you use and
-need for your software to work. Other dependencies are only required to run
-tests, and so are really dependencies that as a developer, or a CI machine,
-need. But for someone that uses your software, they are not needed. Also, your
-final python environment is made of not only your direct dependencies, but also
-its subdependencies.  What if you depend on A and B directly, and they both
-depend on C. Which version of C should it be installed?  Is it even possible to do so,
-if, say, A wants C version 2 and B wants C version 1?
+your direct dependencies versions for different platforms For example, on
+windows you might need a package, and on linux another and you end up with
+win-requirements.txt, linux-requirements.txt etc.  
+
+You also have to consider that some of your dependencies are real dependencies
+that you use and need for your software to work. Other dependencies are only
+required to run tests, and so are really dependencies that as a developer, or a
+CI machine, needs, but for someone that wants to use your software, they are not 
+needed, so they are not dependencies. So now you have dev-requirement.txt as well.
+
+Also, your final python environment is made of not only your direct
+dependencies, but also its subdependencies.  What if you depend on A and B
+directly, and they both depend on C. Which version of C should it be installed?
+Is it even possible to do so, if, say, A wants C version 2 and B wants C
+version 1?
 
 It's a mess, and you don't want to deal with this mess.
 
@@ -237,7 +241,7 @@ need: get a final application on your user's desktop. Packaging is about
 managing the network of dependencies, libraries and tools that you need to
 create that application that you might, or might not, create with pyinstaller.
 
-## What's with Wheels?
+**What's with Wheels?**
 
 Rememeber when I said that pip needs to know what to download from pypi to
 download the right versions and the right operating system? a Wheel is a file
@@ -249,7 +253,7 @@ something has been compiled for, say CPython, it knows the version, the ABI,
 etc. There is a standard layout of this tags in the filename, and there are
 particular keywords in that metadata that have specific meanings.
 
-# Ok, but how do I install something I have the sources of? python setup.py?
+*Ok, but how do I install something I have the sources of? python setup.py?*
 
 No. Use `pip install .` because it guarantees you can uninstall it afterwards.
 
