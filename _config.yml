@@ -1,9 +1,8 @@
-title: Fly, Crash, Throw Exception
-description: Random stuff from Stefano Borini
 plugins:
   - jekyll-remote-theme
-show_downloads: false
 remote_theme: stefanoborini/cards
+name: Fly, Crash, Throw Exception
+description: Random stuff from Stefano Borini
 defaults:
   -
     scope:
