@@ -1,6 +1,6 @@
 plugins:
   - jekyll-remote-theme
-remote_theme: TaylanTatli/Moon
+remote_theme: stefanoborini/cards
 name: Fly, Crash, Throw Exception
 description: Random stuff from Stefano Borini
 defaults:
