@@ -10,9 +10,8 @@ layout: default
                 <ul>
                 {% assign sorted_cats = site.categories | sort %}
                 {% for category in sorted_cats %}
-                    {% capture category_slug %}{{ category | slugify }}{% endcapture %}
                     {% capture category_name %}{{ category | first }}{% endcapture %}
-                    <li><a href="#{{category_slug}}">{{ category_name | capitalize }}</a></li>
+                    <li><a href="#">{{ category_name | capitalize }}</a></li>
                 {% endfor %}
                 </ul>
               </div>
@@ -23,11 +22,10 @@ layout: default
                 {% assign sorted_cats = site.categories | sort %}
                 {% for category in sorted_cats %}
                     {% capture category_name %}{{ category | first }}{% endcapture %}
-                    {% capture category_slug %}{{ category | slugify }}{% endcapture %}
                     <div class="col-md-12 col-sm-12 card">
                         <div class="panel panel-default">
                           <div class="panel-body">
-                            <h3 class="panel-title pull-left" id="{{category_slug}}">{{ category_name | capitalize }}</h3>
+                            <h3 class="panel-title pull-left">{{ category_name | capitalize }}</h3>
                           </div>
                     {% assign sorted_posts = category[1] | sort:"title" %}
                     {% for post in sorted_posts %}
