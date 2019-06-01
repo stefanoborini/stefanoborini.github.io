@@ -27,6 +27,7 @@ layout: default
                 {% else %}
                     <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor"><div class="panel-body">{{ post.title }}</div></a>
                 {% endif %}
+            {% endfor %}
             </div>
             </div>
         {% endfor %}
