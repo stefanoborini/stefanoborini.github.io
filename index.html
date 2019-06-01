@@ -4,6 +4,13 @@ layout: default
 
 <div class="home">
     <div class="row pack">
+            <div class="col-md-12 col-sm-12 card">
+                <div class="panel panel-default">
+                  <div class="panel-body"><h3 class="panel-title pull-left">Slides</h3></div>
+                    <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor"><div class="panel-body">{{ post.title }}</div></a>
+                </div>
+            </div>
+
         {% assign sorted_cats = site.categories | sort %}
         {% for category in sorted_cats %}
             {% capture category_name %}{{ category | first }}{% endcapture %}
