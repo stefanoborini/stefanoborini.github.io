@@ -21,7 +21,6 @@ layout: default
                   </div>
             {% assign sorted_posts = category[1] | sort:"title" %}
             {% for post in sorted_posts %}
-                link to: {{post.link_to }}
                 {% if post.link_to %}
                     <a href="{{ post.link_to }}" class="index-anchor"><div class="panel-body">{{ post.title }}</div></a>
                 {% else %}
