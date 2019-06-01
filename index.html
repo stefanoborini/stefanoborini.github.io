@@ -3,16 +3,17 @@ layout: default
 ---
 
 <div class="home">
-    <div class="row">
-        <div class="col-md-2 col-sm-2 card">
+    <div class="row pack">
+        <div class="col-md-2 col-sm-2 card" >
             <div class="panel panel-default">
               <div class="panel-body">
+                <ul>
                 {% assign sorted_cats = site.categories | sort %}
                 {% for category in sorted_cats %}
                     {% capture category_name %}{{ category | first }}{% endcapture %}
-                    <div class="panel-body pull-left">{{ category_name | capitalize }}</div>
+                    <li class="panel-body pull-left">{{ category_name | capitalize }}</li>
                 {% endfor %}
-              </div>
+              </ul>
             </div>
         </div>
         <div class="col-md-10 col-sm-10">
