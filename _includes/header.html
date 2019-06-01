@@ -15,7 +15,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{site.baseurl}}/about/">About</a></li>
+               {% if site.github %}
+                <li> <a target="_blank" href="{{site.github}}"><li class="social github"><i class="fa fa-github-square"></i> Github</li></a> </li>
+                {% endif %}
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
