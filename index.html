@@ -15,10 +15,7 @@ layout: default
             {% assign sorted_posts = category[1] | sort:"title" %}
             {% for post in sorted_posts %}
              <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor">    
-                  <div class="panel-body">
-                    {{ post.title }}<span class="post-meta pull-right"><small>{{ post.date | date: "%b %-d, %Y" }}</small></span>
-                  </div>
-                  <div class="panel-body"><small>{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</small></div>
+                  <div class="panel-body"><strong>{{ post.title }}</strong><span class="post-meta pull-right"><small>{{ post.date | date: "%b %-d, %Y" }}</small></span></div>
              </a>
         
           {% endfor %}
