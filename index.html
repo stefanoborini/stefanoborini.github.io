@@ -7,7 +7,7 @@ layout: default
         {% assign sorted_cats = site.categories | sort %}
         {% for category in sorted_cats %}
             {% capture category_name %}{{ category | first }}{% endcapture %}
-            <div class="col-md-6 card">
+            <div class="col-md-12 card">
                 <div class="panel panel-default">
                   <div class="panel-body">
                     <h3 class="panel-title pull-left">{{ category_name | capitalize }}</h3>
