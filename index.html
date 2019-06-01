@@ -9,7 +9,7 @@ layout: default
             {% capture category_name %}{{ category | first }}{% endcapture %}
             {% assign sorted_posts = category[1] | sort:"title" %}
             {% for post in sorted_posts %}
-            <div class="col-md-4 card">
+            <div class="col-md-12 card">
              <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor">    
                 <div class="panel panel-default">
                   
