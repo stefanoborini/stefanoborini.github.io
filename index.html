@@ -11,9 +11,10 @@ layout: default
                 {% assign sorted_cats = site.categories | sort %}
                 {% for category in sorted_cats %}
                     {% capture category_name %}{{ category | first }}{% endcapture %}
-                    <li class="panel-body pull-left">{{ category_name | capitalize }}</li>
+                    <li class="panel-title pull-left" style="list-style-type: none;">{{ category_name | capitalize }}</li>
                 {% endfor %}
-              </ul>
+                </ul>
+              </div>
             </div>
         </div>
         <div class="col-md-10 col-sm-10">
