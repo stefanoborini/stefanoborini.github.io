@@ -11,7 +11,7 @@ layout: default
                 {% assign sorted_cats = site.categories | sort %}
                 {% for category in sorted_cats %}
                     {% capture category_name %}{{ category | first }}{% endcapture %}
-                    {% capture category_slug %}{{ category | slugize }}{% endcapture %}
+                    {% capture category_slug %}{{ category_name | slugize }}{% endcapture %}
                     <li><a href="#{{category_slug}}">{{ category_name | capitalize }}</a></li>
                 {% endfor %}
                 </ul>
@@ -23,7 +23,7 @@ layout: default
                 {% assign sorted_cats = site.categories | sort %}
                 {% for category in sorted_cats %}
                     {% capture category_name %}{{ category | first }}{% endcapture %}
-                    {% capture category_slug %}{{ category | slugize }}{% endcapture %}
+                    {% capture category_slug %}{{ category_name | slugize }}{% endcapture %}
                     <div class="col-md-12 col-sm-12 card">
                         <div class="panel panel-default">
                           <div class="panel-body">
