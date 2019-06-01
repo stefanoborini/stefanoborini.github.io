@@ -1,14 +1,13 @@
 ---
-category: other
+category: c++
+title: C++ stdlib srand/rand are not repeatable across platforms
 ---
-C++ stdlib std::srand/std::rand are not repeatable across platforms
-===================================================================
 
 I recently observed that `std::srand/std::rand` are not required to
 yield the same pseudorandom sequence across platforms. This code, for
 example
 
-``` {.cpp}
+```c
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
@@ -28,7 +27,7 @@ int main()
 Gives different results on Linux and Mac. On Linux ubuntu 12.04, it
 gives
 
-``` {.text}
+``` 
 Random value on [0 2147483647]: 1756860556
 Random value on [0 2147483647]: 1141727289
 Random value on [0 2147483647]: 551934435
@@ -36,7 +35,7 @@ Random value on [0 2147483647]: 551934435
 
 On Mac OSX 10.8 gives instead
 
-``` {.text}
+```
 Random value on [0 2147483647]: 5596731
 Random value on [0 2147483647]: 1722461096
 Random value on [0 2147483647]: 1324078912

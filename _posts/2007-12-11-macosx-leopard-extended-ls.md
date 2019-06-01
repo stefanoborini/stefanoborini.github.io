@@ -1,8 +1,7 @@
 ---
-category: other
+category: osx
+title: MacOSX Leopard extended ls
 ---
-MacOSX Leopard extended ls
-==========================
 
 Apparently, something changed in the `ls` command with the release of
 Leopard. I don\'t remember seeing this kind of report on Tiger, although

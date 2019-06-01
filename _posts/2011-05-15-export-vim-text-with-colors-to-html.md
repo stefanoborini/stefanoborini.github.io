@@ -1,8 +1,7 @@
 ---
-category: other
+category: vim
+title: Export vim text (with colors) to HTML
 ---
-Export vim text (with colors) to HTML
-=====================================
 
 Vim is a great, great programming tool. Even after years of experience
 with it you still get to discover, either by change or by sharing,

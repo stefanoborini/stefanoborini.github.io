@@ -1,8 +1,7 @@
 ---
-category: other
+category: osx
+title: Simulating network problems on OSX
 ---
-Simulating network problems on OSX
-==================================
 
 Recently I had to simulate unreliable connections to a remote server,
 for testing purposes. I needed two cases: a fully unreachable host, and
@@ -18,7 +17,7 @@ for future reference.
 
 Here I add a 1 second delay and a 0.4 packet loss in both directions
 
-``` {.console}
+```
 bash-3.2# ipfw add pipe 1 ip from any to 10.0.0.1
 00100 pipe 1 ip from any to 10.0.0.1
 

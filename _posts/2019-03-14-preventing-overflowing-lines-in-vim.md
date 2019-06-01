@@ -1,7 +1,7 @@
 ---
 category: vim
+title: Preventing overflowing lines in vim
 ---
-# Preventing overflowing lines in vim
 
 Good code is properly formatted. One requirement in python encouraged by PEP-8
 is to keep the code within the 80 columns. This is a generally good advice,
