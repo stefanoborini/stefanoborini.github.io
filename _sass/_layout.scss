@@ -14,8 +14,6 @@ html,body {
     border-bottom: 1px solid #eee;
 }
 
-
-
 img {
     max-width: 100%;
 }
@@ -54,15 +52,18 @@ img {
 }
 
 .panel {
-    margin-bottom: 2em;
+   margin-bottom: 2em;
    border: 1px solid #eee;
-   box-shadow: 1px 1px 1px #4582ec;
-
 }
 
 .panel-title {
     color: #4582ec;
 }
+
+.panel a:hover {
+    font-weight: bold;
+}
+
 
 footer {
     border-top: 1px solid $grey-color-light;
