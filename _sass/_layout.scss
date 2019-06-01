@@ -102,14 +102,29 @@ footer {
     border: 1px solid $grey-color-light;
 }
 
+.sidemenu ul {
+    list-style: none;
+    padding: 0;
+    text-align: justify;
+}
+
+.sidemenu ul > li {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.sidemenu {
+    padding: 10px;
+    border: 1px solid $grey-color-light;
+}
+
+
 .post-img img {
     width: 100%;
 }
 
 
 .pack {
-
-
     display: -webkit-inline-flex;
     display: -ms-inline-flexbox;
     display: inline-flex;
