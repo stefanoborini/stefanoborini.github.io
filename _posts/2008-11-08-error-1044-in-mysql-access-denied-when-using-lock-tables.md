@@ -1,6 +1,6 @@
 ---
 category: databases
-title: Error 1044 in MySQL: Access denied when using LOCK TABLES
+title: Error 1044 in MySQL - Access denied when using LOCK TABLES
 ---
 
 I got an error while using mysqldump

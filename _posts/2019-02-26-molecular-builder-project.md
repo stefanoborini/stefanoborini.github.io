@@ -1,6 +1,6 @@
 ---
 category: project management
-title: Retrospective of an old project: How I discovered Agile before it was mainstream
+title: Retrospective of an old project - How I discovered Agile before it was mainstream
 ---
 
 These are the notes of a project I was part of, which followed a strict waterfall process.
