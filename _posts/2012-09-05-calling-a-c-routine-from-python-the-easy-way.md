@@ -1,8 +1,7 @@
 ---
 category: python
+title: Calling a C routine from python, the easy way
 ---
-Calling a C routine from python, the easy way
-=============================================
 
 I think it may be interesting for others to see how to call easily a C
 routine from python, without implementing a python module. What you need

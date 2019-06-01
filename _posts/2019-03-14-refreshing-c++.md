@@ -2,7 +2,6 @@
 category: c++
 title: Refreshing my C++ for fun and profit (Incomplete)
 ---
-# Refreshing my C++ for fun and profit (Incomplete)
 
 It has been a while since I used C++, and now that I regularly do it at work, I
 decided to refresh it a bit. I never really dropped it completely in this

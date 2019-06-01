@@ -1,8 +1,7 @@
 ---
 category: other
+title: Unraveling Unicode problems in WikkaWiki
 ---
-Unraveling Unicode problems in WikkaWiki
-========================================
 
 While I was setting up the wiki, I realized some problems with
 non-English letters, such as ö. Therefore I had to find out more details

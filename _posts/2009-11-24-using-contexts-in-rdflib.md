@@ -1,8 +1,7 @@
 ---
 category: semantic web
+title: Using contexts in rdflib
 ---
-Using contexts in rdflib
-========================
 
 I am playing with [rdflib](http://rdflib.net), a fantastic python
 library to handle RDF data. I had trouble understanding how to use

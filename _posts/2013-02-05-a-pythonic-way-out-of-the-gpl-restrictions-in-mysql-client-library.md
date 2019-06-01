@@ -1,8 +1,7 @@
 ---
 category: python
+title: A pythonic way out of the GPL restrictions in MySQL client library
 ---
-A pythonic way out of the GPL restrictions in MySQL client library
-==================================================================
 
 I recently became aware of this native Python package
 [PyMySQL](https://github.com/petehunt/PyMySQL). The package has one

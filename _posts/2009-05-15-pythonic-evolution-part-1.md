@@ -1,8 +1,7 @@
 ---
 category: python
+title: Pythonic Evolution - Part 1
 ---
-Pythonic Evolution - Part 1
-===========================
 
 This post is in different parts. The fact is that it requires quite a
 lot of time investment, something I really don\'t have in this period.

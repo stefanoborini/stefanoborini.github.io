@@ -1,8 +1,7 @@
 ---
 category: qt
+title: PyQt Gotchas
 ---
-
-# PyQt Gotchas
 
 PyQt and Qt have a fundamental conflict: memory management. Python frees stuff
 when references go out of scope, while Qt, being based on C++, has no such

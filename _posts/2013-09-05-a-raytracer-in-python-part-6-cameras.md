@@ -2,7 +2,6 @@
 category: python
 title: A Raytracer in Python - Part 6 - Cameras
 ---
-# A Raytracer in Python - Part 6 - Cameras
 
 In the [latest commit for the raytracer, I added cameras](https://github.com/stefanoborini/python-raytrace/commit/c5fc3a3c97c46d75d378f6e8c0fa4b53a0efa7b2).
 The design changed so that now the responsible for rendering is the

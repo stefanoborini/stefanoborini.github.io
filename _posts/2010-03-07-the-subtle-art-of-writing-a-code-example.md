@@ -1,8 +1,7 @@
 ---
 category: other
+title: The subtle art of writing a code example
 ---
-The subtle art of writing a code example
-========================================
 
 One of the most frustrating experiences when learning a new technology
 is finding useless examples. An example is the most precious thing that

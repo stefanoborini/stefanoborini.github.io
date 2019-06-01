@@ -1,8 +1,7 @@
 ---
 category: python
+title: Pythonic Evolution - Part 3
 ---
-Pythonic Evolution - Part 3
-===========================
 
 You are welcome to take a look at [Part
 1](http://forthescience.org/blog/2009/05/15/pythonic-evolution-part-1/)

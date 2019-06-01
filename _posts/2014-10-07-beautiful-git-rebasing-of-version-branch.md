@@ -1,8 +1,7 @@
 ---
 category: git
+title: Beautiful Git rebasing of version branch
 ---
-Beautiful Git rebasing of version branch
-========================================
 
 In this post, I want to share with you a technique I learned recently
 from a colleague. It\'s a really great trick to keep your history nice

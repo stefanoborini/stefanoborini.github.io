@@ -2,7 +2,6 @@
 category: web
 title: What is REST, in brief (incomplete)
 ---
-# What is REST, in brief (incomplete)
 
 What exactly IS a REST API. What makes it RESTful? What is an average use case
 for this in a program?  My knowledge of APIs is... Well, not that good, but a

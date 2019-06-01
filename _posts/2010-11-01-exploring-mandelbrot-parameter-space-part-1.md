@@ -1,8 +1,7 @@
 ---
 category: python
+title: Exploring Mandelbrot parameter space - part 1
 ---
-Exploring Mandelbrot parameter space -- part 1
-==============================================
 
 Some time ago, I presented an [interesting python
 code](http://forthescience.org/blog/2010/07/12/the-mandelbrot-set-in-python/)

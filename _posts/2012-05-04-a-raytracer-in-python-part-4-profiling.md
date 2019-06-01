@@ -2,7 +2,6 @@
 category: python
 title: A Raytracer in Python - Part 4 - Profiling
 ---
-# A Raytracer in Python - Part 4 - Profiling
 
 After having finally obtained a raytracer which produces antialiasing,
 it is now time to take a look at performance. We already saw some

@@ -1,8 +1,7 @@
 ---
 category: javascript
+title: base32 encoding in javascript
 ---
-base32 encoding in javascript
-=============================
 
 I had to perform base32 encoding in javascript, and I found nothing
 ready for the task, so I started cramming out code, and here it is

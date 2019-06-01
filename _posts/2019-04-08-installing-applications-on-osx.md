@@ -1,7 +1,7 @@
 ---
 category: osx
+title: Installing applications on OSX
 ---
-# Installing applications on OSX
 
 OSX is a complex environment with a lot of difference compared to Linux or Windows.
 Most of the changes described dealt with the intrinsic difference of the system,

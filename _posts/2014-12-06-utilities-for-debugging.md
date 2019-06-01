@@ -1,8 +1,7 @@
 ---
 category: c
+title: Utilities for debugging
 ---
-Utilities for debugging
-=======================
 
 Part of my daily job involves getting dirty at the assembler level,
 generally to debug segfaults, FPE, deadlocks and similar stuff. It\'s a

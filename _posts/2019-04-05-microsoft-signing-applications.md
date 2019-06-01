@@ -1,8 +1,7 @@
 ---
 category: microsoft
+title: Signing applications for windows
 ---
-
-# Signing applications for windows
 
 These notes were made in 2013. They may now be outdated.
 

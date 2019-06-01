@@ -1,7 +1,7 @@
 ---
 category: python
+title: Editor project - benchmarking member-by-member summing
 ---
-# Editor project: benchmarking member-by-member summing
 
 Recently I introduced classes for VRect, VPoint and VSize, to mirror Qt
 classes, and replaced all usages of tuples with these classes. Unfortunately,

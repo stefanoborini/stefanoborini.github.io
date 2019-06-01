@@ -1,8 +1,7 @@
 ---
 category: databases
+title: Change MySQL config file
 ---
-Change MySQL config file
-========================
 
 It seems trivial, and indeed it is, to specify a different configuration
 file for the mysql client, from the standard .my.cnf to a different

@@ -1,8 +1,7 @@
 ---
 category: fortran
+title: Undefined symbols for Fortran module variables in static library on OSX. Problem (and solution)
 ---
-Undefined symbols for Fortran module variables in static library on OSX. Problem (and solution)
-===============================================================================================
 
 If you program in Fortran on the Mac, you might meet this odd problem.
 You have a module test.f90 containing nothing but public variables

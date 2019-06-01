@@ -1,8 +1,7 @@
 ---
 category: c
+title: New gcc linker behavior leaves me puzzled
 ---
-New gcc linker behavior leaves me puzzled
-=========================================
 
 Today, together with a colleague, I found out this interesting behavior
 of the GNU linker. Suppose you define the following trivial (and

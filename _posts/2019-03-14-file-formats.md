@@ -1,7 +1,7 @@
 ---
 category: other
+title: Design of file formats
 ---
-# Design of file formats
 
 I worked with file formats for a while during my career. I also saw a lot of
 them, produced by others. It is shocking how many bad decisions people do when

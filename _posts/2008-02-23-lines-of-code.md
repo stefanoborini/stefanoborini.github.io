@@ -1,8 +1,7 @@
 ---
 category: other
+title: Lines of code as a metric of project complexity
 ---
-Lines of code
-=============
 
 First, a disclaimer. I just want to play with numbers in this post.
 Lines of code (LOC) do not mean anything in terms of productivity. They

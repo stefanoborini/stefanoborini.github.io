@@ -1,8 +1,7 @@
 ---
 category: semantic web
+title: About class attributes, semantics and microformats
 ---
-About class attributes, semantics and microformats
-==================================================
 
 I just got to [this post by Richard le
 Guen](http://richard.jp.leguen.ca/not-blog/a-css-class) via the

@@ -2,7 +2,6 @@
 category: fortran
 title: Reference counting in Fortran 95 (incomplete)
 ---
-# Reference counting in Fortran 95
 
 Here is a problem which is not only found in Fortran, but in all non
 memory-managed languages: who is in charge of deleting an object? All this

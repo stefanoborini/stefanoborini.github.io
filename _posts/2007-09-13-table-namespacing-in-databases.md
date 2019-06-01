@@ -1,8 +1,7 @@
 ---
 category: databases
+title: Table namespacing in databases
 ---
-Table namespacing in databases
-==============================
 
 I was trying to find out if some database implements namespacing for
 tables, but it looks like google produces no useful results for it. This

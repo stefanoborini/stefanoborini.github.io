@@ -2,7 +2,6 @@
 category: c++
 title: T considered harmful in template programming
 ---
-# T considered harmful in template programming
 
 As I use more and more C++ generic programming, I come to realize one general
 problem of books and tutorials: the use of typename T in template programming.

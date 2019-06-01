@@ -1,8 +1,7 @@
 ---
 category: python
+title: Naming for conversion routines
 ---
-Naming for conversion routines
-==============================
 
 I love code that self-documents and reads naturally, so I strive to name
 my routines and variables appropriately. When you are faced with the

@@ -1,8 +1,7 @@
 ---
 category: other
+title: Old CentOS 4 is not a valid release or hasnt been released yet error
 ---
-Old CentOS \"4 is not a valid release or hasnt been released yet\" error
-========================================================================
 
 If you have to handle an old Centos 4 machine and you try to use yum to
 get some packages, you will get an error \"4 is not a valid release or

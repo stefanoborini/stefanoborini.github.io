@@ -1,8 +1,7 @@
 ---
 category: other
+title: Doing nothing in bash
 ---
-Doing nothing in bash
-=====================
 
 Today I had to \"do nothing\" in bash. In python you have \"pass\" for
 this task. In C, you can use \";\". I found [this

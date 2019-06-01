@@ -1,8 +1,7 @@
 ---
 category: semantic web
+title: From URI to ontologies
 ---
-From URI to ontologies
-======================
 
 It is some sort of well known pattern, the \"`http://`\" stuff. It is so
 frequently used that browsers just fill it in automatically by default.

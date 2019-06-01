@@ -1,8 +1,7 @@
 ---
 category: python
+title: Python and memory fragmentation
 ---
-Python and memory fragmentation
-===============================
 
 If you use CPython on 32 bit architectures, you may encounter a problem
 called memory fragmentation. It is more likely to happen on Windows for

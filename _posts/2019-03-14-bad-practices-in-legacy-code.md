@@ -2,7 +2,6 @@
 category: fortran
 title: Bad practices in Fortran legacy code (incomplete)
 ---
-# Bad practices in Fortran legacy code
 
 I have my fair experience with legacy Fortran code, and still I can't wrap my
 head around some practices, in particular when it comes to understand the logic

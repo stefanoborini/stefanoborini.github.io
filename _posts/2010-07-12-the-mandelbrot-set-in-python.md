@@ -1,8 +1,7 @@
 ---
 category: python
+title: The Mandelbrot set, in python
 ---
-The Mandelbrot set, in python
-=============================
 
 This code is so fascinating
 

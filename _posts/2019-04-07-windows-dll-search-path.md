@@ -1,10 +1,7 @@
 ---
 category: microsoft
+title: Windows DLL search path
 ---
-
-Written 23 Jan 2015
-
-# Windows DLL search path
 
 On windows, we want applications to be able to start without the need for a path specification, yet we need our DLLs to be found. 
 In the past, we relied on PATH for this, but this is going away, for the following reasons:

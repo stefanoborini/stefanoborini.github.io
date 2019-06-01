@@ -1,8 +1,7 @@
 ---
 category: python
+title: Copying and pasting from the python interpreter
 ---
-Copying and pasting from the python interpreter
-===============================================
 
 One very powerful feature of python is the interactive interpreter: it
 allows you to test and quickly evaluate snippets of code. Occasionally,

@@ -1,7 +1,7 @@
 ---
 category: javascript
+title: Object-oriented programming, the JavaScript way
 ---
-# Object-oriented programming, the JavaScript way
 
 As you probably know, I'm a python fan. Unfortunately, python does not run in
 the most common development platform out there: the browser. To add more to the

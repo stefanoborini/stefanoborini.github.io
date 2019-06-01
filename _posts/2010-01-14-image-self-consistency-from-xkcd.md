@@ -1,8 +1,7 @@
 ---
 category: python
+title: Image self consistency from xkcd
 ---
-Image self consistency from xkcd
-================================
 
 I love [xkcd](http://xkcd.com). A comic combining fun and math by
 definition has to be good and geeky and the author, Randall Munroe, is a

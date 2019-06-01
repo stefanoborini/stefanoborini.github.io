@@ -1,8 +1,7 @@
 ---
 category: other
+title: Change separator in gnuplot
 ---
-Change separator in gnuplot
-===========================
 
 Gnuplot is a great software. Very useful for easily plotting datapoints
 without fuss and complicated interface. However, the default accepted

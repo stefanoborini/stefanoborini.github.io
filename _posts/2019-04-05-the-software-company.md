@@ -1,7 +1,7 @@
 ---
 category: project management
+title: The software company
 ---
-# The software company
 
 1. Do you have and use whiteboards?
 

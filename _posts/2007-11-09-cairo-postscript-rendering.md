@@ -1,8 +1,7 @@
 ---
 category: other
+title: Cairo PostScript rendering
 ---
-Cairo PostScript rendering
-==========================
 
 I am trying to render vector graphics with alpha blending. Too bad,
 PostScript, even Level 3, does not support alpha blending. This means

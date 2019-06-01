@@ -1,8 +1,7 @@
 ---
 category: fortran
+title: Fortran 90 pitfall: initialization of vars at declaration
 ---
-Fortran 90 pitfall: initialization of vars at declaration
-=========================================================
 
 I am dusting my Fortran 90 skills. One big gotcha that always leaves me
 baffled is the following. Suppose you write the following program

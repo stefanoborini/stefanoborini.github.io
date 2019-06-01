@@ -1,8 +1,7 @@
 ---
 category: other
+title: Box and Whiskers plot. How ?
 ---
-Box and Whiskers plot. How ?
-============================
 
 I am trying to produce box and whiskers plots. Actually, not the plot in
 itself, but the values for the boxes, the whiskers and so on. An example

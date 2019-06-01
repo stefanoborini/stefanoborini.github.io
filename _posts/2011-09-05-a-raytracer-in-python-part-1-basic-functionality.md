@@ -2,7 +2,6 @@
 category: python
 title: A Raytracer in Python - Part 1 - Basic Functionality
 ---
-# A Raytracer in Python - Part 1 - Basic Functionality
 
 Some time ago I visited Sydney, and I made a tragic mistake: I entered
 the University bookshop. Why a mistake, you say? I am book maniac. As

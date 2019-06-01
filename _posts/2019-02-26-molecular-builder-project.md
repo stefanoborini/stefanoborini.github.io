@@ -1,8 +1,7 @@
 ---
 category: project management
+title: Retrospective of an old project: How I discovered Agile before it was mainstream
 ---
-# Retrospective of an old project: the molecular builder project.
-## or, how I discovered Agile before it went mainstream.
 
 These are the notes of a project I was part of, which followed a strict waterfall process.
 There was a specification phase (9 months), a design phase (3 months), an implementation phase (3 months) and a testing phase (3 months).

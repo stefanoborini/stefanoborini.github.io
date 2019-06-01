@@ -3,8 +3,6 @@ category: project management
 title: What Dungeons and Dragons taught me about software project management (incomplete)
 ---
 
-# What Dungeons and Dragons taught me about software project management
-
 In Dungeons and Dragons,
 
 - Warrior: extremely powerful and capable of both dealing and receiving massive damage to enemies in close combat, but weak against magic effects.

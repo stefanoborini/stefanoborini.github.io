@@ -1,8 +1,8 @@
 ---
 category: project management
+title: Make it work, make it earn, make it clean
 ---
 
-# Make it work, make it earn, make it clean
 
 As programmers, we are often told some golden rules about how to do our job.
 Generally, these rules are technical in nature, or managerial, but they hardly

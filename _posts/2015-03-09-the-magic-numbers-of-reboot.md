@@ -1,8 +1,7 @@
 ---
 category: c
+title: The magic numbers of reboot()
 ---
-The magic numbers of reboot()
-=============================
 
 Today I learned an interesting piece of Linux trivia. To reboot the
 machine, there\'s a system call, reboot(). The funny thing is in its

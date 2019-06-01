@@ -1,8 +1,7 @@
 ---
 category: other
+title: Versioning file permissions in svn
 ---
-Versioning file permissions in svn
-==================================
 
 There can be cases when it\'s important to version file permissions. One
 case I have at hand is to have a cache directory for automatically

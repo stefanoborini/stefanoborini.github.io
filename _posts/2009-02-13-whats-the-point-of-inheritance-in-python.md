@@ -1,8 +1,7 @@
 ---
 category: python
+title: What is the point of inheritance in python ?
 ---
-What\'s the point of inheritance in python ?
-============================================
 
 Python is a fascinating language. It makes you think. Sometimes it can
 destroy your beliefs. Sometimes it makes you understand new concepts in

@@ -1,8 +1,7 @@
 ---
 category: other
+title: Difference between mpiexec and mpirun
 ---
-Difference between mpiexec and mpirun?
-======================================
 
 A few days ago I started playing with MPI, and I started wondering:
 \"what\'s the difference between mpiexec and mpirun?\" It turns out that

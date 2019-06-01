@@ -1,7 +1,7 @@
 ---
 category: other
+title: Distances that every programmer should know
 ---
-# Distances that every programmer should know
 
 A few days ago, I remembered about a famous collection of 
 `numbers that every programmer should know <http://highscalability.com/numbers-everyone-should-know>`_

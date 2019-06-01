@@ -2,7 +2,6 @@
 category: c++
 title: libstdc++ dependencies notes
 ---
-# libstdc++ dependencies notes
 
 Imagine you have a big C++ program, such as Firefox, and you want to compile
 it, link it, package it, and distribute it in binary form. You want to use a

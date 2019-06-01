@@ -1,8 +1,7 @@
 ---
 category: python
+title: Multithreaded testing
 ---
-Multithreaded testing
-=====================
 
 Suppose you have to perform tests. Lots of tests. Functional tests,
 where each test could take a lot of time. Suppose also that

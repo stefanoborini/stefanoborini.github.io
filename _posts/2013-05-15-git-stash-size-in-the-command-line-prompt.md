@@ -1,8 +1,7 @@
 ---
 category: git
+title: Git stash size in the command line prompt
 ---
-Git stash size in the command line prompt
-=========================================
 
 Too often I get confused with git when it comes to stashes. I tend to
 stash often, as I jump from a task to another or from a branch to

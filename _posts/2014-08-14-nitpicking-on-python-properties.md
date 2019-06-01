@@ -1,8 +1,7 @@
 ---
 category: python
+title: Nitpicking on python properties
 ---
-Nitpicking on python properties
-===============================
 
 I like python properties, I really do. Properties allow you to convert
 explicit setters and getters into lean code while keeping control of

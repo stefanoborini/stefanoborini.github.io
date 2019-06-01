@@ -1,8 +1,7 @@
 ---
 category: python
+title: Pythonic Evolution - Part 2
 ---
-Pythonic Evolution - Part 2
-===========================
 
 This is the second part of a post relative to evolution. You can find
 the first part of the post
