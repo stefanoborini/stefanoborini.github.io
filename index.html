@@ -4,7 +4,16 @@ layout: default
 
 <div class="home">
     <div class="row">
-        <div class="col-md-2 col-sm-2">Hi</div>
+        <div class="col-md-2 col-sm-2 card">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                {% assign sorted_cats = site.categories | sort %}
+                {% for category in sorted_cats %}
+                    {% capture category_name %}{{ category | first }}{% endcapture %}
+                    <div class="panel-body pull-left">{{ category_name | capitalize }}</div>
+                {% endfor %}
+              </div>
+        </div>
         <div class="col-md-10 col-sm-10">
             <div class="row pack">
                 {% assign sorted_cats = site.categories | sort %}
