@@ -6,10 +6,10 @@ layout: default
     <div class="row pack">
         {% assign sorted_cats = site.categories | sort %}
         {% for category in sorted_cats %}
+            <div class="col-md-12 card">
             {% capture category_name %}{{ category | first }}{% endcapture %}
             {% assign sorted_posts = category[1] | sort:"title" %}
             {% for post in sorted_posts %}
-            <div class="col-md-12 card">
              <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor">    
                 <div class="panel panel-default">
                   
@@ -17,14 +17,12 @@ layout: default
                     <h3 class="panel-title pull-left">{{ post.title }}</h3><span class="post-meta pull-right"><small>{{ post.date | date: "%b %-d, %Y" }}</small></span>
                   </div>
                   
-                  <div class="panel-body"><small>
-                    {{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</small>
-                  </div>
+                  <div class="panel-body"><small>{{ post.excerpt | strip_html | strip_newlines | truncate: 180 }}</small></div>
                 </div>
                 </a>
-            </div>
         
           {% endfor %}
+            </div>
         {% endfor %}
 
     </div> 
