@@ -1,8 +1,7 @@
 ---
 category: semantic web
+title: XML Namespace URL (updated)
 ---
-XML Namespace URL (updated)
-===========================
 
 I am attending the [EMBRACE workshop in SOAP
 clients](http://www.cbs.dtu.dk/courses/embrace/2008-02-06/). A very
