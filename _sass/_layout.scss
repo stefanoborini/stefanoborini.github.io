@@ -55,13 +55,14 @@ img {
 
 .panel {
     margin-bottom: 2em;
-   border: 1px solid rgba(0, 0, 0, 0.4);
-   box-shadow: 1px 1px 1px rgba(0,0,0,.4);
+   border: 1px solid #eee;
+   box-shadow: 1px 1px 1px #4582ec;
 
 }
 
-
-
+.panel-title {
+    color: #4582ec;
+}
 
 footer {
     border-top: 1px solid $grey-color-light;
