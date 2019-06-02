@@ -11,7 +11,7 @@ layout: default
                           <div class="panel-body">
                             <h3 class="panel-title pull-left">Slides</h3>
                           </div>
-                    {% assign sorted_posts = slides.categories.slides | sort:"title" %}
+                    {% assign sorted_posts = site.categories.slides | sort:"title" %}
                     {% for post in sorted_posts %}
                         {% if post.link_to %}
                             <a href="{{ post.link_to }}" class="index-anchor"><div class="panel-body">{{ post.title }}</div></a>
