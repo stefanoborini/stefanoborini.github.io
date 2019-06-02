@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<div class="home">
+    <div class="row pack">
+        <div class="col-md-3 col-sm-3 card" >
+            <div class="panel panel-default">
+              <div class="panel-body sidemenu">
+                <ul>
+                {% assign sorted_cats = site.categories | sort %}
+                {% for category in sorted_cats %}
+                    {% capture category_name %}{{ category | first }}{% endcapture %}
+                    {% capture category_slug %}{{ category_name | slugize }}{% endcapture %}
+                    <li><a href="#{{category_slug}}">{{ category_name | capitalize }}</a></li>
+                {% endfor %}
+                </ul>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-sm-9">
+            <div class="row pack">
+                {% assign sorted_cats = site.categories | sort %}
+                {% for category in sorted_cats %}
+                    {% capture category_name %}{{ category | first }}{% endcapture %}
+                    {% capture category_slug %}{{ category_name | slugize }}{% endcapture %}
+                    <div class="col-md-12 col-sm-12 card">
+                        <div class="panel panel-default">
+                          <div class="panel-body">
+                            <h3 class="panel-title pull-left" id="{{ category_slug }}">{{ category_name | capitalize }}</h3>
+                          </div>
+                    {% assign sorted_posts = category[1] | sort:"title" %}
+                    {% for post in sorted_posts %}
+                        {% if post.link_to %}
+                            <a href="{{ post.link_to }}" class="index-anchor"><div class="panel-body">{{ post.title }}</div></a>
+                        {% else %}
+                            <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor"><div class="panel-body">{{ post.title }}</div></a>
+                        {% endif %}
+                    {% endfor %}
+                    </div>
+                    </div>
+                {% endfor %}
+
+            </div> 
+        </div>
+    </div>
+</div>
