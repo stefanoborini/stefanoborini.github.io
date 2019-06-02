@@ -8,7 +8,7 @@ layout: default
             <div class="panel panel-default">
               <div class="panel-body sidemenu">
                 <ul>
-                {% assign sorted_cats = site.categories | sort %}
+                {% assign sorted_cats = site.categories | sort | remove: "books" | remove: "slides" %}
                 {% for category in sorted_cats %}
                     {% capture category_name %}{{ category | first }}{% endcapture %}
                     {% capture category_slug %}{{ category_name | slugize }}{% endcapture %}
@@ -20,7 +20,6 @@ layout: default
         </div>
         <div class="col-md-9 col-sm-9">
             <div class="row pack">
-                {% assign sorted_cats = site.categories | sort %}
                 {% for category in sorted_cats %}
                     {% capture category_name %}{{ category | first }}{% endcapture %}
                     {% capture category_slug %}{{ category_name | slugize }}{% endcapture %}
