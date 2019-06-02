@@ -11,8 +11,10 @@ layout: default
                 {% assign sorted_cats = site.categories | sort %}
                 {% for category in sorted_cats %}
                     {% capture category_name %}{{ category | first }}{% endcapture %}
-                    {% capture category_slug %}{{ category_name | slugize }}{% endcapture %}
-                    <li><a href="#{{category_slug}}">{{ category_name | capitalize }}</a></li>
+                    {% if category_name != 'slides' and category_name != 'books' %}
+                        {% capture category_slug %}{{ category_name | slugize }}{% endcapture %}
+                        <li><a href="#{{category_slug}}">{{ category_name | capitalize }}</a></li>
+                    {% endif %}
                 {% endfor %}
                 </ul>
               </div>
