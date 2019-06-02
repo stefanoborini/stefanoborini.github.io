@@ -15,17 +15,17 @@ a value not defined in the enumeration group, it will insert instead a
 special value \'\' (empty string) which is always present in any
 enumeration, and associated with the index 0. You just obtain a warning.
 
-``` {.sql}
+```sql
 mysql> insert into test (my_enum) values ("FOO");
 Query OK, 1 row affected (0.00 sec)
 ```
 
-``` {.sql}
+```sql
 mysql> insert into test (my_enum) values ("HELLO");
 Query OK, 1 row affected, 1 warning (0.00 sec)
 ```
 
-``` {.sql}
+```sql
 mysql> select * from test;
 +---------+
 | my_enum |

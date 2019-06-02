@@ -10,7 +10,7 @@ could not understand what was happening, and it took me a while to
 figure it out but here is the solution, at least to my problem. Add this
 to your .ssh/config
 
-``` {.text}
+```
 Host *
   IPQoS 0x00
 ```

@@ -24,7 +24,7 @@ or the registers.
 The [comment in the kernel confirm
 this](http://lxr.free-electrons.com/source/kernel/reboot.c?v=3.13)
 
-``` {.c}
+```c
 192 * Reboot system call: for obvious reasons only root may call it,
 193 * and even root needs to set up some magic numbers in the registers
 194 * so that some mistake won't make this reboot the whole machine.
@@ -38,7 +38,7 @@ Another interesting trivia is that the magic2 numbers have a special
 meaning. In hex, they are the [birthdates of Torvalds and his
 daughters](http://www.nndb.com/people/444/000022378/).
 
-``` {.c}
+```c
 #define LINUX_REBOOT_MAGIC1 0xfee1dead
 #define LINUX_REBOOT_MAGIC2 672274793   // 0x28121969
 #define LINUX_REBOOT_MAGIC2A 85072278   // 0x05121996
@@ -48,7 +48,7 @@ daughters](http://www.nndb.com/people/444/000022378/).
 
 Any of these values will be accepted to initiate a reboot
 
-``` {.c}
+```c
 210 /* For safety, we require "magic" arguments. */
 211 if (magic1 != LINUX_REBOOT_MAGIC1 ||
 212         (magic2 != LINUX_REBOOT_MAGIC2 &

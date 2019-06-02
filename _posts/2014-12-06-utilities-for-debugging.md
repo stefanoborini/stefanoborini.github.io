@@ -20,7 +20,7 @@ Linux
 This nifty utility converts C++ mangled symbols into the unmangled form.
 A simple example is the following
 
-``` {.console}
+``` 
 $ c++filt _ZNK3MPI4File19Get_position_sharedEv
 MPI::File::Get_position_shared() const
 ```
@@ -34,7 +34,7 @@ with `c++filt` will make everything much clearer.
 Another nifty utility in the Linux arsenal, this easy program reports
 the VM layout of a running process.
 
-``` {.console}
+``` 
 $ pmap  21102
 21102:   cat
 0000000000400000     44K r-x--  /bin/cat
@@ -68,7 +68,7 @@ running, \"info proc mappings\" can achieve the same.
 tree diagram of all dependencies. It is available on Ubuntu in the
 package pax-utils.
 
-``` {.console}
+``` 
 $ lddtree /bin/ls
 ls => /bin/ls (interpreter => /lib64/ld-linux-x86-64.so.2)
     libselinux.so.1 => /lib/i386-linux-gnu/libselinux.so.1

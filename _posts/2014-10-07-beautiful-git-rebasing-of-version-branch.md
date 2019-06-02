@@ -10,7 +10,7 @@ and clean, while being able to work and push feature branches.
 Let\'s start with the workflow and the problem that generates. You have
 a master branch that is pushed to a remote, containing the following
 
-``` {.text}
+``` 
 * f2bc01d 2014-10-07 17:57:52 +0200 Stefano Borini (HEAD, origin/master, origin/HEAD, master) - added 5 to foo
 * 2ecacd7 2014-10-07 17:57:52 +0200 Stefano Borini - added 4 to foo
 * d0f53d8 2014-10-07 17:57:52 +0200 Stefano Borini - added 3 to foo
@@ -23,7 +23,7 @@ a master branch that is pushed to a remote, containing the following
 You want to work on a feature, so you create a feature branch from the
 current master
 
-``` {.console}
+``` 
 sbo@NAS:~/tmp/git-experiment-1$ git checkout -b feature
 Switched to a new branch 'feature'
 sbo@NAS:~/tmp/git-experiment-1$ git push --set-upstream origin feature
@@ -37,7 +37,7 @@ you keep pushing your feature changes to your remote, because you don\'t
 want to risk losing all your work if your hard drive crashes. The
 situation ends up like this
 
-``` {.text}
+``` 
 * 453bada 2014-10-07 18:06:36 +0200 Stefano Borini (HEAD, origin/master, origin/HEAD, master) - added 30 to foo
 * 1546da7 2014-10-07 18:06:36 +0200 Stefano Borini - added 29 to foo
 * cdfa47d 2014-10-07 18:06:36 +0200 Stefano Borini - added 28 to foo
@@ -81,14 +81,14 @@ What you would like to do is to \"cherry pick\" all the commits from
 feature on top of your current master, but there\'s a more elegant way
 of doing it. First of all, checkout your feature branch
 
-``` {.console}
+``` 
 sbo@NAS:~/tmp/git-experiment-1$ git checkout feature
 Switched to branch 'feature'
 ```
 
 Then, create and checkout a local branch from the feature branch
 
-``` {.console}
+``` 
 sbo@NAS:~/tmp/git-experiment-1$ git checkout -b feature_rebaser
 Switched to a new branch 'feature_rebaser'
 ```
@@ -96,7 +96,7 @@ Switched to a new branch 'feature_rebaser'
 Now, rebase this branch against the current master. This migrates all
 the patches from feature\_rebaser to master, but only locally.
 
-``` {.console}
+``` 
 sbo@NAS:~/tmp/git-experiment-1$ git rebase master
 First, rewinding head to replay your work on top of it...
 Applying: added 1 to bar
@@ -110,7 +110,7 @@ And finally, you can merge onto master. You can use \--no-ff to keep the
 patches \"visually separated\" instead of in continuity with the current
 master timeline.
 
-``` {.console}
+``` 
 sbo@NAS:~/tmp/git-experiment-1$ git checkout master
 Switched to branch 'master'
 Your branch is up-to-date with 'origin/master'.
@@ -119,7 +119,7 @@ sbo@NAS:~/tmp/git-experiment-1$ git merge --no-ff feature_rebaser
 
 The resulting tree is the following
 
-``` {.text}
+``` 
 *   c15286c 2014-10-07 18:22:53 +0200 Stefano Borini (HEAD, master) - Merge branch 'feature_rebaser'
 |\  
 | * 166bbe0 2014-10-07 18:19:45 +0200 Stefano Borini (feature_rebaser) - added 5 to bar
@@ -158,7 +158,7 @@ Unfortunately no. I created the same situation with a new branch
 \"feature2\", pushed it to remote, and rebased feature2. Checking out
 master and then back to feature2 I get
 
-``` {.console}
+``` 
 sbo@NAS:~/tmp/git-experiment-1$ git checkout feature2
 Switched to branch 'feature2'
 Your branch and 'origin/feature2' have diverged,
@@ -170,14 +170,14 @@ oops\... I changed history on my local machine, and this differs from
 the situation that is on the remote server. If you pull now, you will
 apply the same patches twice
 
-``` {.console}
+``` 
 sbo@NAS:~/tmp/git-experiment-1$ git pull
 Merge made by the 'recursive' strategy.
 ```
 
 with the following tree
 
-``` {.text}
+``` 
 *   a037791 2014-10-07 18:37:03 +0200 Stefano Borini (HEAD, origin/feature2, feature2) - Merge branch 'feature2' of github.com:stefanoborini/git-experiment-1 into fea
 |\  
 | * 6c9e82a 2014-10-07 18:30:45 +0200 Stefano Borini - added 10 to bar

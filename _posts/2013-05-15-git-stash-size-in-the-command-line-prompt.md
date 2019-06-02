@@ -14,7 +14,7 @@ I concocted this function and bash prompt to present (in proper color no
 less) the current amount of stashed items. This way I always know if I
 have stashes around
 
-``` {.bash}
+```
 function git_stash_size {
  lines=$(git stash list -n 100 2> /dev/null) || return
  if [ "${#lines}" -gt 0 ]
