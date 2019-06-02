@@ -1,5 +1,5 @@
 ---
 category: slides
 title: Fortran programming notes
-link_to: slides/fortran/fortran.svg
+link_to: http://stefanoborini.com/slides/fortran/fortran.svg
 ---
