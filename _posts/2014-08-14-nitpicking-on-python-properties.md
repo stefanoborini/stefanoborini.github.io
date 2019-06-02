@@ -45,8 +45,7 @@ better syntax and without violating encapsulation.
 That said, I noticed a few minor things with properties that are good to
 point out.
 
-1. Refactoring
---------------
+## Refactoring
 
 Imagine that you find \"mode\" too poor as a name. and you decide to use
 editor\_mode instead. If you had an accessor method, you would refactor
@@ -58,16 +57,14 @@ to state.editor\_mode. However, if other parts of your code still use
 state.mode = something, you will not get an exception. In fact, it\'s
 trivially correct. This could produce hard-to-find bugs.
 
-2. No callbacks
----------------
+## No callbacks
 
 While you can store or pass around state.setEditorMode as a callback,
 you can\'t achieve the same effect with a property, not trivially at
 least. No, you can\'t use a lambda, because assignment is forbidden in a
 lambda.
 
-3. Mocking
-----------
+## Mocking
 
 You can certainly [mock a
 property](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.PropertyMock),
@@ -75,8 +72,7 @@ but requires a bit more care. Nothing impossible, but if you learn the
 mock module, you have to go on that extra bit if you want to cover
 properties.
 
-4. Soft-returning a set operation details
------------------------------------------
+## Soft-returning a set operation details
 
 Sometimes you might want your setter to return state information about
 the set operation. One trivial example may be True or False, depending
@@ -85,8 +81,7 @@ exception for this specific case, but your mileage may vary depending on
 the specifics of your problem and what \"looks better\" for your design.
 A property does not give you flexibility to return a value during set.
 
-5. Only one value at a time
----------------------------
+## Only one value at a time
 
 If your setters are connected to some notification system, you might
 want to set multiple values at once to trigger a single notification.
@@ -125,8 +120,7 @@ f=Foo()
 f.values = (1,2)
 ```
 
-6. Magic!
----------
+## Magic!
 
 There\'s some kind of magic behind properties that you can\'t perceive
 to be there when you read client code. For example, code like this

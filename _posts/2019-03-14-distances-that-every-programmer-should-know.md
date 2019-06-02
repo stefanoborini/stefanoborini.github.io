@@ -9,6 +9,7 @@ about timing of typical computer operations. I realized it would be
 interesting to see how much light travels during these times. Without
 further ado, here is the table:
 
+```
 Operation                              Time              Distance
 ---------                              ----              --------
 3.3 GHz CPU Cycle                      0.3 ns            9 cm
@@ -24,6 +25,7 @@ Round trip within same datacenter      500,000 ns        150 km
 Disk seek                              10,000,000 ns     3000 km
 Read 1 MB sequentially from disk       30,000,000 ns     9000 km
 Send packet CA-Netherlands-CA          150,000,000 ns    45000 km
+```
 
 This table shows interesting things for latency. It gives an idea of how 
 incredibly fast are processors today in executing one instruction: a `Laser

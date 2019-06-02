@@ -61,7 +61,7 @@ additional unmovable barriers throughout the VM and reducing real estate
 for contiguous blocks. See for example what happens with 10 threads on
 Linux
 
-``` {.text}
+```
 (gdb) thread apply all print $esp
 
 Thread 10 (Thread 10606): $5 = (void *) 0x50d7184
