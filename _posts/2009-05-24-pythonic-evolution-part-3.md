@@ -3,15 +3,8 @@ category: python
 title: Pythonic Evolution - Part 3
 ---
 
-You are welcome to take a look at [Part
-1](http://forthescience.org/blog/2009/05/15/pythonic-evolution-part-1/)
-and
-[Part2](http://forthescience.org/blog/2009/05/23/pythonic-evolution-part-2/)
-of this series.
-
 In this third part of the \"silicon-based\" bacterial evolution, we move
-to the real action. I developed a program (you can download it from
-[here](http://forthescience.org/blog/wp-content/uploads/2009/08/bacteria.py)),
+to the real action. I developed a program 
 which perform evolutive selection based on mathematical criteria. The
 program has a set of rules to perform selection, but please note that
 most (if not all) of these rules are totally arbitrary. In this sense,

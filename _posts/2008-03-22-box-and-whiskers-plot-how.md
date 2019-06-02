@@ -7,8 +7,7 @@ I am trying to produce box and whiskers plots. Actually, not the plot in
 itself, but the values for the boxes, the whiskers and so on. An example
 of box and whiskers is the following
 
-![image](assets/images/2008/03/box_and_whiskers.jpg){.align-center
-width="400px"}
+![image]({{ site.url }}/assets/images/2008/03/box_and_whiskers.jpg)
 
 Browsing the net, I found that many sites just explain that a box plot
 is made according to the following recipe:

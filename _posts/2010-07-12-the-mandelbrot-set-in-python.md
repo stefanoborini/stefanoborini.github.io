@@ -38,8 +38,7 @@ im.save("mandelbrot.png", "PNG")
 If you execute the python code above, the result is this beautiful and
 mysterious picture:
 
-![image](http://forthescience.org/blog/wp-content/uploads/2010/05/mandelbrot.png){.align-center
-width="400px"}
+![image]({{ site.url}}/assets/images/2010/05/mandelbrot.png)
 
 What you see is a [Fractal](http://en.wikipedia.org/wiki/Fractal), a
 highly fractured geometric picture, and more specifically one of the
@@ -86,21 +85,19 @@ a bit. Here are the results. This image shows how the Mandelbrot Set
 changes when *z*~\*0\*~ goes from -3 to 3 (step 0.1). The set \"blows
 away\" towards the left, when going either towards -3 or +3.
 
-![mandelbrot-change-x](http://forthescience.org/blog/wp-content/uploads/2010/05/mandelbrot-x.gif){.align-center
-width="400px"}
+![mandelbrot-change-x]({{ site.url }}/assets/images/2010/05/mandelbrot-x.gif)
+
 
 If you change *z*~\*0\*~ along the imaginary axis, going from -3.0 i to
 3.0 i, what you obtain is instead:
 
-![mandelbrot-change-imaginary](http://forthescience.org/blog/wp-content/uploads/2010/05/mandelbrot-y.gif){.align-center
-width="400px"}
+![mandelbrot-change-imaginary]({{ site.url }}/assets/images/2010/05/mandelbrot-y.gif)
 
 It blows away towards the right. So I said, what happens if I increase
 both the real part and the imaginary part together? will they \"balance
 out\" ? Not really. It burns away
 
-![mandelbrot-xy](http://forthescience.org/blog/wp-content/uploads/2010/05/mandelbrot-xy.gif){.align-center
-width="400px"}
+![mandelbrot-xy]({{ site.url }}/assets/images/2010/05/mandelbrot-xy.gif)
 
 I have absolutely no idea of what all this means from the strict
 mathematical point of view, except the fact that I am exploring the

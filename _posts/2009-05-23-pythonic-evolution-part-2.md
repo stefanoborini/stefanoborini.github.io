@@ -3,9 +3,7 @@ category: python
 title: Pythonic Evolution - Part 2
 ---
 
-This is the second part of a post relative to evolution. You can find
-the first part of the post
-[here](http://forthescience.org/blog/2009/05/15/pythonic-evolution-part-1/).
+This is the second part of a post relative to evolution.
 
 The last argument in the first post was relative to the requirements for
 evolution to happen. To recall, you need
