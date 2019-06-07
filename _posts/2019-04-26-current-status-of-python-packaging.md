@@ -16,7 +16,21 @@ is generally used for a brand of Linux.
 This is a warning that you should keep in mind, because python packaging is not really about python *packages*. 
 It's about python *distributions* (python distributioning? whatever) but I'll keep calling it packaging.
 
-**Explain me the problem please.**
+**I don't have time to read. Can you give me the short version? What should I do as of today in 2019 to manage python packages?**
+
+I assume you are a programmer and wants to start developing a python distribution:
+
+- Create your development environment with poetry, specifying the direct dependencies of your project with a strict version.
+  This way you ensure your development (and testing) environment is always reproducible.
+- Create a pyproject.toml and use poetry as a backend to create your source and binary distributions.
+- if you really want not to use poetry and want to stay the old way:
+    - Use setuptools. Create a setup.py where you specify all your abstract dependencies in install_requires.
+    - Create a requirements.txt where you specify your concrete (i.e. specifically versioned), direct dependencies.
+    - create a virtual environment with python -m virtualenv and then install the dependencies with pip -rrequirements.txt in that environment. Use this environment to develop.
+    - if you need dependencies for testing, create a dev-requirements.txt and install those too.
+
+
+**I have time. Explain me the problem please.**
 
 The problems. Plural.
 
@@ -179,9 +193,15 @@ Because pip has no guarantee that when it runs setup.py it can actually
 run. It's a python script and may have some dependencies in itself that you
 have no way of specifying or retrieving. It's a chicken and egg problem.
 
-**So setuptools and setup.py is the way to go when I need to build my stuff for release??**
+**but there's a setup_requires option in setuptools.setup()**
 
-It was. Not anymore, or maybe yes. It depends. See, the current situation is
+That option is deeply flawed and you don't solve the problem in any case. It's
+still a chicken and egg problem.  PEP 518 talks in detail about it and the
+final conclusion is that it's just broken. So don't use it.
+
+**So setuptools and setup.py is or isn't the way to go when I need to build my stuff for release??**
+
+It used to be. Not anymore, or maybe yes. It depends. See, the current situation is
 that nobody wants setuptools to be the only one able to decide how packages are
 made. The reason is deeper than that, and there are technicalities involved that
 go too deep, but if you are curious take a look at PEP 518. The most egregious
@@ -189,7 +209,8 @@ is the one I gave above: if pip wants to build a dependency it downloaded, how
 does it know what to download to even start executing the setup script? Yes, it
 can assume it needs setuptools, but it's just an assumption. And you don't
 have setuptools in your environment, so how does pip know that it's needed to
-build this package or that package?
+build this package or that package? And more in general, why would it have to use 
+setuptools at all, instead of something else?
 
 In any case, they decided that anybody that want to write their own tool to
 package should be able to do so, and therefore you need just another meta step
@@ -201,7 +222,7 @@ to build your stuff.
 Exactly. More specifically, a subsection in it that defines the "backend" you
 want to use. If you want to use a different build backend, you can say so. If
 you don't, then the assumption is that you are using setuptools and therefore
-whatever tool you need will look for setup.py, execute it, and hopefully build
+pip will fallback to look for setup.py, execute it, and hopefully build
 something. 
 
 setup.py is just going eventually to disappear, or not. setup.py is a way
@@ -212,16 +233,27 @@ pyproject.toml by adding some sections in it.
 Also, in pyproject.toml you can finally specify the dependencies needed to even
 perform the build, removing the chicken egg problem given above.
 
-**Couldn't they have included setuptools in the standard library instead?**
+**Why toml? I've never heard of this format. What's wrong with JSON/INI/YAML?**
+
+JSON does not allow (from standard) to write comments. Yes. Crockford actually
+wanted that. One could bend the rules, but then it's not JSON. Plus, JSON is
+actually not very pleasant to use by a human.
+
+INI, believe it or not, is not standardi, plus it's rather limited in features.
+
+YAML is a can of worms and a potential security threat.
+
+**Fair enough on toml. But, couldn't they have included setuptools in the standard library instead?**
 
 Maybe, but the problem is that the standard library has veeery slooow release
 cycles. The slowness of improvements over distutils is what triggered the
-implementation of setuptools in the first place.
+implementation of setuptools in the first place. Besides, there's no guarantee
+that setuptools can satisfy all needs. Some packages may have specialized needs.
 
 **Ok, so if I understand correctly: to create my working environment I need poetry. To create the built package, I need setup.py and setuptools. or pyproject.toml?**
 
 If you want to use setuptools, you need a setup.py, but then you have the problem
-that people will need setuptools installed to install your package.
+that people will need setuptools installed to build your package.
 
 **Which other tools can I use instead of setuptools?**
 
@@ -277,12 +309,6 @@ particular keywords in that metadata that have specific meanings.
 **Ok, but how do I install something I have the sources of? python setup.py?**
 
 No. Use `pip install .` because it guarantees you can uninstall it afterwards and it's overall better.
-
-**Can you give me a shorter version? What should I do as of today in 2019?**
-
-- Create your development environment with poetry, specifying the direct dependencies of your project with a strict version.
-  This way you ensure your development (and testing) environment is always reproducible.
-- Create a pyproject.toml and use poetry as a backend to create your source and binary distributions.
-
-Use setuptools only if it provides features that poetry does not provide.
+What pip does is try to check for pyproject.toml and run the build backend. If it does not find 
+a pyproject.toml, it just reverts to the old ways and tries to build running setup.py.
 
