@@ -20,8 +20,11 @@ It's about python *distributions* (python distributioning? whatever) but I'll ke
 
 I assume you are a programmer and wants to start developing a python distribution:
 
-- Create your development environment with poetry, specifying the direct dependencies of your project with a strict version.
-  This way you ensure your development (and testing) environment is always reproducible.
+- Create your development environment with poetry, specifying the direct dependencies of your project.
+  - If you are developing an application for people to *run*, specify as strict versions as possible.
+    This way you ensure your development (and testing) environment is always reproducible.
+  - If you are developing a package for others to import, specify the minimum version that you know your package can work with.
+    This way you ensure you don’t create needless version conflicts with other packages.
 - Create a pyproject.toml and use poetry as a backend to create your source and binary distributions.
 - if you really want not to use poetry and want to stay the old way:
     - Use setuptools. Create a setup.py where you specify all your abstract dependencies in install_requires.
