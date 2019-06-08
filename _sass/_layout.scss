@@ -43,7 +43,7 @@ img {
     font-size: 1.85em;
     padding: 10px;
     margin-left: 15px !important;
-    @media screen and (max-width: $on-palm) {
+    @media screen and (max-width: $on-palm) and (min-width: 401px) {
         font-size: 1.5em;
     }
     @media screen and (max-width: 400px) {
