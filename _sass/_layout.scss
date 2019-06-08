@@ -46,6 +46,9 @@ img {
     @media screen and (max-width: $on-palm) {
         font-size: 1.5em;
     }
+    @media screen and (max-width: 400px) {
+        font-size: 1.2em;
+    }
 }
 .post-meta {
     color: $grey-color;
