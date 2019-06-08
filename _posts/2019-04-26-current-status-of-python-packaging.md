@@ -106,7 +106,7 @@ Sure. You want to write some code. So you generally follow these steps:
 **Which tools do I have to use to do this?**
 
 This is tricky, because there are many and they are changing. One option is
-that you create the isolated python "virtual environment" with *virtualenv*,
+that you create the isolated python "virtual environment" with *venv*,
 which is part of python. Then, you use *pip* (also part of python) to install
 the packages that you depend on. Typing them one by one is boring
 so people put the concrete dependencies (with hardcoded versions) in a file and
@@ -156,7 +156,7 @@ can make smarter decisions because of it.
 
 **For example?**
 
-pipenv is one. It puts together virtualenv, pip and some magic so that you give
+pipenv is one. It puts together venv, pip and some magic so that you give
 a list of direct dependencies and it tries its best to resolve the mess above
 and give you an environment that works. Poetry is another. People talk about
 the two and there's some feud going on because of political and human reason.
