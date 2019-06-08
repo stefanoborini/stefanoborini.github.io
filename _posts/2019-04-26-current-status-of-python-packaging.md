@@ -22,16 +22,17 @@ I assume you are a programmer and wants to start developing a python distributio
 
 - Create your development environment with [Poetry](https://poetry.eustace.io/), specifying the direct dependencies of your project with a strict version.
   This way you ensure your development (and testing) environment is always reproducible.
-- If you are developing an application for people to *run*, specify as strict versions as possible.
-    This way you ensure your development (and testing) environment is always reproducible.
-  - If you are developing a package for others to import, specify the minimum version that you know your package can work with.
-    This way you ensure you don’t create needless version conflicts with other packages.
 - Create a pyproject.toml and use poetry as a backend to create your source and binary distributions.
-- if you really want not to use poetry and want to stay the old way:
-    - Use setuptools. Create a setup.py where you specify all your abstract dependencies in install_requires.
-    - Create a requirements.txt where you specify your concrete (i.e. specifically versioned), direct dependencies.
-    - create a virtual environment with python -m virtualenv and then install the dependencies with pip -rrequirements.txt in that environment. Use this environment to develop.
-    - if you need dependencies for testing, create a dev-requirements.txt and install those too.
+- Now it's time to specify your package dependencies. Specify the abstract dependencies with a minimum version that you know your package can work with.
+  This way you ensure you don’t create needless version conflicts with other packages.
+
+If you really want to work the old way with setuptools:
+
+- Create a setup.py where you specify all your abstract dependencies with the minimum version your package is working with in install_requires.
+- Create a requirements.txt where you specify your strict, concrete (i.e. specifically versioned), direct dependencies. You will use this file to generate your actual working environment.
+- create a virtual environment with ``python -m venv``, activate the environment and then install the dependencies with ``pip -rrequirements.txt`` in that environment. Use this environment to develop.
+- if you need dependencies for testing (very likely), create a dev-requirements.txt and install those too.
+- If you really want to lock your total environment (recommended) do ``pip freeze >requirements-freeze.txt`` and use this to create the environmment from now on.
 
 
 **I have time. Explain me the problem please.**
