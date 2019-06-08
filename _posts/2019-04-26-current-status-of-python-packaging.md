@@ -18,22 +18,21 @@ It's about python *distributions* (python distributioning? whatever) but I'll ke
 
 **I don't have time to read. Can you give me the short version? What should I do as of today in 2019 to manage python packages?**
 
-I assume you are a programmer and wants to start developing a python distribution:
+I assume you are a programmer and wants to start developing a python package:
 
 - Create your development environment with [Poetry](https://poetry.eustace.io/), specifying the direct dependencies of your project with a strict version.
   This way you ensure your development (and testing) environment is always reproducible.
 - Create a pyproject.toml and use poetry as a backend to create your source and binary distributions.
-- Now it's time to specify your package dependencies. Specify the abstract dependencies with a minimum version that you know your package can work with.
+- Now it's time to specify your abstract package dependencies. Specify them with a minimum version that you know your package can work with.
   This way you ensure you don’t create needless version conflicts with other packages.
 
 If you really want to work the old way with setuptools:
 
-- Create a setup.py where you specify all your abstract dependencies with the minimum version your package is working with in install_requires.
-- Create a requirements.txt where you specify your strict, concrete (i.e. specifically versioned), direct dependencies. You will use this file to generate your actual working environment.
-- create a virtual environment with ``python -m venv``, activate the environment and then install the dependencies with ``pip -rrequirements.txt`` in that environment. Use this environment to develop.
-- if you need dependencies for testing (very likely), create a dev-requirements.txt and install those too.
+- Create a setup.py where you specify all your abstract dependencies with the minimum version your package is working with in ``install_requires``.
+- Create a ``requirements.txt`` where you specify your strict, concrete (i.e. specifically versioned), direct dependencies. You will use this file to generate your actual working environment.
+- Create a virtual environment with ``python -m venv``, activate the environment and then install the dependencies with ``pip install -rrequirements.txt`` in that environment. Use this environment to develop.
+- if you need dependencies for testing (very likely), create a ``dev-requirements.txt`` and install those too.
 - If you really want to lock your total environment (recommended) do ``pip freeze >requirements-freeze.txt`` and use this to create the environmment from now on.
-
 
 **I have time. Explain me the problem please.**
 
@@ -58,10 +57,10 @@ time, may or may not be required, may run quite deep and have to consider that
 code may be non portable between operating systems, or even inside the same
 operating system. It's complicated.
 
-And it gets worse, because dependencies have their own set of dependencies.
-What if your package depends on A and B directly, and they both depend on C. 
-Which version of C should you install?  Is it even possible to do so, if, 
-say, A wants C version 2 and B wants C version 1?
+And it gets worse, because your direct dependencies have in turn their own set
+of dependencies.  What if your package depends on A and B directly, and they
+both depend on C?  Which version of C should you install?  Is it even possible
+to do so, if, say, A wants C strictly version 2 and B wants C strictly version 1?
 
 To organise this mess somehow, the devised approach is to package code so that it can 
 be reused, installed, versioned and given some metainformation that describes, 
@@ -71,8 +70,8 @@ work on macos", or "this needs that package of this version or above to work".
 **Ok, now I know the problem. What's the solution?**
 
 A first step is to define a shippable entity that aggregates a given release of
-a given software. This shippable entity is what we call package. You can ship
-it in two forms:
+a given software. This shippable entity is what we call here a **package**
+(distribution in python-speak). You can ship it in two forms:
 
 - **source**: you take the source code, put it in a zip or tar.gz, and who gets it has to compile it by himself.
 - **binary**: you compile the code, publish the compiled stuff, and who gets it uses it directly with no additional fuss.
@@ -95,7 +94,7 @@ Of course with the need of packaging come the need for tools to do it properly s
 
 Sure. You want to write some code. So you generally follow these steps:
 
-1. You create an isolated python so that you can work on multiple projects. 
+1. You create an isolated python environment that is independent of your system python. This way you can work on multiple projects. 
    If you don't, the stuff for project A might mess up the stuff from project B.
 2. You want to specify which dependencies you want, but keep into account that there are two ways of doing so: 
    **abstract** where you just say what you want in general terms (e.g. numpy) and **concrete**, where you say
@@ -111,11 +110,11 @@ which is part of python. Then, you use *pip* (also part of python) to install
 the packages that you depend on. Typing them one by one is boring
 so people put the concrete dependencies (with hardcoded versions) in a file and
 then tell pip: "go read that file and install what's in there". And pip
-obliges. This file is the famous requirements.txt you might have seen around. 
+obliges. This file is the famous requirements.txt you might have seen around.
 
 **Ok, what is pip exactly?**
 
-A program that downloads packages and installs them. If they have dependencies, it installs the dependencies too.
+A program that downloads packages and installs them. If they in turn have dependencies, it installs these sub-dependencies too.
 
 **How?**
 
@@ -124,7 +123,7 @@ If it's binary, it just installs it. If it's source, it compiles it, then instal
 But it does a little more than that, because this package may have additional dependencies itself, 
 so it gets those too, and installs them.
 
-**Why do you say that this approach "is an option"?**
+**Why do you say that this approach with requirements.txt is an "option"?**
 
 Because it gets boring and complex quite quickly. You have to manage by hand
 your direct dependencies versions for different platforms. For example, on
@@ -138,8 +137,8 @@ CI machine, needs, but for someone that wants to use your software, they are not
 needed, so they are not dependencies. So now you have dev-requirement.txt as well.
 
 Then you have the problem that requirements.txt may only specify direct dependencies,
-but in practice you want to specify _everything_ is needed to create your environment
-reliably, so in general you specify both dependencies and their subdependencies in requirements.txt. 
+but in practice you want to specify **everything** is needed to create your environment
+reliably, so in general you specify both dependencies and their sub-dependencies in requirements.txt. 
 But now you can't distinguish them anymore in the file, and if you want to bump up one of your 
 dependencies, maybe because it has a bug, now you have to find out which one are its own subdependencies
 in that file, and ... you get the point.
@@ -194,9 +193,10 @@ is still the same.
 
 **Why hoping for the best?**
 
-Because pip has no guarantee that when it runs setup.py it can actually
-run. It's a python script and may have some dependencies in itself that you
-have no way of specifying or retrieving. It's a chicken and egg problem.
+Because pip has no guarantee that when it runs setup.py to build the package it
+can actually run. It's a python script and may have some dependencies in itself
+that you have no way of specifying or retrieving. It's a chicken and egg
+problem.
 
 **but there's a setup_requires option in setuptools.setup()**
 
@@ -213,9 +213,9 @@ go too deep, but if you are curious take a look at PEP 518. The most egregious
 is the one I gave above: if pip wants to build a dependency it downloaded, how
 does it know what to download to even start executing the setup script? Yes, it
 can assume it needs setuptools, but it's just an assumption. And you don't
-have setuptools in your environment, so how does pip know that it's needed to
-build this package or that package? And more in general, why would it have to use 
-setuptools at all, instead of something else?
+necessarily have setuptools in your environment, so how does pip know that it's
+needed to build this package or that package? And more in general, why would it
+have to use setuptools at all, instead of something else?
 
 In any case, they decided that anybody that want to write their own tool to
 package should be able to do so, and therefore you need just another meta step
@@ -225,10 +225,10 @@ to build your stuff.
 **pyproject.toml?**
 
 Exactly. More specifically, a subsection in it that defines the "backend" you
-want to use. If you want to use a different build backend, you can say so. If
-you don't, then the assumption is that you are using setuptools and therefore
-pip will fallback to look for setup.py, execute it, and hopefully build
-something. 
+want to use to build a package. If you want to use a different build backend, 
+you can say so. If you don't, then the assumption is that you are using
+setuptools and therefore pip will fallback to look for setup.py, execute it,
+and hopefully build something. 
 
 setup.py is just going eventually to disappear, or not. setup.py is a way
 **setuptools** (and before that, distutils) describes how to create a build.
@@ -287,18 +287,6 @@ can install.
 
 Forget them. They are legacy. Always build wheels for your binary distributions.
 
-**What about .pyz?**
-
-Forget it. Unrelated to packaging, strictly speaking. It could be useful in some circumstances. See PEP-441 for more info.
-
-**What about pyinstaller?**
-
-It is also unrelated to packaging, strictly speaking. PyInstaller is a tool
-that you involve when you want to create an executable.  It addresses this
-need: get a final application on your user's desktop. Packaging is about
-managing the network of dependencies, libraries and tools that you need to
-create that application that you might, or might not, create with pyinstaller.
-
 **What's with Wheels?**
 
 Rememeber when I said that pip needs to know what to download from pypi to
@@ -311,9 +299,29 @@ something has been compiled for, say CPython, it knows the version, the ABI,
 etc. There is a standard layout of this tags in the filename, and there are
 particular keywords in that metadata that have specific meanings.
 
+**What about .pyz?**
+
+Forget it. Unrelated to packaging, strictly speaking. It could be useful in some circumstances. See PEP-441 for more info.
+
+**What about pyinstaller?**
+
+It is also unrelated to packaging, strictly speaking. PyInstaller is a tool
+that you involve when you want to create an executable.  It addresses this
+need: get a final application on your user's desktop. Packaging is about
+managing the network of dependencies, libraries and tools that you need to
+create that application that you might, or might not, create with pyinstaller.
+
 **Ok, but how do I install something I have the sources of? python setup.py?**
 
 No. Use `pip install .` because it guarantees you can uninstall it afterwards and it's overall better.
 What pip does is try to check for pyproject.toml and run the build backend. If it does not find 
 a pyproject.toml, it just reverts to the old ways and tries to build running setup.py.
+
+**I like this post, but I have a question or something in this narrative that is unclear**
+
+Just [open an
+issue](https://github.com/stefanoborini/stefanoborini.github.io/issues). If I
+know the answer, I'll add it immediately. If I don't, I'll do some research and
+reply as soon as possible. My aim is to keep this post as the place where
+people finally _understand_ python packaging.
 
