@@ -3,7 +3,7 @@ category: python
 title: Current State of Python Packaging - 2019
 ---
 
-In this post, I will try to put out the dumpster fire that is python packaging. I spent the best part of my evenings in 
+In this post, I will try to explain the intricate details of python packaging. I spent the best part of my evenings in 
 the past two months to gather as much information as possible about the problem, the current solutions, what is legacy 
 and what is not. 
 
@@ -20,10 +20,10 @@ It's about python *distributions* (python distributioning? whatever) but I'll ke
 
 I assume you are a programmer and wants to start developing a python distribution:
 
-- Create your development environment with poetry, specifying the direct dependencies of your project with a strict version.
+- Create your development environment with [Poetry](https://poetry.eustace.io/), specifying the direct dependencies of your project with a strict version.
   This way you ensure your development (and testing) environment is always reproducible.
-- Create a pyproject.toml and use poetry as a backend to create your source and binary distributions.
-- if you really want not to use poetry and want to stay the old way:
+- Create a pyproject.toml file and use Poetry as a backend to create your source and binary distributions.
+- if you really do not want to use Poetry, and want to stay the old way:
     - Use setuptools. Create a setup.py where you specify all your abstract dependencies in install_requires.
     - Create a requirements.txt where you specify your concrete (i.e. specifically versioned), direct dependencies.
     - create a virtual environment with python -m virtualenv and then install the dependencies with pip -rrequirements.txt in that environment. Use this environment to develop.
@@ -155,17 +155,17 @@ pipenv is one. It puts together virtualenv, pip and some magic so that you give
 a list of direct dependencies and it tries its best to resolve the mess above
 and give you an environment that works. Poetry is another. People talk about
 the two and there's some feud going on because of political and human reason.
-Most people seem to prefer poetry.
+Most people seem to prefer Poetry.
 
 Some companies, such as Continuum and Enthought, have their own version (conda
 and edm) which are generally one step above for some additional platform
 complexities. We don't go into that detail here.
 
-**Which one is better? pipenv or poetry?**
+**Which one is better? pipenv or Poetry?**
 
-I have no clue and take no stance. As I said, people seem to prefer poetry. 
+I have no clue and take no stance. As I said, people seem to prefer Poetry. 
 
-**Ok so the bottom line is to use poetry, that creates an environment so that I can install my dependencies in an environment and then code.**
+**Ok so the bottom line is to use Poetry, that creates an environment so that I can install my dependencies in an environment and then code.**
 
 Well yes. But we haven't even started talking about building yet. That is, once
 you have your code, how do you create something you can release?
@@ -250,20 +250,20 @@ cycles. The slowness of improvements over distutils is what triggered the
 implementation of setuptools in the first place. Besides, there's no guarantee
 that setuptools can satisfy all needs. Some packages may have specialized needs.
 
-**Ok, so if I understand correctly: to create my working environment I need poetry. To create the built package, I need setup.py and setuptools. or pyproject.toml?**
+**Ok, so if I understand correctly: to create my working environment I need Poetry. To create the built package, I need setup.py and setuptools. or pyproject.toml?**
 
 If you want to use setuptools, you need a setup.py, but then you have the problem
 that people will need setuptools installed to build your package.
 
 **Which other tools can I use instead of setuptools?**
 
-you can use flit, or poetry itself.
+you can use flit, or Poetry itself.
 
-**Wasn't poetry something to install dependencies?**
+**Wasn't Poetry something to install dependencies?**
 
 Yes but it also does building. pipenv doesn't do that.
 
-**By the way, if I use setup.py I have to write the dependencies, why? What is their relationship with the ones I installed with pipenv/poetry/requirements.txt?**
+**By the way, if I use setup.py I have to write the dependencies, why? What is their relationship with the ones I installed with pipenv/Poetry/requirements.txt?**
 
 Those are the abstract dependencies that are needed for your package to run,
 and are the dependencies that pip needs when it's time to decide what to
