@@ -23,6 +23,7 @@ paginate_path: /page:num/
 
 #social
 github: http://github.com/stefanoborini
+analytics: UA-137605838-1
 
 # Sass style
 sass:
