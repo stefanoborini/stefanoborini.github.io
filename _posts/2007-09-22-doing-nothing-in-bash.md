@@ -1,5 +1,5 @@
 ---
-category: other
+category: bash
 title: Doing nothing in bash
 ---
 

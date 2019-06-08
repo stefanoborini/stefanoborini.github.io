@@ -1,5 +1,5 @@
 ---
-category: other
+category: project management
 title: Lines of code as a metric of project complexity
 ---
 

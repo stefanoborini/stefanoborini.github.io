@@ -1,5 +1,5 @@
 ---
-category: other
+category: linux
 title: Old CentOS 4 is not a valid release or hasnt been released yet error
 ---
 
