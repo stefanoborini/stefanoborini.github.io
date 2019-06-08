@@ -7,7 +7,7 @@
 
 # Site settings
 title: Fly, Crash, Raise Exception
-description: Random stuff from Stefano Borini
+description: 
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://stefanoborini.com" # the base hostname & protocol for your site
 
