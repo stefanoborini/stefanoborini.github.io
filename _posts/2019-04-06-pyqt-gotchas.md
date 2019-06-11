@@ -171,7 +171,7 @@ In this example, 2 subwidgets are added to the layout of a main widget. Access t
       sys.exit(app.exec_())
 ```
 
-This is not a problem, because PyQt is clever enough to increment the pythonn
+This is not a problem, because PyQt is clever enough to increment the python
 reference count of the objects a and b. In this case, when the a and b objects
 go out of scope, the underlying C++ is not deleted as a cascade effect of the
 python decrement reference count.
