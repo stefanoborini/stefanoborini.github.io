@@ -4,23 +4,7 @@ layout: default
 
 <div class="home">
     <div class="row pack">
-        <div class="col-sm-3 col-xs-12 card" >
-            <div class="panel panel-default">
-              <div class="panel-body sidemenu">
-                <ul>
-                {% assign sorted_cats = site.categories | sort %}
-                {% for category in sorted_cats %}
-                    {% capture category_name %}{{ category | first }}{% endcapture %}
-                    {% if category_name != 'slides' and category_name != 'books' %}
-                        {% capture category_slug %}{{ category_name | slugize }}{% endcapture %}
-                        <li><a href="#{{category_slug}}">{{ category_name | capitalize }}</a></li>
-                    {% endif %}
-                {% endfor %}
-                </ul>
-              </div>
-            </div>
-        </div>
-        <div class="col-md-9 col-sm-9">
+        <div class="col-md-12 col-sm-12">
             <div class="row pack">
                 {% for category in sorted_cats %}
                     {% capture category_name %}{{ category | first }}{% endcapture %}
