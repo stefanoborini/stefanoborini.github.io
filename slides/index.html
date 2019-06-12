@@ -14,9 +14,9 @@ layout: default
                     {% assign sorted_posts = site.categories.slides | sort:"title" %}
                     {% for post in sorted_posts %}
                         {% if post.link_to %}
-                            <a href="{{ post.link_to }}" class="index-anchor"><div class="panel-body">{{post.date | date: "%Y-%m-%d"}} - {{ post.title }} <span class="badge badge-secondary">{{ post.category }}</span></div></a>
+                            <a href="{{ post.link_to }}" class="index-anchor"><div class="panel-body">{{post.date | date: "%Y-%m-%d"}} - {{ post.title }}</div></a>
                         {% else %}
-                            <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor"><div class="panel-body">{{post.date | date: "%Y-%m-%d"}} - {{ post.title }} <span class="badge badge-secondary">{{ post.category }}</span></div></a>
+                            <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor"><div class="panel-body">{{post.date | date: "%Y-%m-%d"}} - {{ post.title }}</div></a>
                         {% endif %}
                     {% endfor %}
                     </div>
