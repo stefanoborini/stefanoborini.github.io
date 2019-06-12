@@ -13,6 +13,7 @@ layout: default
                     {% else %}
                         <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor"><div class="panel-body">{{ post.title }}</div></a>
                     {% endif %}
+                    <span class="badge badge-secondary pull-right">{{ post.category }}</span></h1>
                 {% endfor %}
                 </div>
             </div>
