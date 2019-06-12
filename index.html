@@ -9,11 +9,10 @@ layout: default
                 <div class="panel-body"><h3 class="panel-title pull-left">Blog Posts</h3></div>
                 {% for post in site.posts %}
                     {% if post.link_to %}
-                        <a href="{{ post.link_to }}" class="index-anchor"><div class="panel-body">{{ post.title }}</div></a>
+                        <a href="{{ post.link_to }}" class="index-anchor"><div class="panel-body">{{ post.title }} <span class="badge badge-secondary">{{ post.category }}</span></div></a>
                     {% else %}
-                        <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor"><div class="panel-body">{{ post.title }}</div></a>
+                        <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor"><div class="panel-body">{{ post.title }} <span class="badge badge-secondary">{{ post.category }}</span></div></a>
                     {% endif %}
-                    <span class="badge badge-secondary">{{ post.category }}</span>
                 {% endfor %}
                 </div>
             </div>
