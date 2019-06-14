@@ -41,8 +41,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h1>Software Department Organisation</h1>
-					<h2>A model for organising a software company</h2>
+					<h1>A model for organising a software company</h1>
 					<br />
 					<h4>Stefano Borini</h4>
 				</section>
@@ -85,7 +84,7 @@
                     <small>planning and prioritisation, daily scrum, end of sprint demo, retrospective, end of sprint slack.</small></p>
                     <p>Standup at 9:30 <em>with</em> Scrum Master<br />
                     <small>Traditional Scrum: self-organising dev teams, with no need for SM at standup.<br />Personally against it. SM must be “in the trenches” and part of the team, but must not code</small></p>
-                    <p>Digital Information emitter (Scrum board)<br />
+                    <p>Information emitter (Scrum board): Post-it or Digital<br />
                     <small>Personal belief: tactile feedback of post-it notes has a positive effect on team focus.<br />Sadly, requires sync effort.</small></p>
                     <p>Scrum of Scrums: Tue/Thu at 10:00, with Scrum Masters <em>and</em> Product Owners<br />
                     <small>Reduces "PO <em>in absentia</em> effect", if occurring, by having PO in twice a week for questions</small></p>
@@ -120,11 +119,13 @@
                     <ul>
                         <li>The team understood problems to solve <b>and</b> steps toward the solution.</li>
                         <li>The team knows exactly what needs to be done, where, and in which order.</li>
-                        <li>The team knows tentatively</li>
+                        <li>The team learned more about various areas of the code.</li>
+                        <li>The team knows tentatively: </li>
                         <ul>
-                            <li>who is the person implementing a given task.</li>
-                            <li>who is the reviewer according to experience on that part of the code. </li>
+                            <li>who is the person implementing a given task</li>
+                            <li>who is the reviewer 
                         </ul>
+                        according to experience on that part of the code. </li>
                     </ul>
 				</section>
 
@@ -146,10 +147,9 @@
 
 				<section>
                     <h2>On planning poker</h2>
-                    <p>Rough estimate for <em>long</em> term "rule of thumb" planning.<br />
-                        <small>Backed by small evidence like the numbers obtained by the procedure given earlier.</small>
+                    <p>Rough estimate for <strong>medium/long term</strong> "rule of thumb" planning.<br />
+                        <small>Backed by little evidence, unlike the numbers obtained by the procedure given earlier.</small>
                     </p>
-                    <p>Can only be used to quantify effort for medium/long term planning</p>
                     <ul>
                         <li style="list-style-type: none">Management/executives must understand:</li>
                         <ul>
@@ -163,18 +163,18 @@
                     <h2>Bug triaging and handling</h2>
                     <ul>
                         <li>One team member every sprint is designated to assess<b> (not fix)</b> new bugs.  Team members rotate on the role.</li>
-                        <li>Bug fixing either through Scrumban or dedicated sprints<sup>1</sup>, depending on urgency and business pressure.</li>
+                        <li>Bug fixing either through Scrumban or dedicated sprints, depending on urgency and business pressure.<br>
+                            <small>...but be wary of bugfix only sprints. They are heavy work.</small></li>
                         <li>Bugs are initially assigned to user-facing software subsystems. Eventually may reach internal subsystems after investigation.</li>
                         <li>Bugs are fixed in development. Fix is tested, then ported to production.</li>
                         <li>When using release branches, decide for either:
                         <ul>
                             <li>forward cherry pick (release -&gt; master) or</li>
-                            <li>backward cherry pick (master -&gt; release) <sup>2</sup>.</li>
+                            <li>backward cherry pick (master -&gt; release)<br>
+                            <small>Better option. Less likely to be forgotten halfway.</small></li>
                         </ul>
                         Not at random, or chaos will ensue.</li>
                     </ul>
-                    <p><small><sup>1</sup> Be wary of bugfix only sprints. They are heavy work</small><br />
-                        <small><sup>2</sup> Better option. Less likely to be forgotten halfway</small></p>
 				</section>
 
 				<section>
@@ -194,11 +194,10 @@
                     <p>Team productivity (velocity) depends on:</p>
                     <ul>
                         <li>Quality and flexibility of the codebase.</li>
-                        <li>The power of their tools. Tools matter. Use the best tools available.<li>
+                        <li>The power of their tools. Tools matter. Use the best tools available.</li>
                         <li>Ability to retrieve and consume missing information quickly.</li>
-                        <li>Skills in the technology of choice</li>
+                        <li>Skills in the technology of choice.</li>
                     </ul>
-
 				</section>
 
 				<section>
@@ -308,6 +307,7 @@
                         <li>Keep documentation near the code, checked in the version control</li>
                         <li>Do not overdocument</li>
                         <li>Team must learn to speak a common language: class names, library names, design patterns. This language must be simple and uniform, or confusion and onboarding complexity arises. Pick the right name early.</li>
+                        <li>Archivist: some people excel at rationalising, reorganising, rephrasing, remembering and directing others to documentation. Nurture this figure.</li>
                     </ul>
 				</section>
 
