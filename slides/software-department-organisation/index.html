@@ -5,7 +5,7 @@
 
 		<title>Software Department Organisation</title>
 
-		<meta name="description" content="A discussion over how to organise a software department in a software company">
+		<meta name="description" content="A model for organising a software company">
 		<meta name="author" content="Stefano Borini">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -49,26 +49,16 @@
 
 				<section>
                     <h2>Topics</h2>
-                    <table>
-                        <tr>
-                            <td>
-                                <ul>
-                                    <li>Basic overview</li>
-                                    <li>Scrum organization</li>
-                                    <li>Bug triaging and handling</li>
-                                    <li>DevOps support</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <ul>
-                                    <li>Team structure</li>
-                                    <li>Team productivity</li>
-                                    <li>Contact with external teams</li>
-                                    <li>Other</li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </table>
+                    <ul>
+                        <li>Basic overview</li>
+                        <li>Scrum organization</li>
+                        <li>Bug triaging and handling</li>
+                        <li>DevOps services</li>
+                        <li>Team structure</li>
+                        <li>Team productivity</li>
+                        <li>Contact with external teams</li>
+                        <li>Other</li>
+                    </ul>
 				</section>
 
 				<section>
@@ -79,7 +69,7 @@
                         <li>Backend</li>
                         <li>DevOps tasks</li>
                     </ul>
-                    <h2>How can we optimize</h2>
+                    <p>How can we optimize</p>
                     <ul>
                         <li>Internal team performance</li>
                         <li>Interaction with external company groups</li>
@@ -88,181 +78,248 @@
 				</section>
 
 				<section>
-                    <h2>Scrum organization: sprint</h2>
+                    <h2>Scrum organization: Sprint</h2>
                     <p>Two weeks sprints<br />
                     <small>(personal preference: three, but out of phase with month and possibly other teams. Four is too long)</small></p>
-                    <p>Regular Scrum ceremonies (with caveats, see later): planning and prioritisation, daily scrum, end of sprint demo, retrospective, end of sprint slack.</p>
-                    <ul>
-                        <li>Standup at 9:30 <em>with</em> Scrum Master for all groups (modulo available meeting rooms)
-                        (Traditional Scrum: self-organising dev teams. Personally against it. SM must be “in the trenches” and part of the team, but must not code)</li>
-                        <li>Information emitter (Scrum board) 
-                        Digital, although (personal preference and belief) tactile feedback of post-it notes has a positive effect on team focus.
-                        Sadly, it requires additional SM sync effort.</li>
-                        <li>Tuesday and Thursday at 10:00: Scrum of Scrums for Scrum Masters <em>and</em> Product Owners
-                        (Reduces the "Product Owner <em>in absentia</em> effect", if occurring, by keeping him in the loop twice a week for questions)</li>
-                    </ul>
+                    <p>Regular Scrum ceremonies (with caveats, see later)<br />
+                    <small>planning and prioritisation, daily scrum, end of sprint demo, retrospective, end of sprint slack.</small></p>
+                    <p>Standup at 9:30 <em>with</em> Scrum Master<br />
+                    <small>Traditional Scrum: self-organising dev teams, with no need for SM at standup.<br />Personally against it. SM must be “in the trenches” and part of the team, but must not code</small></p>
+                    <p>Digital Information emitter (Scrum board)<br />
+                    <small>Personal belief: tactile feedback of post-it notes has a positive effect on team focus.<br />Sadly, requires sync effort.</small></p>
+                    <p>Scrum of Scrums: Tue/Thu at 10:00, with Scrum Masters <em>and</em> Product Owners<br />
+                    <small>Reduces "PO <em>in absentia</em> effect", if occurring, by having PO in twice a week for questions</small></p>
 				</section>
 
 				<section>
                     <h2>Planning caveats - 1</h2>
+                    <p>Goal: Improve effectiveness of the planning meeting (sprint day 1)</p>
                     <ul>
-                    <li><font color="#333333">Team+PO+SM: </font></li>
-                    <ul>
-                    <li><font color="#333333">Present and d</font>iscuss upcoming stories in order of priority.</li>
-                    </ul>
-                    <li>Team+SM:</li>
-                    <ul>
-                    <li>Fragment stories (what we need to do) into atomic implementation technical subtasks (how we do it) that can be estimated easily. Look at code/use team expertise during meeting.</li>
-                    <li>Assign Story Points to tasks as follows: easy=1; medium=2; hard=3. If &gt;3 fragment more.</li>
-                    <li>Story Points are a fluctuating currency representing complexity, <b>not</b> days of work.
-                    The team must be aware of this.</li>
-                    <li>Compute Story total effort by summing the tasks Story Points.</li>
-                    <li>Teams tend to overestimate tasks: Story Point inflation. Controlled by matched increase in velocity, self-adapting to the team’s definition of easy/medium/hard.</li>
-                    </ul>
-                    <li>Team+PO+SM:</li>
-                    <ul>
-                    <li>Select what to do according to team estimates, velocity, availability.</li>
-                    <li>Reprioritise/leave for next sprint if needed. 
-                    Side effect: “accidental” refinement for upcoming sprint.</li>
-                    </ul>
-                    </ul>
+                        <li>Team+PO+SM (max 1 hour):</li> 
+                        <ul>
+                            <li>Present and discuss upcoming stories in order of priority.</li>
+                        </ul>
+                        <li>Team+SM (few hours):</li>
+                        <ul>
+                            <li>Fragment stories (what to do) into easy to estimate, atomic technical tasks (how to do). Look at code/use team expertise.</li>
+                            <li>Assign Story Points to tasks as follows: easy=1; medium=2; hard=3.<br />If more fragment more.</li>
+                            <li>Compute Story total effort by summing the Tasks' Story Points.</li>
+                        </ul>
+                        <li>Team+PO+SM (max 1 hour):</li>
+                        <ul>
+                            <li>Select what to do according to team estimates, velocity, availability.</li>
+                            <li>Reprioritise/leave for next sprint if needed. 
+                            Side effect: “accidental” refinement for upcoming sprint.</li>
+                        </ul>
                     </ul>
 				</section>
 
 				<section>
                     <h2>Planning caveats - 2</h2>
+                    <p><strong>Expected result at the end of day 1</strong></p>
                     <ul>
-                    <li>Expected result at the end of day 1:</li>
-                    <ul>
-                    <li>The team understood problems to solve <b>and</b> steps toward the solution.</li>
-                    <li>The team knows exactly what needs to be done, where, and in which order.</li>
-                    <li>The team knows tentatively</li>
-                    <ul>
-                    <li>who is the person implementing a given task.</li>
-                    <li>who is the reviewer according to experience on that part of the code. </li>
-                    </ul>
-                    <li>Result: maximise productivity, reduce mistakes, reduce the “I have no idea what I’m doing” factor, ensure at least two people know which changes are happening and if any constraints in the code must be preserved.</li>
-                    <li>Support from SM needed to ensure proper load balancing among team members and reduce chance of code conflicts.</li>
-                    <li>The team and Product Owner see upcoming stories by backlog lookahead.</li>
-                    </ul>
+                        <li>The team understood problems to solve <b>and</b> steps toward the solution.</li>
+                        <li>The team knows exactly what needs to be done, where, and in which order.</li>
+                        <li>The team knows tentatively</li>
+                        <ul>
+                            <li>who is the person implementing a given task.</li>
+                            <li>who is the reviewer according to experience on that part of the code. </li>
+                        </ul>
                     </ul>
 				</section>
 
 				<section>
-                    <h2>Scrum organization: planning poker</h2>
-                    <li>Planning poker is a rough estimate for long term "rule of thumb" planning.</li>
-                    <li>Not backed by evidence like the numbers obtained by the procedure given earlier.</li>
-                    <li>Can only be used to quantify effort for medium/long term planning</li>
-                    <li>It is a rough estimate, management/executives must not take it as a promise.</li> 
+                    <h2>Planning caveats - 3</h2>
+                    <p><strong>Consequences</strong></p>
+                    <ul>
+                        <li>Increase productivity, reduce mistakes and “no idea what I’m doing” factor.</li>
+                        <li>Ensure at least two people know what is changing and if any code constraints must be preserved.</li>
+                        <li>Support from SM needed to ensure proper load balancing among team members and reduce chance of code conflicts.</li>
+                        <li>Team and PO see upcoming stories by backlog lookahead.</li>
+                    </ul>
+
+                    <p><strong>Notes</strong></p>
+                    <ul>
+                        <li>Teams tend to overestimate tasks: Story Point inflation. Controlled by matched increase in velocity, self-adapting to the team’s definition of easy/medium/hard.</li>
+                    </ul>
+				</section>
+
+				<section>
+                    <h2>On planning poker</h2>
+                    <p>Rough estimate for <em>long</em> term "rule of thumb" planning.<br />
+                        <small>Backed by small evidence like the numbers obtained by the procedure given earlier.</small>
+                    </p>
+                    <p>Can only be used to quantify effort for medium/long term planning</p>
+                    <ul>
+                        <li style="list-style-type: none">Management/executives must understand:</li>
+                        <ul>
+                            <li>Story Points: fluctuating currency representing complexity, <strong>not</strong> days.</li>
+                            <li>Planning poker results are not a promise, only an estimate with limited evidence to back it up.</li>
+                        </ul>
+                    </ul>
 				</section>
 
 				<section>
                     <h2>Bug triaging and handling</h2>
                     <ul>
-                    <li>One team member every sprint is designated to assess<b> (not fix)</b> new bugs.  Team members rotate on the role.</li>
-                    <li>Bug fixing either through Scrumban or dedicated sprints (but be wary of bugfixing-only sprints), depending on urgency and business pressure.</li>
-                    <li>Bugs are initially assigned to user-facing software subsystems. Eventually may reach internal subsystems after investigation.</li>
-                    <li>Bugs are fixed in development. Fix is tested, then ported to production.</li>
-                    <li>When using release branches, decide for either forward cherry pick (release -&gt; master) or backward cherry pick (master -&gt; release). Not at random, or chaos will ensue. 
-                    (Personal preference: backward cherry picking. Less likely to be forgotten halfway)</li>
+                        <li>One team member every sprint is designated to assess<b> (not fix)</b> new bugs.  Team members rotate on the role.</li>
+                        <li>Bug fixing either through Scrumban or dedicated sprints<sup>1</sup>, depending on urgency and business pressure.</li>
+                        <li>Bugs are initially assigned to user-facing software subsystems. Eventually may reach internal subsystems after investigation.</li>
+                        <li>Bugs are fixed in development. Fix is tested, then ported to production.</li>
+                        <li>When using release branches, decide for either:
+                        <ul>
+                            <li>forward cherry pick (release -&gt; master) or</li>
+                            <li>backward cherry pick (master -&gt; release) <sup>2</sup>.</li>
+                        </ul>
+                        Not at random, or chaos will ensue.</li>
+                    </ul>
+                    <p><small><sup>1</sup> Be wary of bugfix only sprints. They are heavy work</small><br />
+                        <small><sup>2</sup> Better option. Less likely to be forgotten halfway</small></p>
+				</section>
+
+				<section>
+                    <h2>DevOps services</h2>
+                    <ul>
+                        <li>Mostly reactive (Kanban) but must have space for a Scrum process to optimise workflow and support tools</li>
+                        <li>Ensure minimal internal solution development. "Go shopping", don't "build your own". Deprecate "build your own" whenever feasible.</li>
+                        <li>Valid in general, but DevOps often generates homebrew solutions.</li>
+                        <li>Focus on <b>your</b> core business and <b>your</b> core products. Buy the rest. Internal solutions have a hidden, sunken cost, and can become a white elephant in the long run.</li>
+                    </ul>
+                    <p><strong>Rule of three for internal solutions: make it, use it, bin it</strong></p>
+				</section>
+
+				<section>
+                    <h2>Team productivity</h2>
+
+                    <p>Team productivity (velocity) depends on:</p>
+                    <ul>
+                        <li>Quality and flexibility of the codebase.</li>
+                        <li>The power of their tools. Tools matter. Use the best tools available.<li>
+                        <li>Ability to retrieve and consume missing information quickly.</li>
+                        <li>Skills in the technology of choice</li>
+                    </ul>
+
+				</section>
+
+				<section>
+                    <h2>Code quality management</h2>
+                    <p><strong>Emergent design</strong></p>
+                    <ul>
+                        <li>Isolate useful functionality in separate code packages as soon as they appear as isolated conceptual units.</li>
+                        <li>Do not wait. It will be too late if you do.</li>
+                    </ul>
+                    <p><strong>Enhancement proposals</strong></p>
+                    <ul>
+                        <li>Study a feature and its effects before processing and prioritising for implementation.</li>
+                        <li>Not epics, not specs: like Python Enhancement Proposals</li>
                     </ul>
 				</section>
 
 				<section>
-                    <h1><b><font color="#333333">DevOps</b></font></h1>
+                    <h2>Code quality management - Technical debt</h2>
                     <ul>
-                    <li>Mostly reactive (Kanban) but must have space for a Scrum process to optimise their workflow and support tools. However...</li>
-                    <li>… ensure minimal internal solution development. Favour “go shopping” rather than “build your own”. Deprecate “build your own” solutions whenever feasible.</li>
-                    <li>This is true in general for all teams, but DevOps is more likely to generate it. </li>
-                    <li>Focus on <b>our</b> core business and <b>our</b> core products. Buy the rest. Internal solutions have a hidden, sunken cost, and can become a white elephant in the long run.</li>
+                        <li>Refactoring rarely happens as part of a user story<br /><small>Quick and easy wins the day today, but piles up tomorrow.</small></li>
+                        <li>Developers are customers too.<br /><small>Want improved development efficiency. Not addressing this costs time, hence money.</small></li>
+                        <li><strong>User stories</strong>: add positive value. <strong>Technical stories</strong>: remove negative value.</li>
+                        <li>Sprints keep a 20% SP allocation to address <strong>relevant</strong> technical stories.</li>
+                        <li>Team (not PO) prioritises tech stories.</li>
                     </ul>
 				</section>
 
 				<section>
-                    <h1><b><font color="#333333">Team structure</b></font></h1>
+                    <h2>Team productivity and flow - 1</h2>
                     <ul>
-                    <ul>
-                    <li>Reduce “bus factor”: spread knowledge, but...</li>
-                    <li>...developers are not interchangeable or reallocatable on a whim.
-                    Some people excel in some techniques/parts of the code, are less efficient in others.</li>
-                    <li>Reject “tragedy of the commons”/“Someone else’s problem” effect. 
-                    Developers should have <b>loose</b> ownership of code (not strict, not common). 
-                    Make them feel excellent, dependable, consistent, aware, expert, but not a single point of failure. Prevent the blame game by ensuring pre-merge review and mitigating strategies.</li>
-                    <li>Every software subsystem should have a designated “owner” that is the contact for inquires. </li>
-                    <li>Import members from other teams as needed: e.g. for the duration of the sprint, borrow someone from the core team to tackle API extensions to the core in parallel to frontend changes. </li>
-                    <li>Teams are built around goals. They are generally fixed because the goals are fixed and the required expertise is fixed. But that’s a coincidence that may not always hold.</li>
-                    <li>Team members should be interviewing and approving new employee candidates if the team is expanding. They will work together, so they must understand each other.</li>
-                    </ul>
+                        <li>Establish flow.</li>
+                        <li>Ensure quiet working condition from external disruption.</li>
+                        <li>Ensure no other meetings during the sprint. End of sprint day for Lunch &amp; Learn/training/cleanup</li>
+                        <li>Ensure the team can communicate within itself, but not disrupt other teams.
+                        <small>(Open spaces are terrible on this regard. Signal/noise ratio problem)</small></li>
+                        <li>Ensure colocation and uniform, reduced, focused communication channels.</li>
+                        <li>Train developers on new tech with exploratory projects<br /><small>You become confident in a new technology after three usages of it</small></li>
                     </ul>
 				</section>
 
 				<section>
-                    <h1><b><font color="#333333">Team productivity and flow</b></font></h1>
+                    <h2>Team productivity and flow - 2</h2>
                     <ul>
-                    <ul>
-                    <li>Establish flow.</li>
-                    <li>Ensure quiet working condition from external disruption.</li>
-                    <li>Ensure no other meetings during the sprint. 
-                    End of sprint day for Lunch &amp; Learn/training/cleanup</li>
-                    <li>Ensure the team can communicate within itself, but not disrupt other teams.
-                    (Personal opinion: open spaces do not help on this regard. Signal/noise ratio problem)</li>
-                    <li>Ensure colocation and uniform, reduced communication channels.</li>
-                    <li>Ensure that process and tools don’t break flow.</li>
-                    <ul>
-                    <li>No to obsolete/limited tools (svn, gerrit). </li>
-                    <li>Yes to well-integrated, well-structured, all encompassing solutions (bitbucket, github, gitlab).</li>
-                    </ul>
-                    <li>Ensure tests success is quiet, failure is noisy, punctual, and clear.</li>
-                    <li>Ensure CI failures are delivered only to the involved developer.</li>
-                    <li>Use linters to remove “style fights” among developers.</li>
-                    <li>Guarantee quick response from CI machines.</li>
-                    <li>Guarantee always green master.</li>
-                    </ul>
+                        <li>Ensure that process and tools don’t break flow:</li>
+                        <ul>
+                            <li>No to obsolete/limited tools (svn, gerrit). </li>
+                            <li>Yes to well-integrated, well-structured, all encompassing solutions (bitbucket, github, gitlab).</li>
+                            <li>Ensure tests success is quiet. Failure is noisy, punctual, and clear.</li>
+                            <li>Ensure CI failures are delivered only to the involved developer.</li>
+                            <li>Use linters to remove “style fights” among developers.</li>
+                            <li>Guarantee quick response from CI machines.</li>
+                            <li>Guarantee always green master.</li>
+                        </ul>
                     </ul>
 				</section>
 
 				<section>
-                    <h1><b><font color="#333333">Interaction with external teams</b></font></h1>
+                    <h2>Team structure - 1</h2>
                     <ul>
-                    <li>Interaction with external teams is generally relative to the interface their code present (or needs to present) to others.</li>
-                    <li>Define interface extensions together with the external team.
-                    (however, one has to ensure the external team Scrum process can accept these change requests)</li>
-                    <li>Better: create cross functional team to address the sprint goal, or import one member from one team to the other.</li>
-                    <li>Software architects must be involved and direct the process. Disagreement chaos always arises at the interfaces.</li>
-                    <li>Address fundamental technical issues early if possible (e.g. spooling, atomicity, etc). 
-                    Use best practices and best tools for e.g. REST/SQL apis from the start: natural or surrogate primary keys, proper table schemas, proper db backend, ORM features, db schema migration policy, REST URL and resource representation format.</li>
-                    <li>If the external team is on a different timezone, factor it in the process. If the external team exhibits a language barrier, favour written communication (slower, but safer).</li>
+                        <li>Reduce “bus factor”: spread knowledge, but...</li>
+                        <li>...developers <strong>are not interchangeable or relocatable</strong> on a whim. Some people excel in some techniques/parts of the code, are less efficient in others.</li>
+                        <li>Reject “tragedy of the commons”/“Someone else’s problem” effect.  Developers should have <b>loose</b> ownership of code (not strict, not common).</li>
+                        <li>Make developers feel excellent, dependable, consistent, aware, expert, but not a single point of failure.</li>
+                        <li>Prevent the blame game by ensuring pre-merge review and mitigating strategies.</li>
                     </ul>
 				</section>
 
 				<section>
-                    <h1><b><font color="#333333">Reorganisation changes</b></font></h1>
+                    <h2>Team structure - 2</h2>
                     <ul>
-                    <li>Reorganise work/management in steps.</li>
-                    <li>Do not disturb mechanisms that have proven to work.</li>
-                    <li>Disturb mechanisms that have proven not to work.</li>
-                    <li>Disruption should be gradual. Throwing a “reorganisation grenade” in a team organisation brings everyone to a standstill, as they have to relearn the process flow while coping with the remnants of the old style and the technical work pressure. </li>
-                    <li>Be aware of Systemantics (ISBN: 978-0812906745) and well-known management pitfalls (cfr. Mythical Man Month, ISBN: 0-201-83595-9)</li>
-                    <li>Be aware of “eternal September effect” when adding new members. </li>
-                    <li>Be aware of “death by a thousands papercuts” for team members or teams that have become/are/may become too central for operations.</li>
+                        <li>Every software subsystem should have a designated “owner” that is the contact for inquires.</li>
+                        <li>Import members from other teams as needed: e.g. for the duration of the sprint, borrow someone from the core team to tackle API extensions to the core in parallel to frontend changes. </li>
+                        <li>Teams are built around goals. They are generally fixed because the goals are fixed and the required expertise is fixed. But that’s a coincidence that may not always hold.</li>
+                        <li>Team members should be interviewing and approving new employee candidates if the team is expanding. They will work together, so they must understand each other.</li>
                     </ul>
 				</section>
+
 				<section>
-                    <h1><b><font color="#333333">Remaining topics not covered</b></font></h1>
+                    <h2>Interaction with external teams</h2>
                     <ul>
-                    <li>Emergent design solutions and isolating useful functionality in separate code packages</li>
-                    <li>Developer productivity depends on the power of their tools. Tools matter. Use the best tools available. Train developers with exploratory projects and rule of three 
-                    (personal rule, need discussion)</li>
-                    <li>Technical debt: introduce the notion of Technical stories. Team prioritises tech stories. Sprints keep a 20% SP allocation to address relevant technical stories.
-                    (Personal experience: refactoring rarely happens as part of a user story: quick and easy wins the day today, but piles up tomorrow. Developers are customers too.)</li>
-                    <li>Team must learn to speak a common language: class names, library names, design patterns. This language must be simple and uniform, or confusion and onboarding complexity arises. Pick the right name early.</li>
-                    <li>UI design and Human Interface Guidelines: interaction with a visual design team.</li>
-                    <li>Interaction with UI translation team or contractors for language localisation.</li>
-                    <li>Enhancement proposals: not epics, not specs. Like Python Enhancement Proposals: study a feature and its effects before it’s processed and prioritised for implementation.</li>
-                    <li>Effective use of project management tools.</li>
-                    <li>Documentation policies.</li>
+                        <li>Interaction generally relative to the interface their code presents (or needs to present) to others.</li>
+                        <li>Define interface extensions together with the external team.
+                        <small>(however, one has to ensure the external team Scrum process can accept these change requests)</small></li>
+                        <li>Better: create cross functional team to address the sprint goal, or import one member from one team to the other.</li>
+                        <li>Software architects must be involved and direct the process. Disagreement chaos always arises at the interfaces.</li>
+                        <li>Address fundamental technical issues early if possible (e.g. spooling, atomicity, etc). Use best practices and tools from the start.</li>
+                        <li>If the external team is on a different timezone, factor it in the process. If the external team exhibits a language barrier, favour written communication (slower, but safer).</li>
                     </ul>
 				</section>
+
+				<section>
+                    <h2>Organisation changes</h2>
+                    <ul>
+                        <li>Reorganise work/management in steps.</li>
+                        <li>Do not disturb mechanisms that have proven to work.</li>
+                        <li>Disturb mechanisms that have proven not to work.</li>
+                        <li>Disruption should be gradual. Throwing a “reorganisation grenade” in a team organisation brings everyone to a standstill, as they have to relearn the process flow while coping with the remnants of the old style and the technical work pressure. </li>
+                        <li>Be aware of Systemantics (ISBN: 978-0812906745) and well-known management pitfalls (Mythical Man Month, ISBN: 0-201-83595-9)</li>
+                        <li>Be aware of “eternal September effect” when adding new members. </li>
+                        <li>Be aware of “death by a thousands papercuts” for team members or teams that have become/are/may become too central for operations.</li>
+                    </ul>
+				</section>
+
+				<section>
+                    <h2>Documentation policies</h2>
+                    <ul>
+                        <li>Keep documentation near the code, checked in the version control</li>
+                        <li>Do not overdocument</li>
+                        <li>Team must learn to speak a common language: class names, library names, design patterns. This language must be simple and uniform, or confusion and onboarding complexity arises. Pick the right name early.</li>
+                    </ul>
+				</section>
+
+				<section>
+                    <h2>Other</h2>
+                    <ul>
+                        <li>UI design and Human Interface Guidelines: interaction with a visual design team.</li>
+                        <li>Interaction with UI translation team or contractors for language localisation.</li>
+                        <li>Effective use of project management tools.</li>
+                    </ul>
+				</section>
+
 				<section>
                     <h2>End</h2>
 				</section>
