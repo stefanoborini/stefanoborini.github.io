@@ -339,3 +339,10 @@ know the answer, I'll add it immediately. If I don't, I'll do some research and
 reply as soon as possible. My aim is to keep this post as the place where
 people finally _understand_ python packaging.
 
+
+**Any links I can explore further?**
+
+Sure.
+
+- https://sedimental.org/the_packaging_gradient.html
+
