@@ -134,24 +134,31 @@ You also have to consider that some of your dependencies are real dependencies
 that you use and need for your software to work. Other dependencies are only
 required to run tests, and so are really dependencies that as a developer, or a
 CI machine, needs, but for someone that wants to use your software, they are not 
-needed, so they are not dependencies. So now you have dev-requirement.txt as well.
+needed, so they are not dependencies. So now you have dev-requirements.txt as well.
 
 Then you have the problem that requirements.txt may only specify direct dependencies,
 but in practice you want to specify **everything** is needed to create your environment
-reliably, so in general you specify both dependencies and their sub-dependencies in requirements.txt. 
-But now you can't distinguish them anymore in the file, and if you want to bump up one of your 
-dependencies, maybe because it has a bug, now you have to find out which one are its own subdependencies
-in that file, and ... you get the point.
+reliably. Why? What if you install direct dependency A which has a
+subdependency C which is currently at version 1.1.  But one day C releases a new version
+1.2, and from this moment on, when you create your environment, pip will
+download C version 1.2, which might have a bug. Suddenly your tests start
+failing, and you don't know why.
 
-It's a mess, and you don't want to deal with this mess.
+So you think you might want to specify both dependencies and their
+sub-dependencies in requirements.txt.  But now you can't distinguish them
+anymore in the file, and if you want to bump up one of your dependencies, maybe
+because it has a bug, now you have to find out which one are its own
+subdependencies in that file, and ... 
+
+You get the point. It's a mess, and you don't want to deal with this mess.
 
 Then you have the problem that pip decides which versions to install in a rather
 primitive way, and can eventually paint itself into a corner and give you
 either a broken environment or an error. Remember the case where two packages
-share a subdependency. So you need a more complex process, and basically use
-pip to just download well-defined versions, and leave the task of deciding
-which versions to install to something else that has a higher-level picture and
-can make smarter decisions because of it.
+A and B share a subdependency C. So you need a more complex process, and
+basically use pip to just download well-defined versions, and leave the task of
+deciding which versions to install to something else that has a higher-level
+picture and can make smarter decisions because of it.
 
 **For example?**
 
@@ -163,11 +170,16 @@ Most people seem to prefer Poetry.
 
 Some companies, such as Continuum and Enthought, have their own version (conda
 and edm) which are generally one step above for some additional platform
-complexities. We don't go into that detail here.
+complexities. We don't go into that detail here. Suffice to say that if you
+are going to use a lot of dependencies that are compiled and/or depend on
+compiled libraries, a scenario that is highly common with scientific computing,
+you are better off using their system to manage your environment, because
+they took care of solving a lot of headaches for you. It's their business.
 
 **Which one is better? pipenv or Poetry?**
 
-I have no clue and take no stance. As I said, people seem to prefer Poetry. 
+As I said, people seem to prefer Poetry. I personally tried both, and to me Poetry seems
+to be a better, more encompassing and polished solution.
 
 **Ok so the bottom line is to use Poetry, that creates an environment so that I can install my dependencies in an environment and then code.**
 
@@ -226,9 +238,9 @@ to build your stuff.
 
 Exactly. More specifically, a subsection in it that defines the "backend" you
 want to use to build a package. If you want to use a different build backend, 
-you can say so. If you don't, then the assumption is that you are using
-setuptools and therefore pip will fallback to look for setup.py, execute it,
-and hopefully build something. 
+you can say so, and pip will oblige. If you don't, then pip assumption is that
+you are using distutils or setuptools and therefore pip will fallback to look
+for setup.py, execute it, and hopefully build something. 
 
 setup.py is just going eventually to disappear, or not. setup.py is a way
 **setuptools** (and before that, distutils) describes how to create a build.
@@ -244,7 +256,7 @@ JSON does not allow (from standard) to write comments. Yes. Crockford actually
 wanted that. One could bend the rules, but then it's not JSON. Plus, JSON is
 actually not very pleasant to use by a human.
 
-INI, believe it or not, is not standardi, plus it's rather limited in features.
+INI, believe it or not, is not standard, plus it's rather limited in features.
 
 YAML is a can of worms and a potential security threat.
 
@@ -283,9 +295,9 @@ needs to run setup.py, which in turns uses setuptools to then invoke pip again
 to resolve the abstract dependencies written there into something concrete it
 can install.
 
-**What about eggs? easy install? .egg-info directories**
+**What about eggs? easy install? .egg-info directories? distribute? virtualenv (not venv)? zc.buildout? bento?**
 
-Forget them. They are legacy. Always build wheels for your binary distributions.
+Forget them. They are either legacy, forks, or attempts that went nowhere.
 
 **What's with Wheels?**
 
@@ -298,6 +310,8 @@ Wheels file names (pep-0425) contain tags that act as metadata, so that when
 something has been compiled for, say CPython, it knows the version, the ABI,
 etc. There is a standard layout of this tags in the filename, and there are
 particular keywords in that metadata that have specific meanings.
+
+Always build wheels for your binary distributions.
 
 **What about .pyz?**
 
