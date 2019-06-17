@@ -319,11 +319,33 @@ Forget it. Unrelated to packaging, strictly speaking. It could be useful in some
 
 **What about pyinstaller?**
 
-It is also unrelated to packaging, strictly speaking. PyInstaller is a tool
-that you involve when you want to create an executable.  It addresses this
-need: get a final application on your user's desktop. Packaging is about
-managing the network of dependencies, libraries and tools that you need to
-create that application that you might, or might not, create with pyinstaller.
+Pyinstaller opens a completely different topic. See, the problem with the word "packaging" is that it's 
+unclear what it refers to. Until now, we spoke about 
+
+1. creating an environment in which you can develop your own library 
+2. bundling what you created into something other people can use
+
+But those apply generally to libraries. When it's time to distribute applications,
+the situation changes. When you package a library, you know it's going to be part of
+a larger whole. When you package an application, the application **is the larger whole**.
+
+Plus, with an application you want to provide things that are platform specific. For example,
+you might want to provide an executable with an icon, but how this works differs between
+Windows, macOS and Linux.
+
+PyInstaller is a tool that you involve when you want to create an application
+as a single executable.  It addresses this need: get a final application on
+your user's desktop.  Packaging is about managing the network of dependencies,
+libraries and tools that you need to create that application that you might, or
+might not, create with pyinstaller.
+
+Note however, that this approach assumes that your application is simple and self-contained.
+If the application needs to do something much more complex when it gets installed, such as 
+creating registry keys on Windows, now you need a proper, full fledged installer such as NSIS.
+I am unaware if anything like NSIS is available in the python world. In any case, NSIS
+is agnostic of what you deploy. You can definitely create an application
+executable with pyinstaller, and deploy this executable plus any needed
+Registry changing magic or filesystem modifying sauce to make it work using NSIS.
 
 **Ok, but how do I install something I have the sources of? python setup.py?**
 
