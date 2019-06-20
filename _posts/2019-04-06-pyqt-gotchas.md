@@ -20,25 +20,25 @@ Both cases will lead to access to freed memory, leading to undefined behavior. L
 
 Never use WA_DeleteOnClose.
 
-```
-  import sys
-  from PyQt4 import QtGui, QtCore
-  
-  class Main(QtGui.QPushButton):
-      def __init__(self, parent=None):
-          QtGui.QPushButton.__init__(self, parent)
-          self._label = QtGui.QLabel("hello")
-          self._label.setAttribute(QtCore.Qt.WA_DeleteOnClose)   # Gotcha
-          self.clicked.connect(self.showLabel)
-  
-      def showLabel(self, *args):
-          self._label.show()
-  
-  if __name__ == "__main__":
-      app = QtGui.QApplication(sys.argv)
-      widget = Main()
-      widget.show()
-      sys.exit(app.exec_())
+```python
+import sys
+from PyQt4 import QtGui, QtCore
+
+class Main(QtGui.QPushButton):
+  def __init__(self, parent=None):
+      QtGui.QPushButton.__init__(self, parent)
+      self._label = QtGui.QLabel("hello")
+      self._label.setAttribute(QtCore.Qt.WA_DeleteOnClose)   # Gotcha
+      self.clicked.connect(self.showLabel)
+
+  def showLabel(self, *args):
+      self._label.show()
+
+if __name__ == "__main__":
+  app = QtGui.QApplication(sys.argv)
+  widget = Main()
+  widget.show()
+  sys.exit(app.exec_())
 ```
 
 Launch the example, and press the button. A label will be shown. Close the
@@ -52,33 +52,33 @@ self._label object will involve a deleted backend, with bad consequences.
 
 Launch the example, and press the button twice.
 
-```
-  import sys
-  from PyQt4 import QtGui, QtCore
-  
-  class Main(QtGui.QPushButton):
-       def __init__(self, parent=None):
-          QtGui.QPushButton.__init__(self, parent)
-          self._counter = 0
-          self.clicked.connect(self.doThing)
-  
-      def doThing(self, *args):
-          if self._counter == 0:
-              widget = QtGui.QWidget()                          # Gotcha
-              self._label = QtGui.QLabel("hello", widget)       # Gotcha
-              self._label.show()
-          elif self._counter == 1:
-              self._label.setText("whatever")
-  
-          self._counter += 1
-  
-  if __name__ == "__main__":
-       app = QtGui.QApplication(sys.argv)
-  
-      widget = Main()
-      widget.show()
-  
-      sys.exit(app.exec_())
+```python
+import sys
+from PyQt4 import QtGui, QtCore
+
+class Main(QtGui.QPushButton):
+   def __init__(self, parent=None):
+      QtGui.QPushButton.__init__(self, parent)
+      self._counter = 0
+      self.clicked.connect(self.doThing)
+
+  def doThing(self, *args):
+      if self._counter == 0:
+          widget = QtGui.QWidget()                          # Gotcha
+          self._label = QtGui.QLabel("hello", widget)       # Gotcha
+          self._label.show()
+      elif self._counter == 1:
+          self._label.setText("whatever")
+
+      self._counter += 1
+
+if __name__ == "__main__":
+   app = QtGui.QApplication(sys.argv)
+
+  widget = Main()
+  widget.show()
+
+  sys.exit(app.exec_())
 ```
 
 What happens here is that the parent of the label (widget) is local in scope, and its child is kept around as self._label.
@@ -89,36 +89,36 @@ a reference to the python object representing one of the children (self._label),
 
 Launch the example, and press the button three times.
 
-```
-  import sys
-  from PyQt4 import QtGui, QtCore
-  
-  class Main(QtGui.QPushButton):
-      def __init__(self, parent=None):
-          QtGui.QPushButton.__init__(self, parent)
-          self._counter = 0
-          self.clicked.connect(self.doThing)
-  
-      def doThing(self, *args):
-          if self._counter == 0:
-              self._label = QtGui.QLabel("hello")
-              self._label.show()
-          elif self._counter == 1:
-              self._label.setText("whatever")
-          elif self._counter == 2:
-              self._label.deleteLater()
-          elif self._counter > 2:
-              self._label.setText("whatever")
-  
-          self._counter += 1
-  
-  if __name__ == "__main__":
-      app = QtGui.QApplication(sys.argv)
-  
-      widget = Main()
-      widget.show()
-  
-      sys.exit(app.exec_())
+```python
+import sys
+from PyQt4 import QtGui, QtCore
+
+class Main(QtGui.QPushButton):
+  def __init__(self, parent=None):
+      QtGui.QPushButton.__init__(self, parent)
+      self._counter = 0
+      self.clicked.connect(self.doThing)
+
+  def doThing(self, *args):
+      if self._counter == 0:
+          self._label = QtGui.QLabel("hello")
+          self._label.show()
+      elif self._counter == 1:
+          self._label.setText("whatever")
+      elif self._counter == 2:
+          self._label.deleteLater()
+      elif self._counter > 2:
+          self._label.setText("whatever")
+
+      self._counter += 1
+
+if __name__ == "__main__":
+  app = QtGui.QApplication(sys.argv)
+
+  widget = Main()
+  widget.show()
+
+  sys.exit(app.exec_())
 ```
 
 The problem here is due to deleteLater(). This routine schedules a deletion of a widget for later, but in doing so, only the C++ object is freed. The python object stays alive and again references freed memory.
@@ -128,47 +128,47 @@ The problem here is due to deleteLater(). This routine schedules a deletion of a
 In this example, 2 subwidgets are added to the layout of a main widget. Access to the widgets are provided only by using the C++ API of Qt, ie. without setting a Python
 'self' reference.
 
-```
-  import sys
-  from PyQt4 import QtGui
-  
-  class A(QtGui.QLabel):
-      def __init__(self, parent=None):
-          QtGui.QLabel.__init__(self, parent)
-  
-  class B(QtGui.QLabel):
-      def __init__(self, parent=None):
-          QtGui.QLabel.__init__(self, parent)
-  
-  class Widget(QtGui.QWidget):
-      def __init__(self):
-          QtGui.QWidget.__init__(self)
-  
-          # Base layout
-          layout = QtGui.QVBoxLayout(self)
-  
-          # Add widgets
-          a = A(self)                          # Here
-          b = B(self)                          # Here
-  
-          layout.addWidget(a)
-          layout.addWidget(b)
-   
-      def a(self):
-          return self.layout().itemAt(0).widget()
-   
-      def b(self):
-          return self.layout().itemAt(1).widget()
-    
-  if __name__ == "__main__":
-       app = QtGui.QApplication(sys.argv)
-  
-      widget = Widget()
-      widget.show()
-      print widget.a()
-      print widget.b()
-  
-      sys.exit(app.exec_())
+```python
+import sys
+from PyQt4 import QtGui
+
+class A(QtGui.QLabel):
+  def __init__(self, parent=None):
+      QtGui.QLabel.__init__(self, parent)
+
+class B(QtGui.QLabel):
+  def __init__(self, parent=None):
+      QtGui.QLabel.__init__(self, parent)
+
+class Widget(QtGui.QWidget):
+  def __init__(self):
+      QtGui.QWidget.__init__(self)
+
+      # Base layout
+      layout = QtGui.QVBoxLayout(self)
+
+      # Add widgets
+      a = A(self)                          # Here
+      b = B(self)                          # Here
+
+      layout.addWidget(a)
+      layout.addWidget(b)
+
+  def a(self):
+      return self.layout().itemAt(0).widget()
+
+  def b(self):
+      return self.layout().itemAt(1).widget()
+
+if __name__ == "__main__":
+   app = QtGui.QApplication(sys.argv)
+
+  widget = Widget()
+  widget.show()
+  print widget.a()
+  print widget.b()
+
+  sys.exit(app.exec_())
 ```
 
 This is not a problem, because PyQt is clever enough to increment the pythonn
