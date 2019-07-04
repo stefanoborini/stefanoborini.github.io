@@ -13,12 +13,14 @@ wrote to expand the number of operations the keyboard can provide.
 
 ## Fixing occasional reboot, and "frozen" or "stuck button" behavior.
 
-The first problem I found had to do with occasional reboots, especially when touching the keyboard on
-the side of the top part, and occasional weird behavior as if the keyboard was stuck and was not accepting any
-button press, or like one button was constantly pressed. I found out that the root cause for all these
-problems boil down to poor clearance on the button boards: a metal pillar is supposed to rest on a hole 
-to provide structural support, using a nut as a spacer. Unfortunately, the nut
-is made of metal and thus conductive, and connects the button contacts.
+The first problem I found had to do with occasional reboots, especially when
+touching the keyboard on the side of the top part, and occasional weird
+behavior as if the keyboard was stuck and was not accepting any button press,
+or like one button was constantly pressed. I found out that the root cause for
+all these problems boils down to poor clearance on the button boards: a metal
+pillar is supposed to rest on a hole to provide structural support, using a nut
+as a spacer. Unfortunately, the nut is made of metal and thus conductive, and
+bridges the button contacts.
 
 ![image]({{ site.url }}/assets/images/2019/07/04/nut.jpg)
 
@@ -32,13 +34,12 @@ happened only when I touched the top part of the keyboard, and thus the nut as
 well.
 
 The fix requires a BIC pen and a sharp cutter. Just cut the plastic tube of the
-ink reservoir at the proper height, and use it in lieu of the nut to provide
-the needed shim spacing. 
-
+ink reservoir at the proper height, and use the resulting plastic ring in lieu
+of the nut to provide the needed spacing. 
 
 ![image]({{ site.url }}/assets/images/2019/07/04/workaround.jpg)
 
-This is the only point where such spacer is needed. As you can see from the picture
+This is the only point where such spacer is needed. As you can see from the picture,
 the board rests on the plastic ring, and no rogue connection occurs
 
 ![image]({{ site.url }}/assets/images/2019/07/04/workaround-2.jpg)
@@ -50,8 +51,8 @@ Another issue is due to the incorrect geometry between the Raspi USB micro
 female connector and the cable male. Between these two, there is an acrylic
 shim to compensate for the Raspberry Pi thickness.  Unfortunately the two
 bridges of this shim prevent the USB connector to engage properly on one side,
-and an annoying step for the cable strain mitigation on the other. This results
-in frequent disconnections.
+and creates an annoying step for the cable strain mitigation on the other. This
+results in frequent cable disconnections.
 
 ![image]({{ site.url }}/assets/images/2019/07/04/plug.jpg)
 
@@ -64,7 +65,7 @@ the shim will be kept in position through simple friction.
 
 When I bought keybow, I immediately knew that its power comes from its
 flexibility of programming it. I also realised that the number of buttons is
-large, but not huge. Besides, I need to convey mnemonics and proper spatial
+large, but not huge. Additionally, I wanted to convey mnemonics and proper spatial
 organisation to my commands. With 12 buttons, this is not going to be trivial,
 especially if my usage grows.
 
@@ -83,4 +84,6 @@ entry point script.
 Currently I have two pages: one with desktop operations (typically browser
 actions) and one for coding (git operations and pycharm navigation). The
 remaining pages are currently unused, but I will eventually find the proper
-placement. 
+placement.
+
+Have fun.
