@@ -10,9 +10,9 @@ layout: default
                 {% for post in site.posts %}
                     {% if post.category != 'slides' and post.category != 'books' %}
                         {% if post.link_to %}
-                            <a href="{{ post.link_to }}" class="index-anchor"><div class="panel-body">{{post.date | date: "%Y-%m-%d"}} - {{ post.title }} <span class="badge badge-secondary">{{ post.category }}</span></div></a>
+                            <a href="{{ post.link_to }}" class="index-anchor"><div class="panel-body">{{post.date | date: "%Y-%m-%d"}} - {{ post.title }}</a> <span class="badge badge-secondary">{{ post.category }}</span></div>
                         {% else %}
-                            <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor"><div class="panel-body">{{post.date | date: "%Y-%m-%d"}} - {{ post.title }} <span class="badge badge-secondary">{{ post.category }}</span></div></a>
+                            <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor"><div class="panel-body">{{post.date | date: "%Y-%m-%d"}} - {{ post.title }}</a> <span class="badge badge-secondary">{{ post.category }}</span></div>
                         {% endif %}
                     {% endif %}
                 {% endfor %}
