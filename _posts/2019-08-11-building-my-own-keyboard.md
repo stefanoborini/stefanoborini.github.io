@@ -31,6 +31,27 @@ Basically, this is the layout I want
 
 ![keyboard]({{ site.url }}/assets/images/2019/08/11/keyboard.png)
 
+# Overall design
+
+The two halves have 53 keys the left hand side and 52 the right hand side.
+It is clear that, to drive so many switches, I will need a matrix, as there's no
+chance I can have that many IO pins. This is a typical and well-established trick.
+Standard matrices for keyboards are 8x16 and 8x20 for a full size keyboard. 
+In my case, I have two halves, so a 8x8 matrix on each side will give me 64 keys. 
+Plenty for my needs.
+
+The idea is to have an arduino on each side scanning this matrix. These arduinos
+will send messages, probably via I2C, to the brain of the operation: a raspberry pi.
+Why the Pi? Because I need to drive rather complex logic to control the
+displays, and the wifi. The intention is to have the display fetch, for example,
+information about CI execution, so it needs to get connected to the network.
+
+The RasPi will be hosted on one half of the keyboard, likely the left one, 
+which means that I need a I2C cable to drive the right hand display, and the
+arduino connected to the right hand matrix.
+
+But let's start small. The first step is to create a small 2x2 matrix and have 
+arduino push out i2c data for the scan codes.
 
 # Bill of Materials
 
