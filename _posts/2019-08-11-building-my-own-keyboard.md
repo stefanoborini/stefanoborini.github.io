@@ -32,7 +32,11 @@ Basically, this is the layout I want
 ![keyboard]({{ site.url }}/assets/images/2019/08/11/keyboard.png)
 
 
+# Bill of Materials
+
+
 
 # Links
 
 - http://www.sprintek.com/en/products/keyboard_ic/SK5221.aspx
+- https://www.toptal.com/embedded/from-the-ground-up-how-i-built-the-developers-dream-keybooard
