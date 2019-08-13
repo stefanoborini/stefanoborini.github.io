@@ -56,9 +56,8 @@ situation is more complicated. It must go, it's useless, but it also must be a s
 people map Caps Lock to Esc, but I don't buy it. Moving Esc would just waste space at the top, and I
 want to be muscle compatible with general QWERTY as much as possible.
 
-
-
-
+In other words, I want a mix of ANSI and ISO layouts, with short shifts, horizontal Enter, and 
+additional keys put to good use.
 
 # Overall design
 
