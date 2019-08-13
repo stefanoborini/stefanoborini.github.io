@@ -27,9 +27,38 @@ So, what's my Ideal Keyboard (TM)? It must have
 - must be pleasant to use in terms of touch ergonomics, but not too noisy.
 - must look cool.
 
-Basically, this is the layout I want
+# Layout
+
+Basically, this is the layout I want 
 
 ![keyboard]({{ site.url }}/assets/images/2019/08/11/keyboard.png)
+
+What is the size of this thing? If we assign 1U for the size of a standard button 
+(approx 2 cm), the keyboard has the following sizes:
+
+![keyboard]({{ site.url }}/assets/images/2019/08/11/units-v0.1)
+
+Which is unfortunately incorrect, for a series of reasons:
+
+1. Despite the breakdown of the keyboard in two halves, the total row size must be consistent. 
+   In this keyboard it is 15U. Row 0 (the Esc/Fxx row) is not important. Row 1, 2, 3 (123, QWE, ASD) 
+   do satisfy this requirement, but not row 4 (ZXC) and row 5, (Ctrl/Win/Alt), which counts at 14.5.
+2. Between row 2 and 3 the horizontal offset between Q and A must be 0.25, and between A and Z must be 0.5.
+   This is completely not satisfied in my layout.
+3. keys that are used with the pinky finger need to be at least 1.25U, 
+   as the hand is less accurate with those fingers. This means we can't have two 1U keys to replace 
+   the caps lock (which, due to point 2 above, must be 1.75)
+
+
+This means, I don't really know what to do with the caps lock. I can definitely shorten the Shift key
+from the standard 2.25 to 1.25 and obtain an additional key, but for what concerns the Caps Lock the 
+situation is more complicated. It must go, it's useless, but it also must be a single 1.75 key. Some 
+people map Caps Lock to Esc, but I don't buy it. Moving Esc would just waste space at the top, and I
+want to be muscle compatible with general QWERTY as much as possible.
+
+
+
+
 
 # Overall design
 
@@ -56,7 +85,10 @@ arduino push out i2c data for the scan codes.
 # Bill of Materials
 
 
+# PCB
 
+I will need a custom PCB for this project, and custom PCBs are expensive.
+If possible, it's 
 # Links
 
 - http://www.sprintek.com/en/products/keyboard_ic/SK5221.aspx
