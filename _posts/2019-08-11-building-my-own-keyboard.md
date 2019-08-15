@@ -39,7 +39,7 @@ additional keys put to good use.
 What is the size of this thing? If we assign 1U for the size of a standard button 
 (approx 2 cm), the keyboard has the following sizes:
 
-![keyboard]({{ site.url }}/assets/images/2019/08/11/units-v0.1)
+![keyboard]({{ site.url }}/assets/images/2019/08/11/units-v0.1.png)
 
 Which is unfortunately incorrect, for a series of reasons:
 
@@ -67,7 +67,7 @@ Maybe, but it is not going to be easy to get one.
 If I could learn to love Esc as Caps lock, I might actually obtain this rather interesting
 design. 
 
-![keyboard](https://github.com/stefanoborini/keymine/blob/master/layouts/units-v0.2.png)
+![keyboard](https://github.com/stefanoborini/keymine/blob/master/layouts/units-v0.2.png?raw=true)
 
 But I am not sure. I will certainly have to retrain 20+ years of muscle memory while vimming.
 
