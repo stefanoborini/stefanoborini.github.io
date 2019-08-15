@@ -33,6 +33,9 @@ Basically, this is the layout I want
 
 ![keyboard]({{ site.url }}/assets/images/2019/08/11/keyboard.png)
 
+In other words, I want a mix of ANSI and ISO layouts, with short shifts, horizontal Enter, and 
+additional keys put to good use.
+
 What is the size of this thing? If we assign 1U for the size of a standard button 
 (approx 2 cm), the keyboard has the following sizes:
 
@@ -55,14 +58,20 @@ situation is more complicated. It must go, it's useless, but it also must be a s
 people map Caps Lock to Esc, but I don't buy it. Moving Esc would just waste space at the top, and I
 want to be muscle compatible with general QWERTY as much as possible.
 
-In other words, I want a mix of ANSI and ISO layouts, with short shifts, horizontal Enter, and 
-additional keys put to good use.
-
 An option would be to replace the Caps Lock with a "Function" key. The idea is that 
 I could use a combination of F and 1 to obtain F1. Sounds appealing and would get rid of
 the Caps Lock and 12 Function keys. However, the Esc needs to stay in the old position, 
 and would basically become a lonely button up there. Could I put a long visual strip up there?
 Maybe, but it is not going to be easy to get one.
+
+If I could learn to love Esc as Caps lock, I might actually obtain this rather interesting
+design. 
+
+![keyboard](https://github.com/stefanoborini/keymine/blob/master/layouts/units-v0.2.png)
+
+But I am not sure. I will certainly have to retrain 20+ years of muscle memory while vimming.
+
+
 
 
 # Overall design
