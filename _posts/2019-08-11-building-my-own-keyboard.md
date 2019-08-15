@@ -29,7 +29,7 @@ So, what's my Ideal Keyboard (TM)? It must have
 
 # Layout
 
-Basically, this is the layout I want 
+Basically, this is the layout I am aiming for
 
 ![keyboard]({{ site.url }}/assets/images/2019/08/11/keyboard.png)
 
@@ -52,7 +52,7 @@ Which is unfortunately incorrect, for a series of reasons:
    as the hand is less accurate with those fingers. This means we can't have two 1U keys to replace 
    the caps lock (which, due to point 2 above, must be 1.75)
 
-This means, I don't really know what to do with the caps lock. I can definitely shorten the Shift key
+This means, I don't really know what to do with the Caps Lock. I can definitely shorten the Shift key
 from the standard 2.25 to 1.25 and obtain an additional key, but for what concerns the Caps Lock the 
 situation is more complicated. It must go, it's useless, but it also must be a single 1.75 key. Some 
 people map Caps Lock to Esc, but I don't buy it. Moving Esc would just waste space at the top, and I
@@ -62,7 +62,7 @@ An option would be to replace the Caps Lock with a "Function" key. The idea is t
 I could use a combination of F and 1 to obtain F1. Sounds appealing and would get rid of
 the Caps Lock and 12 Function keys. However, the Esc needs to stay in the old position, 
 and would basically become a lonely button up there. Could I put a long visual strip up there?
-Maybe, but it is not going to be easy to get one.
+Maybe, but it is not going to be easy to get one, and pricey if I do.
 
 If I could learn to love Esc as Caps lock, I might actually obtain this rather interesting
 design. 
@@ -70,9 +70,9 @@ design.
 ![keyboard](https://github.com/stefanoborini/keymine/blob/master/layouts/units-v0.2.png?raw=true)
 
 But I am not sure. I will certainly have to retrain 20+ years of muscle memory while vimming.
-
-
-
+With the above layout, I'll leave out the F keys entirely. They will be mapped to the lateral
+keypad, which will basically be a three tabs multipage, like I have done to my [keybow with
+keybow-pager](https://stefanoborini.com/keybow-pimoroni-keyboard-installation-hacks-fixes-and-multitab-support/)
 
 # Overall design
 
