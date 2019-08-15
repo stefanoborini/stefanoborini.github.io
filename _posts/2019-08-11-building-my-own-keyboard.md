@@ -49,7 +49,6 @@ Which is unfortunately incorrect, for a series of reasons:
    as the hand is less accurate with those fingers. This means we can't have two 1U keys to replace 
    the caps lock (which, due to point 2 above, must be 1.75)
 
-
 This means, I don't really know what to do with the caps lock. I can definitely shorten the Shift key
 from the standard 2.25 to 1.25 and obtain an additional key, but for what concerns the Caps Lock the 
 situation is more complicated. It must go, it's useless, but it also must be a single 1.75 key. Some 
@@ -58,6 +57,13 @@ want to be muscle compatible with general QWERTY as much as possible.
 
 In other words, I want a mix of ANSI and ISO layouts, with short shifts, horizontal Enter, and 
 additional keys put to good use.
+
+An option would be to replace the Caps Lock with a "Function" key. The idea is that 
+I could use a combination of F and 1 to obtain F1. Sounds appealing and would get rid of
+the Caps Lock and 12 Function keys. However, the Esc needs to stay in the old position, 
+and would basically become a lonely button up there. Could I put a long visual strip up there?
+Maybe, but it is not going to be easy to get one.
+
 
 # Overall design
 
