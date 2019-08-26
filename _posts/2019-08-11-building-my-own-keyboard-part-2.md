@@ -64,4 +64,8 @@ If possible, it's
 # Links
 
 - https://www.toptal.com/embedded/from-the-ground-up-how-i-built-the-developers-dream-keybooard
+- https://lcsc.com
+- https://jlcpcb.com
+- https://docs.qmk.fm
+- https://ultimatehackingkeyboard.com/layout-and-keycaps
 
