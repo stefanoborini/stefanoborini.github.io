@@ -1,13 +1,13 @@
 ---
 category: hardware
-title: Building my own keyboard - Part 2 (in progress)
+title: Building my own keyboard - Part 2
 ---
 
 # Overall design
 
 The two halves have 53 keys the left hand side and 52 the right hand side.
 It is clear that, to drive so many switches, I will need a matrix, as there's no
-chance I can have that many IO pins. This is a typical and well-established trick.
+chance I can have that many IO pins. This is a [typical and well-established trick](https://www.baldengineer.com/arduino-keyboard-matrix-tutorial.html).
 Standard matrices for keyboards are 8x16 and 8x20 for a full size keyboard. 
 In my case, I have two halves, so a 8x8 matrix on each side will give me 64 keys. 
 Plenty for my needs.
@@ -22,9 +22,6 @@ The RasPi will be hosted on one half of the keyboard, likely the left one,
 which means that I need a I2C cable to drive the right hand display, and the
 arduino connected to the right hand matrix.
 
-But let's start small. The first step is to create a small 2x2 matrix and have 
-arduino push out i2c data for the scan codes.
-
 # The arduino
 
 To control a 8x8 matrix I will need 16 pins. Plus, I will need some pins to
@@ -38,13 +35,14 @@ Just what I need for the matrix, but not for the LEDs.  I could reduce the
 matrix to 8x7 (which would still be able to handle all buttons) freeing one
 cable for the LEDs, but it feels really constrained. 
 
-I could bring out the big guns: one Atmega2560 to serve both keyboard sides.
+Therefore, I could bring out the big guns: tge Atmega2560. 
+Initially I thought one Atmega2560 to serve both keyboard sides.
 The problem is, however, that we'll need to send 16 wires to the other side,
 plus the power, ground, a wire for the neopixels. Additional wires may be
 needed to drive the LCD.  let's say 20 wires. That's a lot of copper, and
 that's a thick cable, so this is also not a solution. The Atmega is also quite
 big, and I would have to make my own PCB (which is not a big deal) and solder the 
-Atmel (impossible).
+Atmel (close to impossible but I might learn).
 
 Keyboard controllers such as the
 [SK5221](http://www.sprintek.com/en/products/keyboard_ic/SK5221.aspx) handle
@@ -53,15 +51,33 @@ could not find any place where these controllers can actually be bought.
 I could use the [HT82K628A](https://www.holtek.com/productdetail/-/vg/82k628a) but I am not
 sure how I would then convert the data out into an I2C transmission.
 
-For now, I'll use the Atmega2560 (I already have one). Later I'll have to find
-a cheaper, better alternative.
+So I decided to overengineer the hell out of this thing: one Atmega2560 per each side.
 
 # PCB
 
 I will need a custom PCB for this project, and custom PCBs are expensive.
-If possible, it's 
+Why custom? Because I am not using a standard layout. The vast majority of self-made
+keyboards out there use standard layouts, or, in some cases, they use the ortholinear layout.
+Not my thing. 
+
+So, yeah, I will make my own PCB, and it will be an adventure in itself.
+
+# Baseplate 
+
+The baseplate is another issue. Cherry type keys need to lock into position,
+and to do so, they need a baseplate. This plate must be 1.5 mm thick to lock
+the key. I initially thought of using Acrylic, but 1.5 mm acrylic is very
+bendy. I will create an initial prototype using acrylic as I have the laser
+cutter for it, but in the end I will have to use aluminium and ask for a
+professional cut.
+
+One possibility is that the acrylic might be enough, as the split keyboard is
+shorter and thus the plate won't bend that much. I am also planning to use hot
+swap key contacts, so any stress on the key won't end up breaking the solder.
 
 # Links
+
+Here are a few links that gave me some relevant knowledge:
 
 - https://www.toptal.com/embedded/from-the-ground-up-how-i-built-the-developers-dream-keybooard
 - https://lcsc.com
