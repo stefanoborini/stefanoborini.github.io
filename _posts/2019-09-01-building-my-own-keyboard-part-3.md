@@ -43,5 +43,5 @@ play with these kind of problems. There's a lot to learn.
 
 In any case, my final design will be as depicted in the picture below
 
-[schematics](https://raw.githubusercontent.com/stefanoborini/keymine/master/schematics/schema-0.1.png)
+![schematics](https://raw.githubusercontent.com/stefanoborini/keymine/master/schematics/schema-0.1.png)
 
