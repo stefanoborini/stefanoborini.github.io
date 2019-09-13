@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>Pycon UK 2019</title>
+
+		<meta name="description" content="Pycon-UK 2019">
+		<meta name="author" content="Stefano Borini">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../revealjs/css/reveal.css">
+		<link rel="stylesheet" href="../revealjs/css/theme/inbrief.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../revealjs/lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../revealjs/css/print/pdf.css' : '../revealjs/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        <style>
+            .reveal {
+              font-size: 28px;
+            }
+        </style>
+		<!--[if lt IE 9]>
+		<script src="../revealjs/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Python packaging in one convenient blog post</h1>
+					<br>
+					<h4>Stefano Borini</h4>
+				</section>
+
+				<section>
+                    <h2>Python packaging</h2>
+                    <span class="fragment fade-in">Confusing? Unclear?</span>
+				</section>
+
+				<section>
+                    <p>"The best way to learn is to teach" - Seneca the Younger</p>
+                    <a href="http://bit.ly/2mgO2a8"><span class="fragment fade-in">http://bit.ly/2mgO2a8<br /><img src="packaging.png" /></span></a>
+				</section>
+
+				<section>
+                    <h2>pyproject.toml</h2>
+                    <p>PEP-518</p>
+                    <span class="fragment fade-in">It's not just a good idea. It's the LAW!</span>
+				</section>
+
+				<section>
+                    <h2>pyproject.toml</h2>
+                    <pre><code>[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry]
+name = "example"
+version = "0.2.5"
+description = ""
+authors = ["Mr. Python"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+requests = "^2.22"
+click = "^7.0"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.scripts]
+example = 'example.cli:main'</code></pre>
+				</section>
+
+				<section>
+                    <h1>Poetry</h1>
+                    <p>Manages environments. Manages dependencies. Build packages.</p>
+                    <p><a>https://poetry.eustace.io/<br/><img src="poetry.png" /></a></p>
+                    <h2>It's amazing. Use it.</h2>
+				</section>
+
+				<section>
+                    <h1>Thanks</h1>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="../revealjs/lib/js/head.min.js"></script>
+		<script src="../revealjs/js/reveal.js"></script>
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../revealjs/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../revealjs/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../revealjs/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../revealjs/plugin/search/search.js', async: true },
+					{ src: '../revealjs/plugin/zoom-js/zoom.js', async: true },
+					{ src: '../revealjs/plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
