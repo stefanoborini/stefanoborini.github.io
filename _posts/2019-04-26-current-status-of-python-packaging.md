@@ -1,6 +1,6 @@
 ---
 category: python
-title: Current State of Python Packaging - 2019
+title: Current Status of Python Packaging - 2019
 ---
 
 In this post, I will try to explain the intricate details of python packaging. I spent the best part of my evenings in 
