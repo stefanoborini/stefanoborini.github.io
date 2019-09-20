@@ -9,6 +9,9 @@ and have arduino push out i2c data for the scan codes.
 I am following the [excellent guide from the bald engineer](https://www.baldengineer.com/arduino-keyboard-matrix-tutorial.html)
 and I managed to create this.
 
+![pic](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20190920_184318.jpg)
+
+
 # Communication between the arduinos and the RasPi
 
 To connect the two arduinos to the raspberry pi I will use I2C. It's a simple
