@@ -11,6 +11,10 @@ and I managed to create this.
 
 ![pic](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20190920_184318.jpg)
 
+The matrix is configured from pins 22 and 24 for the rows, and pins 38 and 40 for the columns. 
+The [firmware is trivially scanning](https://github.com/stefanoborini/keymine/blob/master/firmware/keymine/keymine.ino) and returns 
+the appropriate scan code (for now of keys QWAS), for now through serial for debugging. To communicate with the raspberry pi
+master we will need a different approach.
 
 # Communication between the arduinos and the RasPi
 
@@ -72,9 +76,9 @@ which I then lasered on acrylic to obtain this (for the right hand)
 ![baseplate](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20190922_180504.jpg)
 
 Some observations:
-- I need to adjust the kerb. The laser has no finitely small thickness, so one has to adjust the position of the laser
+- I need to adjust the kerb. The laser has no infinitely small thickness, so one has to adjust the position of the laser
   considering its thickness. For this cut, the kerb was set to zero, but I will have to adjust it, as the keys are loose.
-- I need to use 1.5mm acrylic. The current cut is with 3mm, which is too thick
+- I need to use 1.5mm acrylic. The cut in the picture uses 3mm acrylic, which is too thick
   to secure the retainer clips in the cherry switches.
 - Corners tend to melt excessively. This is not a major problem, but it can become one for those parts that are
   very thin, such as the thin borders between the backspace key switch and the stabilizers.
