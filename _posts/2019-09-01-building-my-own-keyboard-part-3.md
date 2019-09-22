@@ -49,15 +49,23 @@ In any case, my final design will be as depicted in the picture below
 ![schematics](https://raw.githubusercontent.com/stefanoborini/keymine/master/schematics/schema-0.1.png)
 
 
-# More layouting
+# More layouting and baseplate design
 
-I analysed the layout as I was getting ready to create the prototype baseplate. I went to and created this
-layout at http://www.keyboard-layout-editor.com
+I analysed the layout as I was getting ready to create the prototype baseplate.
+I went to and created this layout at http://www.keyboard-layout-editor.com .
 
-![keyboard layout](https://raw.githubusercontent.com/stefanoborini/keymine/master/layouts/units-v0.3.png)
+![keyboard layout](https://raw.githubusercontent.com/stefanoborini/keymine/master/layouts/keyboard-layout-v0.3.png)
 
-I [link the layout](https://is.gd/vTFd2W) for future tinkering and modifications.
+I [link the layout](https://is.gd/rU9Q6q) for future tinkering and modifications.
 
+I had to perform a few changes to my [original design](https://raw.githubusercontent.com/stefanoborini/keymine/master/layouts/units-v0.2.png). 
+First, I had to change the length of the spacebars to 3u, because the builder program I am using for designing the plate
+did not add stabilizers for intermediate length. It was either 3u or 4u, and I chose 3u. Second, I had to tinker the math here
+and there to ensure the proper alignment. 
+
+To generate the baseplate, I fed the JSON data into http://builder.swillkb.com/ to obtain this design:
+
+![baseplate](https://raw.githubusercontent.com/stefanoborini/keymine/master/layouts/baseplate-v0.3.png)
 
 
 
