@@ -67,5 +67,16 @@ To generate the baseplate, I fed the JSON data into http://builder.swillkb.com/ 
 
 ![baseplate](https://raw.githubusercontent.com/stefanoborini/keymine/master/layouts/baseplate-v0.3.png)
 
+which I then lasered on acrylic to obtain this (for the right hand)
+
+![baseplate](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20190922_180504.jpg)
+
+Some observations:
+- I need to adjust the kerb. The laser has no finitely small thickness, so one has to adjust the position of the laser
+  considering its thickness. For this cut, the kerb was set to zero, but I will have to adjust it, as the keys are loose.
+- I need to use 1.5mm acrylic. The current cut is with 3mm, which is too thick
+  to secure the retainer clips in the cherry switches.
+- Corners tend to melt excessively. This is not a major problem, but it can become one for those parts that are
+  very thin, such as the thin borders between the backspace key switch and the stabilizers.
 
 
