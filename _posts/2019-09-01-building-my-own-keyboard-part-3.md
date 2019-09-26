@@ -106,7 +106,7 @@ Some observations:
   too thick to secure the retainer clips in the cherry switches. I will
   eventually have to redo the whole thing for when I'll have to cut the
   aluminum baseplate, but for prototyping 1.5mm acrylic is what I need.
-- I need to adjust the kerb. The laser has no infinitely small thickness, 
+- I need to adjust the kerf. The laser has no infinitely small thickness, 
   so one has to adjust the position of the laser considering its thickness. 
   For this cut, the kerb was set to zero, but I will have to adjust it, as 
   the keys are loose.
