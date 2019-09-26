@@ -70,7 +70,7 @@ disconnected in the picture for unrelated reasons)
 
 and finally I get an answer on device 0x42 (yes, I know that it's not 42 in decimal)
 
-![arduraspi2](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20190926_203829.jpg)
+![arduraspi2](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20190926_203821.jpg)
 
 After this I wrote a [small script in python for the RasPi to see if I get a signal](https://github.com/stefanoborini/keymine/blob/55ac1373f61e9badcf7955390386e3efe85d68da/firmware/raspiinterrupt.py).  And I do:
 
