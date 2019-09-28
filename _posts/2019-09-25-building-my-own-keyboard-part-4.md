@@ -27,7 +27,6 @@ I can use this clearance, that will also be available in my keyboard, to add a
 second 1.5mm baseplate layer that will stiffen the whole structure.
 
 
-- buy 1.5mm acrylic
 - achieve finalized baseplates in acrylic
 - finalize initial design of the PCB with proper measures and components.
 - explore keycap options
