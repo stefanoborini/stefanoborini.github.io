@@ -103,6 +103,25 @@ generate the USB HID scan codes. The raspberry pi will just forward them.
 
 # The keycaps
 
-There are two families of keycaps: DCS and DSA. 
+There are two main families of keycaps: DCS and DSA. (There is also a third, SA, but it's not very frequently seen) 
 
 ![image]({{ site.url }}/assets/images/2019/10/02/dsadcs.png)
+
+The profile, the angle and the shape of my current keyboard is DSA, so I will aim for this shape. I
+am planning to order the vast majority of keycaps from https://pimpmykeyboard.com/ however they don't seem
+to have 3 spaces DSA spacebars, which is what I need. They also seem to only have Alps mount. I need
+a Cherry mount. After some investigation, it seems that finding a 3u spacebar is pretty much a lost cause.
+[Some information points
+me](https://www.reddit.com/r/MechanicalKeyboards/comments/6rn3dr/3u_spacebars/)
+in the direction of shady chinese suppliers, something I am unwilling to pursue.
+
+I suspect an option would be that I make use of my utter lack of expertise in
+3d printing and CAD drawing and try to hack [this thingiverse
+spacebar](https://www.thingiverse.com/thing:2204309). My main concern is the
+texture, but it might end up ok. I could [try to do acetone vapor
+smoothing](https://all3dp.com/2/abs-smoothing-a-beginners-guide-to-abs-vapor-smoothing/)
+to improve it.
+
+
+
+
