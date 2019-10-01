@@ -101,3 +101,8 @@ The external world will not know of the existence of the arduinos. It is just fo
 my personal simplification, and because it makes sense, that the arduino
 generate the USB HID scan codes. The raspberry pi will just forward them.
 
+# The keycaps
+
+There are two families of keycaps: DCS and DSA. 
+
+![image]({{ site.url }}/assets/images/2019/10/02/dsadcs.png)
