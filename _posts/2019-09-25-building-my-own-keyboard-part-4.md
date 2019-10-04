@@ -24,12 +24,7 @@ two rows of keys.
 ![keybow](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20190926_225730.jpg)
 
 I can use this clearance, that will also be available in my keyboard, to add a
-second 1.5mm baseplate layer that will stiffen the whole structure.
-
-
-- achieve finalized baseplates in acrylic
-- finalize initial design of the PCB with proper measures and components.
-- explore keycap options
+second 1.5mm baseplate layer that will stiffen the whole structure. Maybe?
 
 # Connecting Arduino with the Raspberry Pi
 
