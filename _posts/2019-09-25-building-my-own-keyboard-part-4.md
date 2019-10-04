@@ -101,6 +101,42 @@ The external world will not know of the existence of the arduinos. It is just fo
 my personal simplification, and because it makes sense, that the arduino
 generate the USB HID scan codes. The raspberry pi will just forward them.
 
+# The PCB with Kailh hot plug connectors
+
+My initial attempt at EasyEDA editing of the PCB was not particularly
+successful, and I had to redo the same thing many, many times. My first
+iteration was just to get an idea of the complexity. I used the Cherry Switch
+from the EasyEDA library and a few diodes, imported the baseplate image as
+documentation (so that I could get a reference of the positions) and arranged
+the switches in the proper places. I tried manual routing mostly because I
+wanted to get some practice with the controls. Additionally, the online router
+was too unreliable, so I just downloaded the local one.
+
+The next step was to use [Kailh hot plug connectors](https://cdn.shopify.com/s/files/1/3099/8088/files/CPG151101S11_MX_Socket.pdf?4656976507916097806). 
+These connectors are Cherry compatible and save me the pain of soldering the thin button leads. I already have a bag of these
+connectors.
+
+Now the main problem was to create a PCB module for these switches. I am
+getting to the end of the story quickly, but I discovered that a solid region
+in EasyEDA is **not** equivalent to a pad.  You can't connect to a solid
+region, even if the copper is exposed. You must create a pad. If you don't want
+a hole, simply limit the pad to a single layer (top or bottom). This discovery
+came at the end of a painful debug session where the autorouter failed with an
+unclear message. Also be aware that creating your own PCB module with precise
+geometry positioning is an absolute pain with EasyEDA. I asked a friend and he
+reported me that the world is not better with Eagle. I haven't tried KiCad.
+Also, EasyEDA has the nasty habit to crash every now and then during high zoom
+in. 
+
+Nevertheless, after painful adventures with the autorouter that gave rather
+nasty results, I finally managed to get this PCB for Keymine version 1 left
+
+![keyminev1l](https://raw.githubusercontent.com/stefanoborini/keymine/master/pcb/keymine-v1L.png)
+
+I then exported the [Gerber
+file](https://raw.githubusercontent.com/stefanoborini/keymine/master/pcb/keymine-v1L.zip),
+uploaded it to [jlcpcb](https://jlcpcb.com/) and finally ordered the PCB. Now we wait.
+
 # The keycaps
 
 There are two main families of keycaps: DCS and DSA. (There is also a third, SA, but it's not very frequently seen) 
@@ -121,7 +157,4 @@ spacebar](https://www.thingiverse.com/thing:2204309). My main concern is the
 texture, but it might end up ok. I could [try to do acetone vapor
 smoothing](https://all3dp.com/2/abs-smoothing-a-beginners-guide-to-abs-vapor-smoothing/)
 to improve it.
-
-
-
 
