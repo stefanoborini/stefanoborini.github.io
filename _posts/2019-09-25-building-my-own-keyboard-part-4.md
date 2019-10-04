@@ -1,6 +1,6 @@
 ---
 category: hardware
-title: Building my own keyboard - Part 4 (in progress)
+title: Building my own keyboard - Part 4
 ---
 
 # Thinner acrylic
