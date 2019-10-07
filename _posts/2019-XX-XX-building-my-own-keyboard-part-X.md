@@ -9,3 +9,5 @@ Product                                     | From               | Price
 5xHARWIN 2.54 2x8 PCB Socket                |                    |
 300xON Semiconductor Diode SOD-323 1N4148WS |                    | 
 2xDisplaytech 162D-BC-BC LCD, 2x16          | rs-components.com  | 39.41 GBP
+Gateron MX Switch                           | Amazon             | 24 GBP
+TENSOL 12 Acrylic Adhesive                  |                    | 7 GBP
