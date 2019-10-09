@@ -88,7 +88,7 @@ and there to ensure the proper alignment.
 
 To generate the baseplate, I fed the raw data into the [Swillkb online builder](http://builder.swillkb.com/) to obtain this design:
 
-![baseplate](https://raw.githubusercontent.com/stefanoborini/keymine/master/layouts/baseplate-v0.3.png)
+![baseplate](https://raw.githubusercontent.com/stefanoborini/keymine/master/baseplates/baseplate-v0.3.png)
 
 This layout is very approximated. I considered nothing more than the hole
 positioning and the general understanding of the process, but I will need to
