@@ -11,3 +11,4 @@ Product                                     | From               | Price
 2xDisplaytech 162D-BC-BC LCD, 2x16          | rs-components.com  | 39.41 GBP
 Gateron MX Switch                           | Amazon             | 24 GBP
 TENSOL 12 Acrylic Adhesive                  |                    | 7 GBP
+

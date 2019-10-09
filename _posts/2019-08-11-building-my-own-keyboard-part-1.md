@@ -50,7 +50,7 @@ Sadly, I quickly discovered that this is not a good design. If we assign 1U
 for the size of a standard button (approx 2 cm), the keyboard has the following
 sizes:
 
-![keyboard](https://github.com/stefanoborini/keymine/blob/master/layouts/units-v0.1.png?raw=true)
+![keyboard]({{ site.url }}/assets/images/2019/09/units-v0.1.png)
 
 Which is unfortunately incorrect, for a series of reasons:
 
@@ -78,7 +78,7 @@ Maybe, but it is not going to be easy to get one, and pricey if I do.
 If I could learn to love Esc as Caps Lock, I might actually obtain this rather interesting
 design. 
 
-![keyboard](https://github.com/stefanoborini/keymine/blob/master/layouts/units-v0.2.png?raw=true)
+![keyboard]({{ site.url }}/assets/images/2019/09/units-v0.2.png)
 
 In logical terms, it kind of make sense. Enter is to accept the current task. Esc is to abort the current task.
 It would be beautiful if they were on the exact opposite sides. So be it. I've been wrong for 20+ years, and it's

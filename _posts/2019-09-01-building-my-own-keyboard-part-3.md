@@ -16,19 +16,19 @@ The [firmware is trivially scanning](https://github.com/stefanoborini/keymine/bl
 the appropriate scan code (for now of keys QWAS), for now through serial for debugging. To communicate with the raspberry pi
 master we will need a different approach. The circuit can be summed up more or less as this:
 
-![schema](https://raw.githubusercontent.com/stefanoborini/keymine/master/layouts/schema-2x2.png)
+![schema]({{ site.url }}/assets/images/2019/09/schema-2x2.png)
 
 If we create the PCB from the above schema, we obtain the following connectivity network
 
-![pcb unconnected](https://raw.githubusercontent.com/stefanoborini/keymine/master/layouts/pcb-2x2.png)
+![pcb unconnected]({{ site.url }}/assets/images/2019/09/pcb-2x2.png)
 
 If we reorder and rotate the components we obtain this
 
-![pcb reodered](https://raw.githubusercontent.com/stefanoborini/keymine/master/layouts/pcb-2x2-reordered.png)
+![pcb reodered]({{ site.url }}/assets/images/2019/09/pcb-2x2-reordered.png)
 
 And if we finally trigger the autorouter we get this layout for the copper traces
 
-![pcb traces](https://raw.githubusercontent.com/stefanoborini/keymine/master/layouts/pcb-trace-2x2.png)
+![pcb traces]({{ site.url }}/assets/images/2019/09/pcb-trace-2x2.png)
 
 Which points at the general pattern I'll have to assemble.
 
@@ -81,7 +81,7 @@ modifications. I then decided to split the two as separate JSONs as they will
 need two different base plates and circuits, so I have separate files [for the left](https://raw.githubusercontent.com/stefanoborini/keymine/master/layouts/keyboard-layout-left-v0.3.json)
 and [for the right](https://raw.githubusercontent.com/stefanoborini/keymine/master/layouts/keyboard-layout-right-v0.3.json)
 
-I had to perform a few changes to my [original design](https://raw.githubusercontent.com/stefanoborini/keymine/master/layouts/units-v0.2.png). 
+I had to perform a few changes to my [original design]({{ site.url }}/assets/images/2019/09/units-v0.2.png). 
 First, I had to change the length of the spacebars to 3u, because the builder program I am using for designing the plate
 did not add stabilizers for intermediate length. It was either 3u or 4u, and I chose 3u. Second, I had to tinker the math here
 and there to ensure the proper alignment. 
