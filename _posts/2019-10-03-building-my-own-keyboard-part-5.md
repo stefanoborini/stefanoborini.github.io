@@ -66,7 +66,8 @@ is receiving.
 
 ![error](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20191012_200613.jpg)
 
-As you can see, there are occasional 0xFF (255) that are sent for no reason.
+As you can see, there are occasional 0xFF (255) that are sent for no reason. Additionally, sometimes there is an array
+that is all zeros 0x00. This is also not possible according to the protocol.
 In order to debug the problem, first I wanted to see if that false data was actually in transit, hence the logical analyser.
 It turns out that they do indeed go through the wire
 
