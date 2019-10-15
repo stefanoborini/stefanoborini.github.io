@@ -74,7 +74,23 @@ It turns out that they do indeed go through the wire
 ![logic-i2c](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/logic-i2c.png)
 
 So the arduino is sending it. However, I never actually populate the array with those values, and if I print them
-to Serial just before they are sent out by the arduino, they are all zero. what gives?
+to Serial just before they are sent out by the arduino, they are all zero. What gives?
+
+What gives is that my C is old, I am old, and I make mistakes. memset wants the size in bytes, so this
+
+```c
+memset(buf, 0x00, 32)
+```
+
+should really be this
+
+```c
+memset(buf, 0x00, 32*sizeof(byte))
+```
+
+For shame! But troubles are far from over. I reworked the code a bit because a few potential race conditions
+with the interrupt were present, but it still does not work and produces odd results. This time however I don't think
+it's my fault. I'll write more in the next post, but I might have to dig into the i2c kernel driver.
 
 # PCB
 
