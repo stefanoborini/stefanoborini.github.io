@@ -1,6 +1,6 @@
 ---
 category: python
-title: Why 0.1 + 0.2 is not equal to 0.3 in python (in progress)
+title: Why 0.1 + 0.2 is not equal to 0.3 in python
 ---
 
 This post explain a frequently asked question about python that is nothing new to people who knows their bits and bytes,
@@ -58,20 +58,15 @@ and again, using powers of ten, as
     0.125 = 1 * 10^-1 + 2*10^-2 + 5 * 10^-3
 
 When we have binary numbers, the rule is the same, only that instead of using 10, we use 2. 
-A binary number only allows the digits 0 and 1, so a value like
+A binary number only allows the digits 0 and 1, so a binary value like 110.01 means:
 
-    110.01<sub>2</sub>
+    0b110.01 = 1 * 2^2 + 1 * 2^1 + 0 * 2^0 + 0 * 2^-1 + 1 * 2^-2
 
-Is equivalent to 
+which, if you do the math, is 6.25 in decimal.
 
-    1 * 2^2 + 1 * 2^1 + 0 * 2^0 + 0 * 2^-1 + 1 * 2^-2
-
-and if you do the math it is 6.25 in decimal.
-
-What about 0.2? in decimal, it's easy, it is 2 * 10^-1. 
-
-But in binary you will find out that it is repeating, and its first ten digits
-are 0.0011001100 and on and on. 
+What about 0.2? in decimal, it's easy and non-repeating: 2 * 10^-1, but in
+binary you will find out that it is repeating, and its first ten digits
+are 0.0011001100... 
 
 Like in our example with truncated tau value, if we stop at ten binary digits,
 we cannot represent any value that lies between 0.0011001100, which is
@@ -81,94 +76,116 @@ is 0.2001953125, a bit more than 0.2.
 The decimal value 0.2 lies in this interval, and because its value in binary is
 infinite, a computer cannot exactly hold decimal 0.2 in memory. It will always
 hold a very close approximation, but never exactly 0.2. Every time you tell the
-computer you want to handle 0.2, the computer will not store 0.2.  It will
+computer you want to handle 0.2, the computer will not store 0.2. It will
 store something very close to it. How close, depends on how many binary digits
-it uses to represent the number.  This also happens for other values, and it is
+it uses to represent the number. This also happens for other values, and it is
 the reason why this difference emerges occasionally. 
 
-Python is not wrong. It is just exposing the hard truth: mathematics with
-floating point numbers is inexact by design and the error between the
-represented value and the mathematically correct value, known as round-off
-error, can have dramatic effects on the final result of a series of operations.
-It also means that the order of operations or the precision of intermediate
-values can change the result.
+Python is not wrong. It is just exposing the hard truth: **mathematics with
+floating point numbers is inexact by design**, because some values cannot be
+represented exactly and are truncated. The error between the represented value
+and the mathematically correct value, known as round-off error, can have
+dramatic effects on the final result of a series of operations.  It also means
+that the order of operations or the precision of intermediate values can change
+the result.
 
 # Floating point in-memory representation: IEEE 754
 
-How are floating point numbers actually represented in memory?
+Until now, we discussed the general issue with representing numbers that are 
+finite in decimal base, but infinite in binary base, and how truncation affects
+the final precision. We said nothing about how floating point numbers actually 
+represented in a computer memory.
+
 Converting a concept, in this case a floating point number, into a bit pattern is
-called an encoding. There's a standard known as the IEEE 754 that specifies
-exactly how floating point values should be represented in memory.
+called an **encoding**. There's a standard known as IEEE 754 that specifies
+exactly how floating point values should be represented in memory (and disk).
 Note that this is not the only encoding possible (in fact, I had to work with
 non IEEE encodings in my career), but it is by far the most universal standard
 in modern computing.
 
-To understand how a floating point number is stored in memory we will use the struct module.
-struct allows us to extract the byte representation of data. We'll then convert this 
-representation to bits and I will explain how these bits represent the floating point number. 
+*Be warned*: What I am giving here is an extremely simplified description of IEEE 754.
+If you want the full details, this is not the right place, but it will give you a basic
+understanding of how it works.
 
-When dealing with floating point values, we need to represent three pieces of information: 
-the sign, the mantissa and the exponent.
+A generic floating point number is fully represented by three entities: the sign,
+the exponent and the mantissa. The final result is meant to represent something like
 
-normalised form : we gain one bit.
+    sign mantissa * 2^exponent
 
-IEEE 754 also defines some special combinations of bits to represent some extremely useful information for floating point math,
-such as plus or minus infinite, and an entity called Not a Number (NaN). There's an interesting gotcha about NaN that needs some explanation
-NaN is not equal to itself.
+such as
+    
+    - 0b1.0010 * 2^(-5)
+
+When we have to store this value, IEEE-754 uses the following tricks:
+
+- the exponent is represented as an integer, but shifted so that a value of zero
+  means the highest representable negative exponent.
+- the mantissa is represented as a sequence of binary digits, representing a
+  base 2 fractionary number as in the example I gave above. However,
+  the value is normalised, which means that it will be written so that the first
+  digit is never zero. This may require a change in the value for the exponent,
+  of course.  In other words, binary 110.01 will be rewritten as binary 1.1001,
+  and binary 0.0011010 will be rewritten as binary 1.1010. With this
+  trick, the first digit will always inevitably be 1, so it can be omitted
+  from the in-memory representation and considered implicit.
+
+The standard defines a single precision floating point to be stored using 32 bits, or four bytes.
+These 32 bits are allocated as follows:
+
+- 1 bit for the sign: represents if the value is positive (0) or negative (1)
+- 8 bits represent the exponent.
+- 23 bits to represent the mantissa.
+
+To understand how a floating point number is stored in memory we will use the
+``struct`` module to extract the byte representation of data. The following line
+does a lot of magic
+
+```python
+print(" ".join(reversed(list(map(lambda x: bin(x)[2:].zfill(8), struct.pack('@f', 0.5))))))
+```
+
+and basically shows the binary representation of the value 0.5 according to IEEE-754 on
+a little endian machine. The result is the following:
+
+    00111111 00000000 00000000 00000000                                                     
+
+If we divide the bits according to the rules given above
 
 
-code
+    sign exp-127  mantissa                                                                  
+    0    01111110 00000000000000000000000                                                   
 
-slide
+We see that the exponent is, after removing the shift:
 
-    The standard defines four possible sizes for a floating point representation. 
-    The two most common are known as single precision and double precision.
-    Single precision occupies 32 bits, four bytes, can represent numbers between around 10^-38 and 10^38, both positive and negative, with a precision of around 7 decimal digits. 
-    In C on an x86 machine, this is generally referred as "float". (FIXME: check float precision)
-    Double precision occupies 64 bits, eight bytes, and can represent numbers between 10^-308 and 10^308, both positive and negative, with a precision of around 16 decimal digits.
-    In C on an x86 machine, this is generally referred as "double".
-    Both modes also allows to specify special values such as positive and negative infinity, positive and negative zero, a value known as "NaN" or Not a Number with some odd properties,
-    and other special properties we will not explore.
+    0b01111110 - 127 = 126-127 = -1
 
+and the mantissa is the implicit one followed by all zeros. The result is therefore
 
-    53 bits. But here there are only 52. The reason is, one bit is always for free.
+    + 1 * 2^(-1) = 0.5 in decimal
 
-To reduce build up of errors, the standard also specifies an extended double precision (80 bits, 10 bytes). 
-This mode is for example used internally by x86 processors while doing multiple operations one after another.
+IEEE 754 also defines some special combinations of bits to represent some
+extremely useful information for floating point math, such as plus or minus
+infinite, positive and negative zero, and an entity called Not a Number (NaN).
+There's an interesting gotcha about NaN that needs some explanation NaN is not
+equal to itself.
+
+To reduce build up of errors, the standard also specifies an extended double
+precision (80 bits, 10 bytes).  This mode is for example used internally by x86
+processors while doing multiple operations one after another. 
 
 ## Alternative encodings
 
-IEEE 754 is today _the_ way to represent a floating point value, but it wasn't always the only one. In fact, many other representations
-existed, and some are still in use today on legacy code.  VAX had its own, as well as Microsoft with MBF. 
-This format was also used on the venerable Commodore 64.
+IEEE 754 is today _the_ way to represent a floating point value, but it wasn't
+always the only one.  Before 1985 every platform had its own way of encoding
+floating point values, and in some extremely rare cases they
+are still supported today. For example, I personally witnessed two: VAX and
+MBF. Two bits of trivia on these:
 
-IEEE 754 was not always the standard. Before 1985 every platform had its own way of encoding floating point values,
-and in some extremely rare cases they are still supported today. For example, I personally witness two: VAX and MBF.
+- VAX floating point representation was quite similar to IEEE, but the
+  information was stored as middle endian.
 
-Commodore 64 had no in processor operations to perform floating point operations.
-
-One interesting bit of information about VAX is that, floating point representation aside, which was quite similar 
-to IEEE, was that the value was stored as middle endian.
-
-VAX-11 Floating Point Representations: "F_Floating" Structure (32 bit "longword"):
-313029282726252423222120191817161514131211109876543210
-Fraction (second part): bit 16 is the least significantSign BitExponentFraction (first part): bit 6 is the most significant
-
-Cray Floating point representation
-
-signed zero
-
-If the exponent is all ones, then two things can happen. Either the mantissa is all zeros, and in that case the value
-represents a zero, or the mantissa is not all zeros, and in that case it represents NaN.
-
-zero is all bits set to zero.
-
-
-References
-----------
-
-http://www.mrob.com/pub/math/floatformats.html
-
-
-
+- Commodore 64 had no in-processor operations to perform floating point
+  operations.  All floating point operations were done in-software by the
+  KERNAL. This made floating point operations extremely slow, but these routines
+  just applied MBF enconding.
 
