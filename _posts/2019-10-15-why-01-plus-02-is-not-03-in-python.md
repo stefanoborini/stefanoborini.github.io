@@ -25,7 +25,8 @@ repeats forever, like 0.666 and on and on, others don't repeat, but are
 infinite, like pi or tau.  However, when you bring computers in, there are
 problems, specifically
 
-    Not all real numbers are representable as floating point numbers
+
+**Not all real numbers are representable as floating point numbers**
 
 which means we must always truncate them to a given maximum number of digits.
 
@@ -33,34 +34,33 @@ For example, imagine we only have 4 digits available. Tau is mathematically
 6.28318.. etc but we cannot express this value with only four digits. We can
 express 6.283 or 6.284. Nothing in between.  It's like there's a hole between
 them, and any value in that hole, finite or infinite, cannot be expressed.
-
 But, I hear you say, 0.2 should be representable, right? It's not infinite.
 Well, no, and to explain this, we need to dig deeper.
 
-Computers don't understand numbers in base ten. They understand numbers in base two, binary numbers. 
-A number that is finite in one system, may not be finite in another. Specifically, 0.2 is not finite in 
-binary. Let's see why.
+Computers don't understand numbers in base ten. They understand numbers in base
+two, binary numbers. A number that is finite in one system, may not be finite
+in another. Specifically, 0.2 is not finite in binary. Let's see why.
 
 First of all, let's check what it means to be in a given base. A number like 327 can be written as 
 
-    3 * 100 + 2 * 10 + 7
+    327 = 3 * 100 + 2 * 10 + 7
 
 and if we use powers of ten, we can write
 
-    3 * 10^2 + 2 * 10^1 + 7 * 10^0
+    327 = 3 * 10^2 + 2 * 10^1 + 7 * 10^0
 
 similarly, a number like 0.125 can be rewritten as
 
-    1 * 0.1 + 2 * 0.01 + 5 * 0.001
+    0.125 = 1 * 0.1 + 2 * 0.01 + 5 * 0.001
 
 and again, using powers of ten, as
 
-    1 * 10^-1 + 2*10^-2 + 5 * 10^-3
+    0.125 = 1 * 10^-1 + 2*10^-2 + 5 * 10^-3
 
 When we have binary numbers, the rule is the same, only that instead of using 10, we use 2. 
 A binary number only allows the digits 0 and 1, so a value like
 
-    110.01
+    110.01<sub>2</sub>
 
 Is equivalent to 
 
