@@ -78,7 +78,23 @@ to Serial just before they are sent out by the arduino, they are all zero. what 
 
 # PCB
 
-- wait for the PCB
+The PCB arrived, and they are a thing of beauty.
+
+![PCB1](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20191015_200659.jpg)
+
+The buttons fit perfectly. As you can see, the central pin sits perfectly in the middle hole, and the two contacts
+are perfectly aligned with the hot-swap holes.
+
+![PCB2](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20191015_200750.jpg)
+
+Unfortunately, one minor snag is the position of the top-left screw hole, which
+is definitely too close to the border, and misaligned with the other holes.
+This is the classic little, blatant mistake that gets uncaught no matter how
+much you check. I will fix it, but I doubt I will get a replacement PCB. I'll
+probably drill the hole myself. I have five PCBs of the left side, in case I
+want to make more keyboards. This is the unintended consequence of a minimum
+order of five.
+
 - order all the parts.
 - test it.
 
