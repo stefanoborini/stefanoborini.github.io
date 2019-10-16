@@ -133,6 +133,6 @@ I then setup a small acetone chamber with an upside down glass, a napkin with so
 I then left the key in there for a time that I considered adequate, but turned out to be probably excessive: 30 minutes. The resulting key
 is definitely smoother, but it's clearly not a very appealing result.
 
-![abs-button-postacetone](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/abs-button-postacetone.png)
+![abs-button-postacetone](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/abs-button-postacetone.jpg)
 
 I might have to find a different solution.
