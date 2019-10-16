@@ -1,6 +1,6 @@
 ---
 category: hardware
-title: Building my own keyboard - Part 5 (in progress)
+title: Building my own keyboard - Part 5
 ---
 
 # Baseplate and new (larger) prototype matrix
@@ -103,6 +103,10 @@ are perfectly aligned with the hot-swap holes.
 
 ![PCB2](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20191015_200750.jpg)
 
+And it also perfectly matches the Kailh hot swap contact
+
+![PCB3](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/IMG-20191016-WA0002.jpeg)
+
 Unfortunately, one minor snag is the position of the top-left screw hole, which
 is definitely too close to the border, and misaligned with the other holes.
 This is the classic little, blatant mistake that gets uncaught no matter how
@@ -111,13 +115,24 @@ probably drill the hole myself. I have five PCBs of the left side, in case I
 want to make more keyboards. This is the unintended consequence of a minimum
 order of five.
 
-- order all the parts.
-- test it.
-
 # The keycaps
 
-- order keycaps and costar stabilizers
-- edit the thingiverse spacebar
-- 3d print one
-- try acetone smoothing
+To explore the viability of 3d printing the 3u spacebar, I printed an ABS button from the thingiverse, then applied
+acetone vapors to smooth it. I used a 0.06 mm high resolution print, and this was the result 
 
+![abs-button-preacetone](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/abs-button-preacetone.png)
+
+Setting aside the color, there were a couple of major issues: the first one is that the accuracy of the cross-shaped 
+hole was very, very poor, leading to a result that did not fit the switch. Despite various attempts, I only managed to break the 
+central rod. This means that I will have to account for this poor accuracy and rework the 3d model to make it more tolerant to it.
+
+I then setup a small acetone chamber with an upside down glass, a napkin with some acetone, and the key at the bottom.
+
+![acetone-chamber](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/acetone-chamber.jpg)
+
+I then left the key in there for a time that I considered adequate, but turned out to be probably excessive: 30 minutes. The resulting key
+is definitely smoother, but it's clearly not a very appealing result.
+
+![abs-button-postacetone](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/abs-button-postacetone.png)
+
+I might have to find a different solution.
