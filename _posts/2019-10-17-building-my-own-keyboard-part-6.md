@@ -9,7 +9,21 @@ I laser cut the complete baseplate. Laser files provided. Link.
 
 screwed the screw space. Need rework.
 
-Strength of the tensol 12 bond.  Images.
+To verify the strength of the Tensol 12 bond, I applied a small amount on two scrap strips of acrylic.
+I let them cure for 24 hours, and then tried to separate them. It was much stronger than I could even remotely
+think. I tried to shear separate them by using pliers and pulling in opposite directions with the help of another person.
+The acrylic snapped first
+
+![tensol](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20191019_174234.jpg)
+
+So it is safe to say that tensol 12 is indeed an excellent bonding agent for acrylic, and
+it's perfectly transparent too.  Unfortunately, I also realised that the actual
+time from application to solid is in the order of 15-20 seconds, not hours as I
+believed. Longer than cyanoacrylate, but still very small to allow for proper
+gluing and setting of the two halves of the baseplate. My first attempt was far
+from perfect, as you will see soon, but I will come up with a solution for
+rapid application at a later stage.
+
 - create new baseplate and design the screw setup
 
 
@@ -38,12 +52,23 @@ for the current prototypes, so I can reuse the switches in later prototypes and
 finished product. The result is that I will have to rework the final PCB to
 just provide through-hole solder pads for the switches.
 
+After adding the baseplate and the switches, it's now time to do the final assembly of
+the left side prototype:
+
+![final-left-side](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20191023_200650.jpg)
+
+Note how the baseplate tensol application was far from perfect, but despite this I am pleased with the result.
 
 # Debugging arduino/raspi connection woes
 
 - check kernel i2c driver.
 
 # The keycaps
+
+Ordered keycaps from [the keyboard company](http://keyboardco.com), the only
+company based in the UK with a reasonable set of keys. I ordered two sets: one
+with US layout, and the other with blank keycaps. 
+
 
 - keep searching 3u spacebar DCS.
 - search the DCS keycaps for the rest of the keyboard.
