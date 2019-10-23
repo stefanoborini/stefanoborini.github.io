@@ -61,6 +61,15 @@ Note how the baseplate tensol application was far from perfect, but despite this
 
 # Debugging arduino/raspi connection woes
 
+I realised I have made a pretty large whoopsie with the connection. I am not
+sure if this is the source of my current issues with the I2C, but it certainly
+needs fixing. The arduino mega2560 is operating at 5 volts. The raspberry pi at
+3.3v, and its pins are _not_ 5v resistant.  There's a chance that I might have
+destroyed the raspberry pi GPIO, so I decided to replace it, and add a level shifter
+in between.
+
+
+
 - check kernel i2c driver.
 
 # The keycaps

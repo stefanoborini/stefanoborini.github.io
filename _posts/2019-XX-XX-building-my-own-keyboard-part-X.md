@@ -14,3 +14,4 @@ TENSOL 12 Acrylic Adhesive                  |                    | 7 GBP
 3x A3 3mm Perspex Black Matt Acrylic        | Amazon             | 9.99 GBP
 1x FKCS104EB (USA Black Filco 104 Key)      | keyboardco.com     | 24.95 GBP  
 1x FKCS105BB (Blank Black Filco 105 Key)    | keyboardco.com     | 24.95 GBP
+2x level shifters                           | pimoroni           | 11 GBP
