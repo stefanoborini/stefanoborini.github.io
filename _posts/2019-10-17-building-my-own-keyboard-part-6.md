@@ -58,10 +58,22 @@ the left side prototype:
 ![final-left-side](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20191023_200650.jpg)
 
 Note how the baseplate tensol application was far from perfect, but despite this I am pleased with the result.
+Except that, well, I made a big (but overall unimportant) whoopsie: the switches are upside down!
+maybe? maybe not? It's unclear. Let me explain. If you look at the [image from wikipedia of a cherry keyboard](https://en.wikipedia.org/wiki/Cherry_(keyboards)#/media/File:Cherry_MX_Blue_Switches.jpg)
+you will note that the slot for the LED is on the bottom. [This
+article](https://www.zdnet.com/article/cherry-mx-board-silent-the-keyboard-for-professionals/)
+also shows pictures of an official Cherry keyboard with the slot on the bottom]. However, if you look
+at [keyboards that are
+backlit](https://mechanicalkeyboards.com/shop/index.php?l=product_detail&p=4023),
+the LED is at the top. The switches are completely non-directional, but the LED
+position is important as the letter are translucid and the light needs to shine
+through. My keyboard has no backlight, but I might consider adding individually
+controlled LEDs later on. 
+
 
 # Debugging arduino/raspi connection woes
 
-I realised I have made a pretty large whoopsie with the connection. I am not
+I realised I have made another pretty large whoopsie, this time with the connection. I am not
 sure if this is the source of my current issues with the I2C, but it certainly
 needs fixing. The arduino mega2560 is operating at 5 volts. The raspberry pi at
 3.3v, and its pins are _not_ 5v resistant.  There's a chance that I might have
