@@ -78,9 +78,38 @@ sure if this is the source of my current issues with the I2C, but it certainly
 needs fixing. The arduino mega2560 is operating at 5 volts. The raspberry pi at
 3.3v, and its pins are _not_ 5v resistant.  There's a chance that I might have
 destroyed the raspberry pi GPIO, so I decided to replace it, and add a level shifter
-in between.
+in between. So I bought a [level shifter from Pimoroni](https://shop.pimoroni.com/products/adafruit-4-channel-i2c-safe-bi-directional-logic-level-converter)
+and plugged it in. I also reduced the data transfer speed on the I2C bus by modifying the
+/boot/config.txt parameters. With this setup I managed to reduce the error rate to
+zero, but it still occasionally failed for unknown reasons.
 
+I then tried to setup the USB keyboard using the [configfs kernel feature](https://github.com/stefanoborini/keymine/blob/master/firmware/raspi-os-setup/keyboard-configfs)
+following [this excellent blog post](https://www.rmedgar.com/blog/using-rpi-zero-as-keyboard-setup-and-device-definition), then I made 
+a small python script to forward the events from the I2C to the USB configfs device... and it kind of works...
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WXywF1FtrJw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Yes, button press events are sent both at press and release, hence the
+duplicated keys. This is just because I wanted to test it and I didn't bother
+to send the key release event. Anyway, I noticed it's very, very slow. I am
+unsure if this is because the python program is very slow (it's not
+particularly efficient) or because configfs access is, or because the I2C
+communication is slow.  The final result is unusable and rather unstable. I got
+unexpected and weird events. I also noted the following additional
+complication: raspberry pi usb is not hot swap, which means that when I plug
+the usb connector into the computer, the raspberry pi reboots even when powered
+on the other usb socket. While this is not necessarily a dealbreaker for the
+final product, it makes my life much harder when debugging.
+
+At this point, I have to go back to basics. Writing this firmware is not as
+trivial as I thought and I need to study a bit more. I therefore decided to take
+a look at the USB specs, and at the [QMK firmwares](https://github.com/qmk). I am
+also checking an alternative option of just buying an off-the-shelf [keyboard to
+usb microcontroller such as the HT82K629A](http://www.farnell.com/datasheets/79209.pdf)
+and skip the raspberry pi completely. This is suboptimal, but it might get me
+to a basic working prototype quicker. The only problem is that I will have to transport
+signal from one half of the keyboard to the other, as I can't have two controllers
+if I use this encoder.
 
 - check kernel i2c driver.
 
