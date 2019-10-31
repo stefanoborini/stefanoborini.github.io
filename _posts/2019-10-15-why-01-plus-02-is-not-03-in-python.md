@@ -3,7 +3,7 @@ category: python
 title: Why 0.1 + 0.2 is not equal to 0.3 in python
 ---
 
-![neinneinnein]({{ site.url }}/assets/images/2019/10/15/neinneinnein.jpg)
+![neinneinnein]({{ site.url }}/assets/images/2019/10/15/neinneinnein.png)
 
 This post explain a frequently asked question about python that is nothing new to people who knows their bits and bytes,
 but it's unexpected to newcomers. Why this
