@@ -168,8 +168,11 @@ and the mantissa is the implicit one followed by all zeros. The result is theref
 IEEE 754 also defines some special combinations of bits to represent some
 extremely useful information for floating point math, such as plus or minus
 infinite, positive and negative zero, and an entity called Not a Number (NaN).
-There's an interesting gotcha about NaN that needs some explanation NaN is not
+There's an interesting gotcha about NaN that needs some mention: NaN is not
 equal to itself.
+
+    >>> float('nan') == float('nan')
+    False
 
 To reduce build up of errors, the standard also specifies an extended double
 precision (80 bits, 10 bytes).  This mode is for example used internally by x86
