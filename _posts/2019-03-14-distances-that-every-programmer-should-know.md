@@ -4,7 +4,7 @@ title: Distances that every programmer should know
 ---
 
 A few days ago, I remembered about a famous collection of 
-`numbers that every programmer should know <http://highscalability.com/numbers-everyone-should-know>`_
+[numbers that every programmer should know](http://highscalability.com/numbers-everyone-should-know)
 about timing of typical computer operations. I realized it would be
 interesting to see how much light travels during these times. Without
 further ado, here is the table:
@@ -28,9 +28,9 @@ Send packet CA-Netherlands-CA          150,000,000 ns    45000 km
 ```
 
 This table shows interesting things for latency. It gives an idea of how 
-incredibly fast are processors today in executing one instruction: a `Laser
-Range Finder <http://en.wikipedia.org/wiki/Laser_rangefinder>`_ using "time of
+incredibly fast are processors today in executing one instruction: a [Laser
+Range Finder](http://en.wikipedia.org/wiki/Laser_rangefinder) using "time of
 flight" is able to shoot a bunch of photons, and physically measure the time it
 takes for these photons to bounce and come back. In fact, even a simple
-`arduino <http://forum.arduino.cc/index.php?topic=110549.0>`_ can count fast
+[arduino](http://forum.arduino.cc/index.php?topic=110549.0) can count fast
 enough to measure distances with a time of flight approach.
