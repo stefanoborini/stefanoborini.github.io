@@ -24,9 +24,6 @@ gluing and setting of the two halves of the baseplate. My first attempt was far
 from perfect, as you will see soon, but I will come up with a solution for
 rapid application at a later stage.
 
-- create new baseplate and design the screw setup
-
-
 # PCB
 
 Soldering the PCB components took me a whole day, but I found myself strangely absorbed at the zen-like activity of soldering
@@ -111,17 +108,10 @@ to a basic working prototype quicker. The only problem is that I will have to tr
 signal from one half of the keyboard to the other, as I can't have two controllers
 if I use this encoder.
 
-- check kernel i2c driver.
-
 # The keycaps
 
-Ordered keycaps from [the keyboard company](http://keyboardco.com), the only
+For the keycaps Ordered keycaps from [the keyboard company](http://keyboardco.com), the only
 company based in the UK with a reasonable set of keys. I ordered two sets: one
 with US layout, and the other with blank keycaps. 
 
-
-- keep searching 3u spacebar DCS.
-- search the DCS keycaps for the rest of the keyboard.
-- order keycaps and costar stabilizers
-- refine acetone process
 
