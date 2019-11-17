@@ -119,6 +119,7 @@ Ordered keycaps from [the keyboard company](http://keyboardco.com), the only
 company based in the UK with a reasonable set of keys. I ordered two sets: one
 with US layout, and the other with blank keycaps. 
 
+![keyboard](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/IMG-20191105-WA0005.jpeg)
 
 - keep searching 3u spacebar DCS.
 - search the DCS keycaps for the rest of the keyboard.
