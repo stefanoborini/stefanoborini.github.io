@@ -34,9 +34,39 @@ All you need for a turbidimeter is:
 - a cuvette, a container that holds the liquid to analyse and defines a precise
   (relatively speaking) path length for the light to traverse.
 
+I created the box with some plywood. I drilled two holes with diameters 3 and 5 mm 
+to hold the light source and the detector. For the cuvettes, I used some 1.5mm acrylic,
+Tensol 12 to glue them, and a lot of anger (the small size made it impossible to clamp).
+
 ![image]({{ site.url }}/assets/images/2019/12/IMG-20191129-WA0008.jpeg)
+
+I built three cuvettes, as we need two for the standards and one for the sample. I could have used one,
+but with three it's more practical as I can prepare the standards before the meeting. An accidental
+consequence of the build layout is that there's space for packing the cuvettes in the unused space.
+
 ![image]({{ site.url }}/assets/images/2019/12/IMG-20191129-WA0010.jpeg)
+
+For the electronics, I used:
+
+- A white LED as light source.
+- A photoresistor as a detector. I have no idea of the type and model. I found it laying around.
+- A handful of resistors.
+- A MCP3008 analog to digital converter
+- A raspberry Pi to control the LED and read the value.
+
+Those of the readers who know a bit about turbidimetry will have plenty of
+objections, but remember, it's a toy. I followed [these
+instructions](https://www.raspberrypi-spy.co.uk/2013/10/analogue-sensors-on-the-raspberry-pi-using-an-mcp3008/)
+to connect the whole thing. The MCP3008 is an interesting little chip. It
+receives an analog voltage on up to 8 different channels (we'll use only one)
+and gives a numerical value from 0 to 1023 out on an SPI bus. All you need to
+do is to connect the pins and measure the voltage as the photoresistor changes
+its resistance according to the amount of light it receives.
+
 ![image]({{ site.url }}/assets/images/2019/12/IMG-20191206-WA0001.jpeg)
 
+I decided to wire the LED to an actual output pin, rather than a permanent 3.3v
+source, so that during the exercises we also have to consider the enabling and
+disabling of the LED before and after the acquisition. It's more fun that way.
 
-Those of the readers who know a bit about turbidimetry will have plenty of objections, but remember, it's a toy.
+The thing works perfectly and it's ready to go.
