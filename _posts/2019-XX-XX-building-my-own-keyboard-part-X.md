@@ -15,3 +15,5 @@ TENSOL 12 Acrylic Adhesive                  |                    | 7 GBP
 1x FKCS104EB (USA Black Filco 104 Key)      | keyboardco.com     | 24.95 GBP  
 1x FKCS105BB (Blank Black Filco 105 Key)    | keyboardco.com     | 24.95 GBP
 2x level shifters                           | pimoroni           | 11 GBP
+M4 Screws                                   | Amazon             | 14 GBP
+Green perspex A2                            | Makespace          | 8 GBP
