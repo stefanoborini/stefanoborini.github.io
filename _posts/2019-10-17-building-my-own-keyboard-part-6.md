@@ -1,34 +1,40 @@
 ---
 category: hardware
-title: Building my own keyboard - Part 6 (in progress)
+title: Building my own keyboard - Part 6
 ---
 
 # Baseplate 
 
-I laser cut the complete baseplate. Laser files provided. Link.
-
-screwed the screw space. Need rework.
-
-To verify the strength of the Tensol 12 bond, I applied a small amount on two scrap strips of acrylic.
-I let them cure for 24 hours, and then tried to separate them. It was much stronger than I could even remotely
-think. I tried to shear separate them by using pliers and pulling in opposite directions with the help of another person.
-The acrylic snapped first
+I laser cut the complete baseplate. The [files are available here](https://github.com/stefanoborini/keymine/tree/master/baseplates)
+I clearly screwed the screw space, as there's not enough space for setting them. It needs rework. In any case, the two
+layers must be glued together with Tensol 12, a fast curing glue tailored to
+acrylic.  To verify its strength bond, I applied a small amount on two scrap
+strips of acrylic.  I let them cure for 24 hours, and then tried to separate
+them. It was much stronger than I could even remotely think. I tried to shear
+separate them by using pliers and pulling in opposite directions with the help
+of another person.  The acrylic snapped first. 
 
 ![tensol](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20191019_174234.jpg)
 
-So it is safe to say that tensol 12 is indeed an excellent bonding agent for acrylic, and
-it's perfectly transparent too.  Unfortunately, I also realised that the actual
-time from application to solid is in the order of 15-20 seconds, not hours as I
-believed. Longer than cyanoacrylate, but still very small to allow for proper
-gluing and setting of the two halves of the baseplate. My first attempt was far
-from perfect, as you will see soon, but I will come up with a solution for
-rapid application at a later stage.
+Without a doubt it's a much stronger bond than cyanoacrylate, which is well
+known to have poor shear strength. I don't expect to shear the baseplate, of
+course, but it's good to know that Tensol 12 lives up to its promises. It
+stinks horribly though.  So it is safe to say that tensol 12 is indeed an
+excellent bonding agent for acrylic, and it's perfectly transparent too.
+Unfortunately, I also realised that the actual time from application to solid
+is in the order of 15-20 seconds, not hours as I believed. Longer than
+cyanoacrylate, but still very small to allow for proper gluing and setting of
+the two halves of the baseplate. My first attempt was far from perfect, as you
+will see soon, but I will come up with a solution for rapid application at a
+later stage.
 
 # PCB
 
-Soldering the PCB components took me a whole day, but I found myself strangely absorbed at the zen-like activity of soldering
-with a microscope. I thought it was much harder, but with a steady hand, a good technique with the solder, iron, and tweezers,
-and some good tune, I managed to solder all the diodes and the kailh hot-plugs.
+Soldering the PCB components took me a whole day, but I found myself strangely
+absorbed at the zen-like activity of soldering with a microscope. I thought it
+was much harder, but with a steady hand, a good technique with the solder,
+iron, and tweezers, and some good tune, I managed to solder all the diodes and
+the kailh hot-plugs.
 
 ![first-pair](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20191019_130412.jpg)
 
@@ -115,4 +121,3 @@ company based in the UK with a reasonable set of keys. I ordered two sets: one
 with US layout, and the other with blank keycaps. 
 
 ![keyboard](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/IMG-20191105-WA0005.jpeg)
-
