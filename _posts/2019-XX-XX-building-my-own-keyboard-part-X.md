@@ -17,3 +17,7 @@ TENSOL 12 Acrylic Adhesive                  |                    | 7 GBP
 2x level shifters                           | pimoroni           | 11 GBP
 M4 Screws                                   | Amazon             | 14 GBP
 Green perspex A2                            | Makespace          | 8 GBP
+Costar stabilizers                          | Amazon (Yimedia)   | 6 GBP
+2x Spacebar 2.75u                           | Amazon (Yimedia)   | 6 GBP
+Holtek chip                                 
+Holtek board.
