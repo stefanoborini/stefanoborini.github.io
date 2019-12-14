@@ -3,7 +3,7 @@ category: hardware
 title: Building my own keyboard - Part 7 (in progress)
 ---
 
-# USB Controller
+# USB Controller and board
 
 I decided to put the firmware on hold for a while and just rely on
 the Holtek chip. It's a single solution and while I won't be able to achieve
@@ -27,18 +27,27 @@ You can see the consequences of this odd wiring in this video I made
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UdCWe9osWNg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+This means that I will have to redesign the board, and I will take the chance
+of isolating the 3x5 part from the rest. This will give me better reuse, because I can use the
+same board both on the left and on the right. I will however be careful with the wiring, because
+the right part actually associates to live keys that the Holtek controller monitors, and the left part
+is programmable and will stay silent until I can write the firmware to replace the Holtek.
+
+This means that my firmware will have to be compatible with the Holtek matrix.
+Not a big deal, but something to keep in mind.
+
 # Keycaps
 
-I ordered 2.75 spacebar keycaps and costar stabilizers. 
+I ordered [2.75 spacebar keycaps](https://www.amazon.co.uk/gp/product/B07953BXY1/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1) and 
+[costar stabilizers](https://www.amazon.co.uk/gp/product/B07K8FFDYJ/ref=ppx_yo_dt_b_asin_title_o03_s00?ie=UTF8&psc=1) from amazon.
 
 # Body
 
-
-- create new baseplate and design the screw setup
-- keep searching 3u spacebar DCS.
-- search the DCS keycaps for the rest of the keyboard.
-
-- USB vendor and product id?
-
-[USB specifications](https://www.beyondlogic.org/usbnutshell/usb1.shtml)
-
+I made the body out of multiple horizontal layers of green acrylic. It's a
+quick and dirty solution but it is not going to be the final structure. I
+decided to take a different approach and do the slicing vertically, rather than
+horizontally, resulting in a lot of 3mm thick shapes that will stack side by side.
+This solution gives me a lot more freedom in the final shape, but I will have
+to use glue, and do a lot of polishing. I also found out that the best option for a long
+setting glue is not Tensol 12, which is fast acting and good for joints, but Tensol 80, 
+which is a two components glue for surfaces. 
