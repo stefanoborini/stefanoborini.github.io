@@ -27,7 +27,7 @@ You can see the consequences of this odd wiring in this video I made
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/UdCWe9osWNg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-This means that I will have to redesign the board, and I will take the chance
+This means that I will have to redesign the board, and I will hopefully take the chance
 of isolating the 3x5 part from the rest. This will give me better reuse, because I can use the
 same board both on the left and on the right. I will however be careful with the wiring, because
 the right part actually associates to live keys that the Holtek controller monitors, and the left part
