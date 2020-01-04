@@ -10,8 +10,27 @@ redesign the whole board so that the matrix complies with the controller expecta
 I took also the chance to redesign [the layout](https://github.com/stefanoborini/keymine/tree/master/layouts/v0.4)
 and
 [baseplate](https://github.com/stefanoborini/keymine/tree/master/baseplates/v0.4)
-to the expected new keycap sizes (space 2.75). To redesign the PCB, I fired up
-EasyEDA ready to endure the pain, but I realised an additional puzzling question.
+to the expected new keycap sizes (space 2.75). 
+
+Then, I mapped each key to the appropriate row and column. First the left part
+
+![left](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/key-matrix-2.png)
+
+And then the right part
+
+![left](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/key-matrix-3.png)
+
+Now, the bad news is that the assignment is far from straightforward, and both
+left and right use a very large number of columns, meaning that the cables that
+will go from the matrix to the controller will have 28 contacts (8 rows and 20
+columns), most of which will be used. If I had a better, more partitioned
+assignment I could have had cables with less contacts, but this is not the
+case, so I decided to make the contact uniform for both left and right. Pin 1-8
+are R0-R7, and Pin 9-28 are C0-19.
+
+The complicated assignment given above will also mean a very messy PCB routing,
+which is what I am going to do next: I fired up EasyEDA ready to endure the
+pain, but I realised an additional puzzling question.
 
 In my previous PCB, I added diodes, which is a common way to prevent ghost keys.
 The Holtek controller datasheet makes no mention of it, which means that it
@@ -56,3 +75,15 @@ So the take home messages are:
    long as they are in the same configuration they are in now: Row -> button -> diode -> Column.
 
 
+Nevertheless, I pushed forward with the routing, and I obtained three new PCBs. The left board
+
+IMAGE
+
+The right board
+
+IMAGE
+
+and the new controller board, which now accepts all lines (the first version
+accepted only a limited number of them)
+
+IMAGE
