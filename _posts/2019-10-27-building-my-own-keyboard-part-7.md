@@ -1,6 +1,6 @@
 ---
 category: hardware
-title: Building my own keyboard - Part 7 (in progress)
+title: Building my own keyboard - Part 7
 ---
 
 # USB Controller and board
