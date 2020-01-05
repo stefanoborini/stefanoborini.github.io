@@ -10,7 +10,7 @@ the Holtek chip. It's a single solution and while I won't be able to achieve
 what I want in the long run, I can starte designing other things and get a functional
 keyboard quickly. I designed the PCB, ordered the components, and soldered them
 
-![image](https://raw.githubusercontent.com/stefanoborini/keymine/master/pcb/PCB_holtek-v1_20191115214619.png)
+![image](https://raw.githubusercontent.com/stefanoborini/keymine/master/pcb/holtek/v1/PCB_holtek-v1_20191115214619.png)
 
 This first iteration of the board does not connect all pins, but the routing was quite challenging and
 I stayed simple for now. The bill of material required mostly passive components that are easily

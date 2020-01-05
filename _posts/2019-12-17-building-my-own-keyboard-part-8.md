@@ -77,13 +77,18 @@ So the take home messages are:
 
 Nevertheless, I pushed forward with the routing, and I obtained three new PCBs. The left board
 
-IMAGE
+![image](https://raw.githubusercontent.com/stefanoborini/keymine/master/pcb/keymine/v2/left/PCB_keymine-v2L_20200104211318.png)
 
 The right board
 
-IMAGE
+![image](https://raw.githubusercontent.com/stefanoborini/keymine/master/pcb/keymine/v2/right/PCB_keymine-v2R_20200104211500.png)
 
 and the new controller board, which now accepts all lines (the first version
-accepted only a limited number of them)
+accepted only a limited number of them), top:
 
-IMAGE
+![image](https://raw.githubusercontent.com/stefanoborini/keymine/master/pcb/holtek/v2/PCB_holtek-v2_20200105214253.png)
+
+and bottom (note the huge number of lines to connect both left and right halves to the same pins)
+
+![image](https://github.com/stefanoborini/keymine/blob/master/pcb/holtek/v2/PCB_holtek-v2_20200105214313.png)
+
