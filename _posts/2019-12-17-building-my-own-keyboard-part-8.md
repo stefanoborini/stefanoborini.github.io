@@ -90,5 +90,5 @@ accepted only a limited number of them), top:
 
 and bottom (note the huge number of lines to connect both left and right halves to the same pins)
 
-![image](https://github.com/stefanoborini/keymine/blob/master/pcb/holtek/v2/PCB_holtek-v2_20200105214313.png)
+![image](https://raw.githubusercontent.com/stefanoborini/keymine/master/pcb/holtek/v2/PCB_holtek-v2_20200105214313.png)
 
