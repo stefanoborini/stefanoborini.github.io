@@ -41,8 +41,15 @@ this option. The pillar needs to be threaded and resist traction from the screw,
 well as internal pressure from the tap to thread the inside of the pillar. Acrylic doesn't 
 work for that.
 
-So I decided to 3d print a cylinder with ABS. It threads beautifully and glues
-extremely well to acrylic. The following picture shows two pillars glued with
+So I decided to 3d print a cylinder with ABS and attempt to glue it to acrylic.
+One important point when printing such small parts is to print more than one and keep the
+vertical resolution to rather coarse values, 0.15 mm in my case. Why? With
+small vertical values (e.g. 0.06 mm) the tip ends up stirring the still molten
+ABS from the previous layer. The resulting piece is just a shapeless blob of
+plastic. You need to leave time for the ABS to solidify, and keep the tip high
+between layers. 
+
+The following picture shows two pillars glued with
 Tensol 12 (right) and cyanoacrylate (left) to a scrap piece of acrylic. 
 
 ![image](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/IMG-20200106-WA0003.jpg)
@@ -52,9 +59,3 @@ it crack. The ABS has been threaded with a M3 tap and the screw holds really,
 really well.
 
 As far as I am concerned, the board pillars is a solved problem.
-
-
-
-
-
-
