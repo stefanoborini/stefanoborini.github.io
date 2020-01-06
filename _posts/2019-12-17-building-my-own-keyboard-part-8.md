@@ -1,6 +1,6 @@
 ---
 category: hardware
-title: Building my own keyboard - Part 8 (in progress)
+title: Building my own keyboard - Part 8
 ---
 
 # Redesigning the board
