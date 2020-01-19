@@ -59,3 +59,12 @@ it crack. The ABS has been threaded with a M3 tap and the screw holds really,
 really well.
 
 As far as I am concerned, the board pillars is a solved problem.
+
+# New PCBs
+
+The new PCBs arrived
+
+![image](https://raw.githubusercontent.com/stefanoborini/keymine/master/pics/20200118_102159.jpg)
+
+both left and right are completed and need testing. The PCB that will hold the controller is however temporary
+and will be hosted in a separate box.
