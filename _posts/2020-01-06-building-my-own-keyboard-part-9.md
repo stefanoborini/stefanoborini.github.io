@@ -68,3 +68,14 @@ The new PCBs arrived
 
 both left and right are completed and need testing. The PCB that will hold the controller is however temporary
 and will be hosted in a separate box.
+
+Unfortunately, I realised I am a big, fat moron. I created the connector with
+28 pins assuming there would be a 28 pins wire-to-board IDC connector, but
+[Amphenol does not make them](http://www.farnell.com/datasheets/1648842.pdf)
+and the mystical 28 pins connector is not found also on Mouser or RS-Online.
+Hirose has no 28 either. It's either 26 or 30. I want to cry now.
+
+The only option I have now is to use a board-to-board connector and jury rig 
+an adapter between a 28 board-to-board and a 30 wire-to-board.
+
+

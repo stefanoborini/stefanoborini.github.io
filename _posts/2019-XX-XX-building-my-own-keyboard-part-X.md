@@ -25,3 +25,18 @@ Holtek board v1                             | JLCPCB             |
 5xPCB keymine v2L                           | JLCPCB             | 11.07 GBP
 5xPCB holtek v2                             | JLCPCB             |  1.53 GBP
 JLCPCB shipping                             | JLCPCB             | 12.16 GBP
+4x Wire-To-Board Connector, Vertical,       | Farnell            | 1.20 GBP
+2.54 mm, 30 Contacts, Header, T821 Series,  |                    | 
+Through Hole, 2 Rows                        |                    |
+Wire-To-Board Connector, with Strain Relief | Farnell            | 1.6 GBP 
+2.54 mm, 30 Contacts, Receptacle,           |                    |
+T812 Series                                 |                    | 
+Ribbon Cable, Round Conductor Flat,         | Farnell            | 2.98 GBP
+Unscreened, 30 Core, 28 AWG                 |                    |
+DC Film Capacitor, 10000 pF, 63 V,          | Farnell            | 0.2 GBP each
+Metallized PET Stacked, ± 5%, B32529 Series |                    |
+DC Film Capacitor, 0.1 µF, 63 V,            | Farnell            | 0.2 GBP each
+Metallized PET Stacked, ± 10%,              |                    |
+B32529 Series, Potted                       |                    | 
+
+
