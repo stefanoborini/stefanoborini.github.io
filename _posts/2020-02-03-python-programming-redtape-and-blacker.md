@@ -102,9 +102,8 @@ So, in the next few days, I am going to:
 
 # Piles and piles of red tape
 
-As I adventured in this petty task, I discovered that today, starting a python project that 
-complies with the sensitivities of the opensource community you must have so much stuff setup
-that setting it up is a project in itself. You need:
+As I adventured in this petty task, it's worth nothing the amount of red tape required to setup a python project today.
+You need:
 
 - isort: because be damned if your imports are in the wrong order.
 - pre-commit: whatever this thing does
@@ -125,5 +124,6 @@ that setting it up is a project in itself. You need:
 - As ✨ many ✨ stars ✨ as ✨ possible
 
 Can I start writing code now? of course not! You forgot appveyor!
+and the trouble is... you kind of need it. I think it's quite excessive to be honest, but there are useful tools in there that prevent you from making mistakes. My point is not at the amount of red tape. My point is that this red tape needs time to be setup, and you must factor that in when you estimate. cookiecutter helps, but up to a point.
 
 
