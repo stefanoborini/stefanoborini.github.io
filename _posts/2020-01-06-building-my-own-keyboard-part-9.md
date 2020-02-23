@@ -1,12 +1,13 @@
 ---
 category: hardware
-title: Building my own keyboard - Part 9 (in progress)
+title: Building my own keyboard - Part 9
 ---
 
 # Designing the body
 
-If I haven't done any design of the body yet, it's because learning Fusion 360 is much harder than I expected, at least with the time 
-I have available. However, I decided the following:
+If I haven't done any design of the body yet, it's because learning Fusion 360
+is much harder than I expected, at least with the time I have available.
+However, I decided the following:
 
 1. No 3d printing. The body is too large and thin for effective 3d printing, and the quality is probably not going to be great.
 I could probably pull that off with a lot of support (that I need to remove) printing it vertically with the Ultimaker Extended.
@@ -77,5 +78,3 @@ Hirose has no 28 either. It's either 26 or 30. I want to cry now.
 
 The only option I have now is to use a board-to-board connector and jury rig 
 an adapter between a 28 board-to-board and a 30 wire-to-board.
-
-
