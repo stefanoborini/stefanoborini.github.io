@@ -270,3 +270,11 @@ Imports:
 So now I need to find why my environment does not have a function that I have no way of finding.
 
 # session is saved
+
+# Inconsistent case style
+
+R uses inconsistent case style in its base library all the time. Sometimes it uses '.' as a separator (e.g. is.null), sometimes it uses camelCase (e.g. modifyList) sometimes snakecase (e.g. check_tzones), sometimes all lowercase (e.g. debugonce, extendrange)
+
+# modifyList
+
+This function merges two lists, and does not modify any of the passed arguments.
