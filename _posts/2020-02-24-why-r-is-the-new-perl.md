@@ -152,6 +152,14 @@ documentation clarity.
 
 # length("") is 1
 
+# %in% cannot tell you if there's a null value in a list
+
+> 1 %in% list(1,NULL,3)
+[1] TRUE
+> NULL %in% list(1,NULL,3)
+logical(0)
+
+
 # your interpreter is stateful
 
 # lintr expect_lint_free() silently does nothing unless you are running on CRAN.
