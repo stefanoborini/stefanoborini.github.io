@@ -270,3 +270,31 @@ Imports:
 So now I need to find why my environment does not have a function that I have no way of finding.
 
 # session is saved
+
+
+# nchar(NA) == 2
+
+Note: fixed in 3.3 and above.
+
+nchar gives the number of characters in a string. Except when the argument is NA, in which case it apparently converts NA to a string, then gives you the length of that. The result is 2.
+
+> nchar("hello")
+[1] 5
+> nchar(NA)
+[1] 2
+
+in R > 3.3 the same expression returns NA. One could argue it's a bug that has been fixed. I suspect it's a design decision with unintended side effects.
+
+
+# R6 objects return NULL on undefined variables
+
+> x <- R6::R6Class("x", list(foo = function() { print(self$notexistent) }))
+> xx <- x$new()
+> xx$foo()
+NULL
+This means that if I make a typo in one access e.g. results instead of result it will use NULL instead of throwing an error. Is there a way to force the latter?
+
+
+if you're not willing to use get or another function then I propose you doublecheck the code you're writing to avoid typos 
+
+
