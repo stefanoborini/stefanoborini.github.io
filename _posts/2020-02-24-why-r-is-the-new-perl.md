@@ -152,6 +152,14 @@ documentation clarity.
 
 # length("") is 1
 
+# %in% cannot tell you if there's a null value in a list
+
+> 1 %in% list(1,NULL,3)
+[1] TRUE
+> NULL %in% list(1,NULL,3)
+logical(0)
+
+
 # your interpreter is stateful
 
 # lintr expect_lint_free() silently does nothing unless you are running on CRAN.
@@ -298,3 +306,10 @@ This means that if I make a typo in one access e.g. results instead of result it
 if you're not willing to use get or another function then I propose you doublecheck the code you're writing to avoid typos 
 
 
+# Inconsistent case style
+
+R uses inconsistent case style in its base library all the time. Sometimes it uses '.' as a separator (e.g. is.null), sometimes it uses camelCase (e.g. modifyList) sometimes snakecase (e.g. check_tzones), sometimes all lowercase (e.g. debugonce, extendrange)
+
+# modifyList
+
+This function merges two lists, and does not modify any of the passed arguments.
