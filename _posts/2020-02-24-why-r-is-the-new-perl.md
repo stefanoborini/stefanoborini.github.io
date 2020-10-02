@@ -330,6 +330,17 @@ RStudio is an extremely poor development environment. In truth, it's a data anal
 
 ### Shiny requires a constant websocket open, transfers large chunks of HTML
 
+# Licensing problems
+
+The R interpreter is GPLv2, as are a relevant amount of CRAN libraries. This has deep, deep implications for
+commercial suitability of R developed solutions, because with the interpreter being GPL, and most importantly
+the interpreter core libraries being GPL, it means that any code that you develop must be released
+under a GPL license and can only run in a GPL compliant system. This pretty much [destroys any chance 
+for integration of R code in a commercial, closed source environment](https://www.r-bloggers.com/2019/01/how-gpl-makes-me-leave-r-for-python/).
+
+
+
+
 
 
 # Summing up
