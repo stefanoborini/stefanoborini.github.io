@@ -37,19 +37,19 @@ be recapped in different categories:
 
 Before going into detail, let me quote a [brilliant piece of design advice about language design](https://eev.ee/blog/2012/04/09/php-a-fractal-of-bad-design/)
 
-    I assert that the following qualities are important for making a language
-    productive and useful [...]:
-
-    - A language must be **predictable**. 
-      It’s a medium for expressing human ideas and having a computer execute them, so it’s critical that a human’s understanding of a program actually be correct.
-    - A language must be **consistent**. 
-      Similar things should look similar, different things different. Knowing part of the language should aid in learning and understanding the rest.
-    - A language must be **concise**. 
-      New languages exist to reduce the boilerplate inherent in old languages. (We could all write machine code.) A language must thus strive to avoid introducing new boilerplate of its own.
-    - A language must be **reliable**. 
-      Languages are tools for solving problems; they should minimize any new problems they introduce. Any “gotchas” are massive distractions.
-    - A language must be **debuggable**. 
-      When something goes wrong, the programmer has to fix it, and we need all the help we can get.
+> I assert that the following qualities are important for making a language
+> productive and useful [...]:
+>
+> - A language must be **predictable**. 
+>   It’s a medium for expressing human ideas and having a computer execute them, so it’s critical that a human’s understanding of a program actually be correct.
+> - A language must be **consistent**. 
+>   Similar things should look similar, different things different. Knowing part of the language should aid in learning and understanding the rest.
+> - A language must be **concise**. 
+>   New languages exist to reduce the boilerplate inherent in old languages. (We could all write machine code.) A language must thus strive to avoid introducing new boilerplate of its own.
+> - A language must be **reliable**. 
+>   Languages are tools for solving problems; they should minimize any new problems they introduce. Any “gotchas” are massive distractions.
+> - A language must be **debuggable**. 
+>   When something goes wrong, the programmer has to fix it, and we need all the help we can get.
 
 R fails on all the points above. It is often unpredictable and inconsistent. It
 is not concise when you want to program defensively or when you want to use
@@ -70,40 +70,40 @@ people complained even [against structured programming and claimed that
 removing
 gotos](https://web.archive.org/web/20090320002214/http://www.ecn.purdue.edu/ParaMount/papers/rubin87goto.pdf) 
 
-    GOTOless programming [...] has caused incalculable harm to the field of 
-    programming, which has lost an efficacious tool. It is like butchers 
-    banning knives because workers sometimes cut themselves. Programmers 
-    must devise eIaborate workarounds, use extra flags, nest statements 
-    excessively, or use gratuitous subroutines. The result is that 
-    GOTOless programs are harder and costlier to create, test, and modify. 
+> GOTOless programming [...] has caused incalculable harm to the field of 
+> programming, which has lost an efficacious tool. It is like butchers 
+> banning knives because workers sometimes cut themselves. Programmers 
+> must devise eIaborate workarounds, use extra flags, nest statements 
+> excessively, or use gratuitous subroutines. The result is that 
+> GOTOless programs are harder and costlier to create, test, and modify. 
 
 The results of bowing to poorly designed or massively gotcha-prone languages
 created piles and piles of unreliable, fragile code that were impossible to
 reliably maintain, all while their supporters chanted it's not the language
 fault, it's your fault.  Again, I will adapt from Fractal of Bad Design:
 
-    Imagine you have a toolbox. 
-    You pull out a screwdriver, and you see it’s one of those weird tri-headed
-    things. Okay, well, that’s not very useful to you, but you guess it comes in
-    handy sometimes.
-
-    You pull out the hammer, but [...] it has the claw part on both sides. 
-    Still serviceable though, I mean, you can hit nails with the middle of the 
-    head holding it sideways.
-
-    You pull out the pliers, but they don’t have those serrated surfaces; 
-    it’s flat and smooth. That’s less useful, but it still turns bolts well enough, so whatever.
-
-    And on you go. Everything in the box is kind of weird and quirky, but 
-    maybe not enough to make it completely worthless. And there’s no clear 
-    problem with the set as a whole; it still has all the tools.
-
-    Now imagine you meet millions of carpenters using this toolbox who tell you 
-    "well hey what’s the problem with these tools? They’re all I’ve ever used 
-    and they work fine!" And the carpenters show you the houses they’ve built, 
-    where every room is a pentagon and the roof is upside-down. And you knock 
-    on the front door and it just collapses inwards and they all yell at you 
-    for breaking their door.
+> Imagine you have a toolbox. 
+> You pull out a screwdriver, and you see it’s one of those weird tri-headed
+> things. Okay, well, that’s not very useful to you, but you guess it comes in
+> handy sometimes.
+>
+> You pull out the hammer, but [...] it has the claw part on both sides. 
+> Still serviceable though, I mean, you can hit nails with the middle of the 
+> head holding it sideways.
+>
+> You pull out the pliers, but they don’t have those serrated surfaces; 
+> it’s flat and smooth. That’s less useful, but it still turns bolts well enough, so whatever.
+>
+> And on you go. Everything in the box is kind of weird and quirky, but 
+> maybe not enough to make it completely worthless. And there’s no clear 
+> problem with the set as a whole; it still has all the tools.
+>
+> Now imagine you meet millions of carpenters using this toolbox who tell you 
+> "well hey what’s the problem with these tools? They’re all I’ve ever used 
+> and they work fine!" And the carpenters show you the houses they’ve built, 
+> where every room is a pentagon and the roof is upside-down. And you knock 
+> on the front door and it just collapses inwards and they all yell at you 
+> for breaking their door.
 
 R is just one more of the languages on the list above, and will meet the same
 fate.
@@ -579,10 +579,10 @@ check](https://www.rdocumentation.org/packages/utils/versions/3.6.1/topics/globa
 Can you restrict it at least in scope? No, of course not, because this is R, namespacing is not a thing,
 the note states 
 
-    The global variables list really belongs to a restricted scope (a function or
-    a group of method definitions, for example) rather than the package as a whole.
-    However, implementing finer control would require changes in check and/or in
-    codetools, so in this version the information is stored at the package level.
+> The global variables list really belongs to a restricted scope (a function or
+> group of method definitions, for example) rather than the package as a whole.
+> However, implementing finer control would require changes in check and/or in
+> codetools, so in this version the information is stored at the package level.
 
 In practice, this whole ordeal works around (``globalVariables``) with a confusing
 mechanism a workaround (``rlang::.data``) of a blunder of design of the language
