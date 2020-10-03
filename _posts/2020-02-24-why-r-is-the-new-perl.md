@@ -132,7 +132,7 @@ An interpreter should always be stateless (in other words, the vanilla option sh
 be enabled by default). This is the case with all interpreted languages except
 R (as far as I know).
 
-## It has four ways of doing object oriented programming
+### It has four ways of doing object oriented programming
 
 R has four ways of doing object oriented programming: S3, S4, R5 (apparently
 now obsolete) and R6. They are:
@@ -141,7 +141,7 @@ now obsolete) and R6. They are:
 - have been "bolted on" on a language that has not been designed with object orientation in mind (kind of like Perl's ``bless``)
 - each have massive shortcomings.
 
-# Lists and environments are prone to typos
+### Lists and environments are prone to typos
 
 lists will return NULL if you use a name that has not been defined:
   
@@ -155,7 +155,7 @@ The consequence of this is that if you accidentally mistype a name, it will not 
 continue with the NULL value until it will eventually fail, much later. Tracking down the incorrectly typed
 name will be extremely hard.
 
-# R6 objects return NULL on undefined variables
+### R6 objects return NULL on undefined variables
 
 As a consequence of the above, R6 classes will suffer the same fate, both for member values and for methods:
 
@@ -199,9 +199,6 @@ The result is that most libraries out there don't bother with a complex
 protocol and just throw stop with an error message, making it impossible or
 really hard to take appropriate corrective actions, as they depend on the type
 of failure, and this is only expressed in fragile human readable form.
-
-### Evaluation is delayed
-
 
 ### Tracebacks are useless
 
@@ -591,7 +588,6 @@ mechanism a workaround (``rlang::.data``) of a blunder of design of the language
 (allowing to use undefined names from the caller in the callee) and of the
 check system, which therefore does not even understand its own rules.
 
-
 ## Problems with its tools and environment
 
 ### Its package manager, packrat, is inadequate
@@ -755,6 +751,41 @@ RStudio is an extremely poor development environment. In truth, it's a data anal
 
 ### Shiny requires a constant websocket open, transfers large chunks of HTML
 
+Shiny allows for fast development of web interfaces to R code. Its design is extremely poor.
+All the state of the session is kept on the server. Every time you click a button, every time
+you modify a control content, it requires a round trip to the server to modify the state there.
+The server will then respond with data to modify the page, potentially just a slab of HTML to 
+replace the DOM tree.
+
+This design has the following issues:
+
+- it's awfully slow, as every user interaction requires network operations. This will give the user the impression
+  of a poorly responding and slow application
+- requires a constant and stable connection.
+- If the connection is interrupted, willingly or unwillingly, the state will be lost and the user will 
+  have to restart the whole interaction from scratch. There are some mitigating options but are palliative
+  of a deeper issue.
+- Dynamic interfaces flicker due to the delay in retrieving and replacing large parts of the HTML tree.
+
+Moreover, the default implementation is single threaded, single task, meaning
+that if one user starts a long running calculation, it will block _the_ _whole_
+_application_ to anybody else. The calculation lasts 20 minutes?  No other user
+will be able to even connect to the application for those 20 minutes. Yes, you
+can use promises to mitigate this issue, but they are not part of Shiny itself.
+A design that supports this natively should be a default, not an afterthought.
+Even with futures, you still lock the session to the user, because the futures
+must complete before other events are processed.
+
+Finally, controls can only be either input or output. You can't use a control
+both as an input and as an output. If you do, you will end up with potential
+desynchronization problems and "ping-pongs" between the frontend state on the
+browser and the server state, due to the intrinsic loop nature of the
+transaction and the round trip time between the operations. This problem is
+easy to handle when the state is all local to the browser, but pretty much
+impossible to handle. Cases of controls that must be both input and output are
+checkboxes, textfields, radio buttons, sliders, and selects.
+
+
 # Licensing problems
 
 The R interpreter is GPLv2, as are a relevant amount of CRAN libraries. This has deep, deep implications for
@@ -766,9 +797,9 @@ for integration of R code in a commercial, closed source environment](https://ww
 # Summing up
 
 R is a fundamentally broken language that is destined to a brief surge in
-popularity pumped by the current data analysis requirements, followed by an
+popularity pumped by the current data analysis trends, followed by an
 inevitable crash once the same utilities are ported to python and its old
-school proponents retire. It is deeply flawed technically and deeply flawed
+school proponents retire. It is deeply flawed technically, and deeply flawed
 from a business perspective. It is a one-company environment defined by a
-restricte group of developers who make very dubious and questionable design
+restricted group of developers who make very dubious and questionable design
 choices.
