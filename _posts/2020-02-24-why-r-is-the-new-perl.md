@@ -323,7 +323,7 @@ Error in if (foo %in% list(1, 2, 3)) { : argument is of length zero
 > 
 ```
 
-### is.integer(66) is FALSE
+### is.integer(66) is FALSE (and is.\* routines are inconsistent)
 
 Here we go in the realm of the ``is.`` functions. They are checking for type,
 not value, and that is ok, provided that there's consistency. Unfortunately that's not the
@@ -347,7 +347,7 @@ visual purposes integers) to floating point (type numeric). The broken design
 of the data type hierarchy leads to these counterintuitive behaviors and poor
 consistency.
 
-### Everything is global and no namespaces
+### Everything is global with no namespaces
 
 R does not support namespacing. There's no importing mechanism. All your code is brought in
 by "sourcing" it and basically running the code in one single namespace. The result is that
@@ -359,6 +359,235 @@ these files are organised into a package, the sourcing of these files happen in
 alphabetical order. I have no idea what happens if the locale changes, and the
 lack of control over the sourcing order means that you have to rely on stupid
 names like ``aaa.R`` and ``zzz.R`` to ensure some code is sourced first or last.
+
+### The library import strategy is very poor
+
+The import strategy of the language, at least for external packages (as we saw
+above, there's no import strategy for local code) and in all tutorials relies
+heavily on ``library()``. The problem with library is that everything is
+imported globally from the package, meaning that the chance of conflicts
+between different libraries or between libraries and your routines is large.
+
+But that's beside the point. The major problem is with code information: if I
+see the routine ``foobar()`` called, I now have no idea where this routine comes from.
+Is it core R? is it from one of the ten packages imported with library()? is it a
+routine of this package? 
+
+Fortunately, there's another notation, which is to qualify the routine
+invocation with ``::``. So, instead of calling ``foobar()``, one can call
+``thatlib::foobar()`` without using ``library()`` and at least ensure that the
+provenance is established and there's no name conflict. Too bad one has to do
+it everywhere, so one workaround is to do weird local assignments such as
+``foobar <- thatlib::foobar``. And note: local as "inside each and every
+function", because if you do it at the top level, you are basically polluting
+the global namespace and solved nothing.
+
+Additionally, the hierarchy is necessarily flat, so forget about being able to
+organise libraries in subsystems and be able to invoke
+``mylibrary::mysubsystem::myfunction``.
+
+### The online documentation is poorly organised and deceiving
+
+One day I get the following error (wow, a working stacktrace!):
+
+```
+Warning: Error in shinyWidgets::updateProgressBar: could not find function "startsWith"
+Stack trace (innermost first):
+    68: h
+    67: .handleSimpleError
+    66: shinyWidgets::updateProgressBar
+    65: observeEventHandler
+```
+
+Sure enough in progressBar the startsWith is called
+
+```
+R/progressBars.R:    if (!startsWith(id, session$ns("")))
+```
+
+Uncertain about the nature of the error, I google startsWith, and get documentation
+about [gdata startsWith](https://www.rdocumentation.org/packages/gdata/versions/2.18.0/topics/startsWith).
+Try it, google "startsWith R". Only the second result is the correct function, which is startsWith from the
+core R. If you go to Rdocumentation.org and search for "startsWith" you get Package entries in the following order
+
+- translations
+- tools 
+- datasets 
+- methods
+- utils 
+- stats4 
+- tcltk
+- compiler
+- parallel
+- splines
+- grDevices
+- grid
+- graphics
+- stats
+- base 
+
+Only *the last one* actually contains a function *startsWith*. In the function list, we get instead:
+
+- startsWith (backports)
+- startsWith (gdata)
+- startsWith (base)
+- startsWith (SparkR)
+- startsWith (jmvcore)
+- startsWith (Xmisc)
+- other stuff unrelated to startsWith
+
+Now, as you can see, in order to find out which ``startsWith`` is the one that
+shinyWidgets is actually calling I must check shinyWidgets dependencies, plus
+their subdependencies, plus their dependencies etc, because I have no idea
+where that symbol comes from and which one is supposed to be called.
+In practice, I need to find why my environment does not have a function that I
+have no way of finding.
+
+Of course this is a simple example (and yet pointed out that the authors of
+shinyWidgets [did not check or agree on the appropriate minimum R compatibility
+requirements on their DESCRIPTION
+file](https://github.com/dreamRs/shinyWidgets/issues/234)) but in a real world
+scenario with a large codebase it makes it extremely time consuming or even
+impossible to trace the problem. This is time best spent on doing something
+else. Like learning a better language.
+
+### Delayed evaluation let problems pass silently and have errors occur away from where they originate
+
+Imagine you have the following scenario (simplified to make the point):
+
+```
+baz <- function(x) {
+    print("tons of code in baz")
+    print(x)  # [2]
+}
+bar <- function(x) {
+    print("tons of code in bar")
+    baz(x)
+    print("more tons of code in bar")
+}
+foo <- function(x) {
+    print("tons of code in foo")
+    bar(x)
+    print("more tons of code in foo")
+}
+
+foo(3+"4") # [1]
+```
+
+Adding a number and a string is not possible, so an error should be produced. 
+Where is the error going to happen? Not where the sum is actually performed in \[1\], 
+but much, much later, at \[2\]
+
+```
+[1] "tons of code in foo"
+[1] "tons of code in bar"
+[1] "tons of code in baz"
+Error in 3 + "4" : non-numeric argument to binary operator
+```
+
+because R does not evaluate the parameters passed to a function until they are
+evaluated, which may be never. Comment out the line at \[2\] and the code will
+execute without an error.
+
+This is _horrifying_ because:
+
+- errors will occur in locations much, much later in the execution, and tracing back their
+  actual origin will be a nightmare, especially considering the poor or non-existent tracebacks.
+- errors will be silenced until some conditions actually trigger the evaluations, meaning 
+  that, for example, algorithms or UIs will keep hidden bug bombs that will only
+  be triggered when specific circumstances occur, and not immediately when and
+  where the expression is composed.
+
+The justification for this behavior is performance (why calculate something you are not using).
+I say if you are not using it, don't calculate it in the first place. Or at least devise something
+that makes it _clear_ and _explicit_ the evaluation will be delayed, like a functor. Don't make it
+the default of the language, because the default makes it much, much harder to debug. This design
+is equivalent to [premature optimisation, the root of all evil](https://ubiquity.acm.org/article.cfm?id=1513451), 
+and carries a heavy technical and human cost.
+
+### Debugging information is inconsistent depending on invocation strategy
+
+Invoking with Rscript provides some form of backtrace
+```
+$ Rscript x.R 
+[1] "tons of code in foo"
+[1] "tons of code in bar"
+[1] "tons of code in baz"
+Error in 3 + "4" : non-numeric argument to binary operator
+Calls: foo -> bar -> baz -> print
+Execution halted
+```
+
+Invoking from the prompt as source gives no information whatsoever about the call chain:
+
+```
+> source("x.R")
+[1] "tons of code in foo"
+[1] "tons of code in bar"
+[1] "tons of code in baz"
+Error in 3 + "4" : non-numeric argument to binary operator
+```
+
+same if you extract the broken evaluation 
+
+```
+x <- function() {
+   foo(3+"4")
+}
+```
+
+and invoke it as a function
+
+```
+> source("x.R")
+> x()
+[1] "tons of code in foo"
+[1] "tons of code in bar"
+[1] "tons of code in baz"
+Error in 3 + "4" : non-numeric argument to binary operator
+```
+
+If it weren't for the prints, and in a large codebase, you would have no damn
+idea where the error actually triggered, and as seen from the problem above,
+where it actually originated.
+
+### Non standard evaluation: workaround after workaround
+
+In addition to what we saw above, in R the expression (and not the value) you
+pass to a function is received in the called function, meaning that if you have
+a dataframe with a column called ``Characteristic``, 
+you can write it as a (non-existent) variable and exploit the mechanism to
+refer to the column named ``Characteristic`` in ``data``:
+
+```
+sub <- subset(data, Characteristic == outcome)
+```
+
+Unfortunately, for linters and ``R CMD check`` now you have an undefined variable
+"Characteristics". How do you work around it?  one way is to use rlang::.data,
+but unfortunately then [you get an error](https://community.rstudio.com/t/using-rlang-data-with-dplyr-verbs-to-generate-queries/6074)
+when your tests try to invoke your code. Not sure if it's a bug, but it
+certainly does not help in understanding how this ["data
+pronoun"](https://rlang.r-lib.org/reference/tidyeval-data.html) is supposed to
+work. Some people use it with the rlang:: prefix, [some others say you
+shouldn't](https://github.com/tidyverse/dplyr/issues/2930) but then you have to
+add it to NAMESPACE. Yet it still does not work. 
+
+What's the recommended solution? Shut up the check with "globalVariables" which 
+declares a variable as global, but not for everything, [just for the
+check](https://www.rdocumentation.org/packages/utils/versions/3.6.1/topics/globalVariables).
+Can you restrict it at least in scope? No, of course not, because this is R, namespacing is not a thing,
+the note states 
+
+    The global variables list really belongs to a restricted scope (a function or
+    a group of method definitions, for example) rather than the package as a whole.
+    However, implementing finer control would require changes in check and/or in
+    codetools, so in this version the information is stored at the package level.
+
+In practice, this whole ordeal works around (``globalVariables``) with a confusing
+mechanism a workaround (``rlang::.data``) of a blunder of design of the language
+(allowing to use undefined names from the caller in the callee) and of the
+check system, which therefore does not even understand its own rules.
 
 
 ## Problems with its tools and environment
@@ -541,101 +770,3 @@ school proponents retire. It is deeply flawed technically and deeply flawed
 from a business perspective. It is a one-company environment defined by a
 restricte group of developers who make very dubious and questionable design
 choices.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Workaround after workaround
-
-in R, the name of what you pass to a function is received in the called function, meaning that if you have a dataframe
-with a column called "Characteristic", you can write this to extract data where the value of Characteristic is equal to  
-a given value.
-
-sub <- subset(data, Characteristic == outcome)
-
-Unfortunately, now for linters and R check now you have an undefined variable
-"Characteristics". How do you work around it?  one way is to use rlang::.data,
-but unfortunately then [you get anerror](https://community.rstudio.com/t/using-rlang-data-with-dplyr-verbs-to-generate-queries/6074)
-when your tests try to invoke your code. Not sure if it's a bug, but it
-certainly does not help in understanding how this ["data
-pronoun"](https://rlang.r-lib.org/reference/tidyeval-data.html) is supposed to
-work. Some people use it with the rlang:: prefix, [some others say you
-shouldn't](https://github.com/tidyverse/dplyr/issues/2930) but then you have to
-add it to NAMESPACE. Yet it still does not work. What's the recommended
-solution? Shut up the check with "globalVariables" which declares a variable as
-global, but not for everything, [just for the
-check](https://www.rdocumentation.org/packages/utils/versions/3.6.1/topics/globalVariables).
-Can you restrict it at least in scope? No, of course, because in R, namespacing is not a thing,
-the note states "The global variables list really belongs to a restricted scope (a function or
-a group of method definitions, for example) rather than the package as a whole.
-However, implementing finer control would require changes in check and/or in
-codetools, so in this version the information is stored at the package level."
-
-In practice, this whole ordeal works around (globalVariables) with a confusing
-mechanism a workaround (rlang::.data) of a blunder of design of the language
-(allowing to use undefined names from the caller in the callee) and of the
-check system, which therefore does not even understand its own rules.
-
-
-# The standard library is ungooglable
-
-say you want to know know to read a file. If you google that,
-rdocumentation contains functions that are a separate package
-
-
-# The import strategy does not allow you any information on how to debug
-
-Warning: Error in shinyWidgets::updateProgressBar: could not find function "startsWith"
-Stack trace (innermost first):
-    68: h
-    67: .handleSimpleError
-    66: shinyWidgets::updateProgressBar
-    65: observeEventHandler
-
-Sure enough in progressBar the startsWith is called
-
-R/progressBars.R:    if (!startsWith(id, session$ns("")))
-
-Googling seems to point that startsWith is in gdata
-
-https://www.rdocumentation.org/packages/gdata/versions/2.18.0/topics/startsWith
-
-But gdata is not in the direct dependencies of shiny widgets
-
-Imports:
-    shiny (>= 0.14),
-    htmltools,
-    jsonlite,
-    grDevices,
-    scales
-
-So now I need to find why my environment does not have a function that I have no way of finding.
-
-
-# modifyList
-
-This function merges two lists, and does not modify any of the passed arguments.
-
-# Two ways to lookup namespaces
-
-:: and $
-
