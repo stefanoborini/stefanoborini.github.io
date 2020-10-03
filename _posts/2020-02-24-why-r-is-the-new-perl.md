@@ -235,10 +235,12 @@ nchar gives the number of characters in a string. Except when the argument is
 NA, in which case it apparently converts NA to a string, then gives you the
 length of that. The result is 2.
 
+```
 > nchar("hello")
 [1] 5
 > nchar(NA)
 [1] 2
+```
 
 in R > 3.3 the same expression returns NA. One could argue it's a bug that has
 been fixed. I suspect it was a design decision with unintended side effects.
