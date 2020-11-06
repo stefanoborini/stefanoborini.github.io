@@ -1,6 +1,6 @@
 ---
 category: hardware
-title: Building my own keyboard - Part 10 (in progress)
+title: Building my own keyboard - Part 10
 ---
 
 # First working prototype
@@ -26,6 +26,8 @@ and has a shoulder.
 - Next time I'll use DSA profile. The reason is that DCS profiles are way less reusable, considering that you have to honor both the length and the shape.
 - The support screws are too close to the Enter key and the Esc key. I'll have to move them.
 
+# Next steps
 
-
-
+Due to COVID, I lacked access to the makespace for many, many months. This has put a damp on my enthusiasm and, most importantly, I had no access to the fundamental
+tools I needed to keep the project going. I spent some time thinking about the current state of the project, and I decided to start from scratch. I learned 
+a lot from the prototype but now it's time to treasure the experience and start again with a more sensible design.
