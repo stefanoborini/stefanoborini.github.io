@@ -226,6 +226,54 @@ Execution halted
 make: *** [serve] Error 1
 ```
 
+### write.csv and read.csv are not symmetric
+
+One would expect that if you write something, read it back, and write it back again it would give 
+you the same content. This is called a round trip. R begs to differ:
+
+```
+> df <- data.frame(a=c("foo","bar","baz"))
+> write.csv(df, "foo.csv")
+> df <- read.csv("foo.csv")
+> df
+  X   a
+1 1 foo
+2 2 bar
+3 3 baz
+> write.csv(df, "foo.csv")
+> df <- read.csv("foo.csv")
+> df
+  X.1 X   a
+1   1 1 foo
+2   2 2 bar
+3   3 3 baz
+> write.csv(df, "foo.csv")
+> df <- read.csv("foo.csv")
+> df
+  X.2 X.1 X   a
+1   1   1 1 foo
+2   2   2 2 bar
+3   3   3 3 baz
+> write.csv(df, "foo.csv")
+> df <- read.csv("foo.csv")
+> write.csv(df, "foo.csv")
+> df <- read.csv("foo.csv")
+> write.csv(df, "foo.csv")
+> df <- read.csv("foo.csv")
+> write.csv(df, "foo.csv")
+> df <- read.csv("foo.csv")
+> df
+  X.6 X.5 X.4 X.3 X.2 X.1 X   a
+1   1   1   1   1   1   1 1 foo
+2   2   2   2   2   2   2 2 bar
+3   3   3   3   3   3   3 3 baz
+```
+
+write.csv adds a numerical index for the row with an empty string as a row name _for_ _no_ _reason_ by default.
+This messes up recognition of the first row as a header, which is triggered only if the number of columns in
+the first row is one less of the number of columns of the rest of the file. write.csv default behavior 
+basically sabotages the subsequent discovery of read.csv.
+
 ### nchar(NA) == 2 (fixed in >3.3)
 
 nchar gives the number of characters in a string. Except when the argument is
@@ -784,7 +832,6 @@ transaction and the round trip time between the operations. This problem is
 easy to handle when the state is all local to the browser, but pretty much
 impossible to handle. Cases of controls that must be both input and output are
 checkboxes, textfields, radio buttons, sliders, and selects.
-
 
 # Licensing problems
 
