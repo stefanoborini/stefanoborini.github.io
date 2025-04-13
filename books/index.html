@@ -6,43 +6,46 @@ layout: default
     <div class="row pack">
         <div class="col-md-12 col-sm-12">
             <div class="row pack">
-                    <div class="col-md-12 col-sm-12 card">
-                        <div class="panel panel-default">
-                          <div class="panel-body">
+                <div class="col-md-12 col-sm-12 card">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
                             <h3 class="panel-title pull-left">Books</h3>
-                          </div>
+                         </div>
                     {% assign sorted_posts = site.categories.books | sort:"-date" %}
                     {% for post in sorted_posts %}
                         {% if post.link_to %}
-                            <a href="{{ post.link_to }}" class="index-anchor"><div class="panel-body">{{post.date | date: "%Y-%m-%d"}} - {{ post.title }}</div></a>
+                         <a href="{{ post.link_to }}" class="index-anchor"><div class="panel-body">{{post.date | date: "%Y-%m-%d"}} - {{ post.title }}</div></a>
                         {% else %}
-                            <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor"><div class="panel-body">{{post.date | date: "%Y-%m-%d"}} - {{ post.title }}</div></a>
+                         <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor"><div class="panel-body">{{post.date | date: "%Y-%m-%d"}} - {{ post.title }}</div></a>
                         {% endif %}
                     {% endfor %}
                     </div>
-                    </div>
+                </div>
             </div> 
         </div>
     </div>
     <div class="row pack">
         <div class="col-md-12 col-sm-12">
             <div class="row pack">
-                    <div class="col-md-12 col-sm-12 card">
-                        <div class="panel panel-default">
-                          <div class="panel-body">
+                <div class="col-md-12 col-sm-12 card">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
                             <h3 class="panel-title pull-left">Books</h3>
-                          </div>
-                    {% assign sorted_posts = site.categories.books | sort:"-date" %}
-                    {% for post in sorted_posts %}
-                        {% if post.link_to %}
-                            <a href="{{ post.link_to }}" class="index-anchor"><div class="panel-body">{{post.date | date: "%Y-%m-%d"}} - {{ post.title }}</div></a>
-                        {% else %}
-                            <a href="{{ post.url | prepend: site.baseurl }}" class="index-anchor"><div class="panel-body">{{post.date | date: "%Y-%m-%d"}} - {{ post.title }}</div></a>
-                        {% endif %}
-                    {% endfor %}
+                         </div>
+                         <div class="panel-body">9780201835953 - The Mythical Man-Month: Essays on Software Engineering, Anniversary Edition</div>
+                         <div class="panel-body">9780321278548 - Mac OS X Internals: A Systems Approach</div>
+                         <div class="panel-body">9781784046446 - The Artist's Guide to Drawing Manga</div>
+                         <div class="panel-body">9780071429771 - Teach Yourself Go</div>
+                         <div class="panel-body">9780356500843 - Ender's Game (Ender Saga): Book 1 of the Ender Saga</div>
                     </div>
-                    </div>
+                </div>
             </div> 
         </div>
     </div>
 </div>
+
+
+
+
+
+
